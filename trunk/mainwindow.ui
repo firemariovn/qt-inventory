@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>507</width>
+    <height>384</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Inventory</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/Icons/icons/Contact.png</normaloff>:/Icons/icons/Contact.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QMdiArea" name="mdiArea"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>507</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuDatabase">
+    <property name="title">
+     <string>Database</string>
+    </property>
+    <property name="separatorsCollapsible">
+     <bool>false</bool>
+    </property>
+    <addaction name="actionUsers"/>
+    <addaction name="actionItems"/>
+    <addaction name="actionItems_types"/>
+    <addaction name="actionItems_status"/>
+    <addaction name="actionLocations"/>
+    <addaction name="actionDepartments"/>
+    <addaction name="actionOperators"/>
+    <addaction name="actionScrap"/>
+    <addaction name="separator"/>
+    <addaction name="actionLogs"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+    <addaction name="actionAboutQt"/>
+    <addaction name="actionLicensing"/>
+   </widget>
+   <widget class="QMenu" name="menuOperations">
+    <property name="title">
+     <string>Operations</string>
+    </property>
+    <addaction name="actionAllocations"/>
+   </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <widget class="QMenu" name="menuLanguages">
+     <property name="title">
+      <string>Languages</string>
+     </property>
+     <property name="icon">
+      <iconset resource="resources.qrc">
+       <normaloff>:/Icons/icons/Globe.png</normaloff>:/Icons/icons/Globe.png</iconset>
+     </property>
+    </widget>
+    <addaction name="actionChange_password"/>
+    <addaction name="actionSettings"/>
+    <addaction name="actionSQL_Browser"/>
+    <addaction name="menuLanguages"/>
+   </widget>
+   <addaction name="menuDatabase"/>
+   <addaction name="menuOperations"/>
+   <addaction name="menuTools"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/icons/Standby.png</normaloff>:/Icons/icons/Standby.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionUsers">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/icons/User.png</normaloff>:/Icons/icons/User.png</iconset>
+   </property>
+   <property name="text">
+    <string>Users</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/icons/Go In.png</normaloff>:/Icons/icons/Go In.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionItems">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/icons/Computer.png</normaloff>:/Icons/icons/Computer.png</iconset>
+   </property>
+   <property name="text">
+    <string>Items</string>
+   </property>
+  </action>
+  <action name="actionLocations">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/icons/Home.png</normaloff>:/Icons/icons/Home.png</iconset>
+   </property>
+   <property name="text">
+    <string>Locations</string>
+   </property>
+  </action>
+  <action name="actionOperators">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/icons/Man.png</normaloff>:/Icons/icons/Man.png</iconset>
+   </property>
+   <property name="text">
+    <string>Operators</string>
+   </property>
+  </action>
+  <action name="actionDepartments">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/icons/Flag.png</normaloff>:/Icons/icons/Flag.png</iconset>
+   </property>
+   <property name="text">
+    <string>Departments</string>
+   </property>
+  </action>
+  <action name="actionItems_types">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/icons/Sitemap.png</normaloff>:/Icons/icons/Sitemap.png</iconset>
+   </property>
+   <property name="text">
+    <string>Items types</string>
+   </property>
+  </action>
+  <action name="actionItems_status">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/icons/Info2.png</normaloff>:/Icons/icons/Info2.png</iconset>
+   </property>
+   <property name="text">
+    <string>Items status</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/icons/Info.png</normaloff>:/Icons/icons/Info.png</iconset>
+   </property>
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionAllocations">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/icons/Puzzle.png</normaloff>:/Icons/icons/Puzzle.png</iconset>
+   </property>
+   <property name="text">
+    <string>Allocations</string>
+   </property>
+  </action>
+  <action name="actionAboutQt">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/icons/Gear.png</normaloff>:/Icons/icons/Gear.png</iconset>
+   </property>
+   <property name="text">
+    <string>About Qt</string>
+   </property>
+  </action>
+  <action name="actionChange_password">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/icons/Hand.png</normaloff>:/Icons/icons/Hand.png</iconset>
+   </property>
+   <property name="text">
+    <string>Change password</string>
+   </property>
+  </action>
+  <action name="actionLogs">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/icons/Write2.png</normaloff>:/Icons/icons/Write2.png</iconset>
+   </property>
+   <property name="text">
+    <string>Logs</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/icons/Applications.png</normaloff>:/Icons/icons/Applications.png</iconset>
+   </property>
+   <property name="text">
+    <string>Settings</string>
+   </property>
+  </action>
+  <action name="actionSQL_Browser">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/icons/Database.png</normaloff>:/Icons/icons/Database.png</iconset>
+   </property>
+   <property name="text">
+    <string>SQL Browser</string>
+   </property>
+  </action>
+  <action name="actionEnglish">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>English</string>
+   </property>
+  </action>
+  <action name="actionBulgarian">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Bulgarian</string>
+   </property>
+  </action>
+  <action name="actionScrap">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/icons/Trash.png</normaloff>:/Icons/icons/Trash.png</iconset>
+   </property>
+   <property name="text">
+    <string>Scrap</string>
+   </property>
+  </action>
+  <action name="actionLicensing">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/icons/Write2.png</normaloff>:/Icons/icons/Write2.png</iconset>
+   </property>
+   <property name="text">
+    <string>Licensing</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionExit</sender>
+   <signal>activated()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>253</x>
+     <y>191</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
