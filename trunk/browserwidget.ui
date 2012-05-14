@@ -221,7 +221,6 @@
       </layout>
       <zorder>views_listView</zorder>
       <zorder>sqlEdit</zorder>
-      <zorder></zorder>
       <zorder>label</zorder>
      </widget>
     </widget>
