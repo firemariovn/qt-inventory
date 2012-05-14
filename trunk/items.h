@@ -43,6 +43,7 @@ private:
     bool saveItem() const;
     void loadData();
     bool checkNumber() const;
+    void fillProperties(const int type_id = 0);
 
     Ui::Items *ui;
     QSqlTableModel* locations_model;

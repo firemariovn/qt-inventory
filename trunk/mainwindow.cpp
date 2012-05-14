@@ -98,6 +98,7 @@ void MainWindow::openDatabase(QSqlDatabase *db)
         this->setUserRights();
         this->setToolbar();
         this->startWithTable();
+        this->updateDataTable();
         if (loadUpdatePlugin()){
             connect(updmgr->updmgrObject(), SIGNAL(blockUserInput(bool)), this, SLOT(setDisabled(bool)));
             updmgr->checkForUpdate("inventory",_STR_PRODUCT_VERSION);
@@ -1020,4 +1021,27 @@ bool MainWindow::loadUpdatePlugin()
         }
      }
     return false;
+}
+
+void MainWindow::updateDataTable()
+{
+    if(_REVISION >= 58){
+        QSqlQuery* query = new QSqlQuery();
+        if(!query->exec(QString("CREATE TABLE IF NOT EXISTS "
+                                "main.properties "
+                                "(`id` INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , `type_id` INTEGER, `property` VARCHAR)"
+                                ))){
+            qDebug() << "SQL Error: " << query->lastError();
+            logger->writeLog(Logger::Error, Logger::Other, query->lastError().text());
+            return;
+        }
+        if(!query->exec(QString("CREATE TABLE IF NOT EXISTS "
+                                "main.item_properties "
+                                "(`id` INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , `property_id` INTEGER NOT NULL , `item_id` INTEGER, `value` VARCHAR)"
+                                ))){
+            qDebug() << "SQL Error: " << query->lastError();
+            logger->writeLog(Logger::Error, Logger::Other, query->lastError().text());
+            return;
+        }
+    }
 }

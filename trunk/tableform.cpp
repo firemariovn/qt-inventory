@@ -27,6 +27,7 @@ TableForm::TableForm(QWidget *parent, Qt::WindowFlags f)
     show_items = 0;
     show_attachments = 0;
     show_rights = 0;
+    show_properties = 0;
 
     logger = 0;
 
@@ -69,6 +70,7 @@ TableForm::TableForm(QWidget *parent, Qt::WindowFlags f)
     connect(ui->attachments_toolButton, SIGNAL(clicked()), this, SLOT(addAttachedFile()));
     connect(ui->detailed_tableView, SIGNAL(add_attachment_()), this, SLOT(addAttachedFile()));
     connect(ui->detailed_tableView, SIGNAL(add_item_()), this, SLOT(addItem()));
+    connect(ui->detailed_tableView, SIGNAL(add_property_()), this, SLOT(addProperty()));
     connect(ui->detailed_tableView, SIGNAL(tableUpdate(QString)), this, SLOT(needUpdate(QString)));
     connect(ui->detailed_tableView, SIGNAL(searchItem(int,QString)), this, SIGNAL(searchItem(int,QString)));
     connect(ui->detailed_tableView, SIGNAL(activatedItem(int,QString)), this, SLOT(activatedItem(int,QString)));
@@ -703,6 +705,13 @@ void TableForm::setUserRights(const bool has_rights)
 
 void TableForm::itemSelected(const QModelIndex &current, const QModelIndex& previous)
 {
+    /*
+    if(!query->exec(QString("DROP TABLE IF EXISTS `ITEM_PROPERTIES_TEMP`"))){
+        if(logger) logger->writeLog(Logger::Error, Logger::Other,
+                                    tr("Sql error:\n%1").arg(query->lastError().text())
+                                    );
+    }
+    */
     if(current.isValid()){
         setCurrentIndex(current);
         ui->remove_toolButton->setEnabled(true);
@@ -712,6 +721,26 @@ void TableForm::itemSelected(const QModelIndex &current, const QModelIndex& prev
             QSqlRecord record = model->record(current_row);
             if(!record.isEmpty()){
                 current_id = record.value("id").toInt();
+                /*
+                if(model->tableName() == "items"){
+                    qDebug() << "Create temporary properties table";
+                    if(!query->exec(QString("CREATE TEMP TABLE `ITEM_PROPERTIES_TEMP` (id INTEGER PRIMARY KEY, property VARCHAR, value VARCHAR)"))){
+                        if(logger) logger->writeLog(Logger::Error, Logger::Other,
+                                                    tr("Sql error:\n%1").arg(query->lastError().text())
+                                                    );
+                    }
+                    if(!query->exec(QString("INSERT INTO `%1` ( `id`, `property_id`, `value` ) "
+                                            "SELECT item_properties.id, item_properties.property_id, item_properties.value "
+                                            "FROM item_properties "
+                                            "LEFT JOIN properties "
+                                            "ON data.type_id = properties.type_id "
+                                            "LEFT JOIN properties_data "
+                                            "ON properties.id = properties_data.property_id AND properties_data.data_id = data.id").arg(temp_locations_table))){
+                        if(logger) logger->writeLog(Logger::Error, Logger::Allocations,
+                                                    tr("Sql error:\n%1").arg(query->lastError().text())
+                                                    );
+                }
+                */
             }
             else{
                 current_id = 0;
@@ -822,13 +851,27 @@ void TableForm::showDetailedTable(const bool show)
 
 void TableForm::showDetailedItems(const bool show)
 {
+    if(show_attachments){
+        show_attachments->blockSignals(true);
+        show_attachments->setChecked(false);
+        show_attachments->blockSignals(false);
+    }
+    if(show_rights){
+        show_rights->blockSignals(true);
+        show_rights->setChecked(false);
+        show_rights->blockSignals(false);
+    }
+    if(show_properties){
+        show_properties->blockSignals(true);
+        show_properties->setChecked(false);
+        show_properties->blockSignals(false);
+    }
     if(!show){
-        if(show_attachments) show_attachments->setChecked(true);
+        if(ui->detailed_toolButton->isChecked()) ui->detailed_toolButton->toggle();
         return;
     }
     if(!this->checkUserRights(3)) return;
-    if(show_attachments) show_attachments->setChecked(false);
-    if(show_rights) show_rights->setChecked(false);
+
     if(!ui->detailed_toolButton->isChecked()) ui->detailed_toolButton->toggle();
     if(model->tableName() == "operators"){
         detailed_filter = QString("operator_id = ");
@@ -946,14 +989,27 @@ void TableForm::setDetailedOptions()
 
 void TableForm::showDetailedAttachments(const bool show)
 {
+    if(show_items){
+        show_items->blockSignals(true);
+        show_items->setChecked(false);
+        show_items->blockSignals(false);
+    }
+    if(show_rights){
+        show_rights->blockSignals(true);
+        show_rights->setChecked(false);
+        show_rights->blockSignals(false);
+    }
+    if(show_properties){
+        show_properties->blockSignals(true);
+        show_properties->setChecked(false);
+        show_properties->blockSignals(false);
+    }
     if(!show){
-        if(show_items) show_items->setChecked(true);
-        else if(ui->detailed_toolButton->isChecked()) ui->detailed_toolButton->toggle();
+        if(ui->detailed_toolButton->isChecked()) ui->detailed_toolButton->toggle();
         return;
     }
     if(!this->checkUserRights(15)) return;
-    if(show_items) show_items->setChecked(false);
-    if(show_rights) show_rights->setChecked(false);
+
     if(!ui->detailed_toolButton->isChecked()) ui->detailed_toolButton->toggle();
     detailed_filter.clear();
     detailed_filter = QString("`tablename` LIKE '%1' AND `item_id`=")
@@ -995,10 +1051,27 @@ void TableForm::needUpdate(const QString &table)
 
 void TableForm::showDetailedRights(const bool show)
 {
-    if(!show) return;
+    if(show_items){
+        show_items->blockSignals(true);
+        show_items->setChecked(false);
+        show_items->blockSignals(false);
+    }
+    if(show_attachments){
+        show_attachments->blockSignals(true);
+        show_attachments->setChecked(false);
+        show_attachments->blockSignals(false);
+    }
+    if(show_properties){
+        show_properties->blockSignals(true);
+        show_properties->setChecked(false);
+        show_properties->blockSignals(false);
+    }
+    if(!show) {
+        if(ui->detailed_toolButton->isChecked()) ui->detailed_toolButton->toggle();
+        return;
+    }
     if(!this->checkUserRights(0)) return;
-    if(show_items) show_items->setChecked(false);
-    if(show_attachments) show_attachments->setChecked(false);
+
     if(!ui->detailed_toolButton->isChecked()) ui->detailed_toolButton->toggle();
     detailed_filter.clear();
     detailed_filter = QString("`user_id`=");
@@ -1962,13 +2035,27 @@ void TableForm::sortIndicatorChanged(int logicalIndex, Qt::SortOrder order)
 /* properties addon */
 void TableForm::showTypeProperties(const bool show)
 {
+    if(show_attachments){
+        show_attachments->blockSignals(true);
+        show_attachments->setChecked(false);
+        show_attachments->blockSignals(false);
+    }
+    if(show_items){
+        show_items->blockSignals(true);
+        show_items->setChecked(false);
+        show_items->blockSignals(false);
+    }
+    if(show_rights){
+        show_rights->blockSignals(true);
+        show_rights->setChecked(false);
+        show_rights->blockSignals(false);
+    }
     if(!show){
-        if(show_attachments) show_attachments->setChecked(true);
+        if(ui->detailed_toolButton->isChecked()) ui->detailed_toolButton->toggle();
         return;
     }
-    //if(!this->checkUserRights(3)) return;
-    if(show_attachments) show_attachments->setChecked(false);
-    if(show_items) show_items->setChecked(false);
+    if(!this->checkUserRights(18)) return;
+
     if(!ui->detailed_toolButton->isChecked()) ui->detailed_toolButton->toggle();
     detailed_filter = QString("type_id = ");
 
@@ -1987,8 +2074,77 @@ void TableForm::showTypeProperties(const bool show)
     this->updateDetailedView();
 }
 
-void TableForm::showItemProperties(const bool show)
+void TableForm::addProperty()
 {
-
+    if(model){
+        QSqlRecord record = model->record(current_row);
+        if(!record.isEmpty()){
+            bool ok;
+            QString text = QInputDialog::getText(this, tr("%1 (new property)").arg(record.value("type").toString()),
+                                                 tr("Property name:"), QLineEdit::Normal,
+                                                 "", &ok);
+            if (ok && !text.isEmpty()){
+                QSqlQuery* query = new QSqlQuery(QSqlDatabase::database());
+                if(!query->exec(QString("INSERT INTO properties (`type_id`, `property`) VALUES ('%1', '%2')")
+                                .arg(record.value("id").toInt())
+                                .arg(text))
+                   ){
+                    if(logger) logger->writeLog(Logger::Error, Logger::Properties,
+                                            tr("Sql error:\n%1").arg(query->lastError().text())
+                                            );
+                    }
+                    else{
+                        if(logger) logger->writeLog(Logger::Add, Logger::Properties,
+                                                tr("Property: %1 has been added to:\n%2")
+                                                .arg(text)
+                                                .arg(logger->infoLog(record))
+                                                );
+                    }
+                    this->updateDetailedView();
+            }
+        }
+    }
 }
 
+void TableForm::showItemProperties(const bool show)
+{
+    if(show_attachments){
+        show_attachments->blockSignals(true);
+        show_attachments->setChecked(false);
+        show_attachments->blockSignals(false);
+    }
+    if(show_items){
+        show_items->blockSignals(true);
+        show_items->setChecked(false);
+        show_items->blockSignals(false);
+    }
+    if(show_rights){
+        show_rights->blockSignals(true);
+        show_rights->setChecked(false);
+        show_rights->blockSignals(false);
+    }
+    if(!show){
+        if(ui->detailed_toolButton->isChecked()) ui->detailed_toolButton->toggle();
+        return;
+    }
+    if(!this->checkUserRights(18)) return;
+
+    if(!ui->detailed_toolButton->isChecked()) ui->detailed_toolButton->toggle();
+    detailed_filter = QString("item_id = ");
+
+    if(!detailed_model) detailed_model = new QSqlRelationalTableModel;
+    detailed_model->clear();
+    detailed_model->setTable("item_properties");
+    detailed_model->setRelation(detailed_model->fieldIndex("property_id"), QSqlRelation("properties", "id", "property"));
+    detailed_model->select();
+    ui->detailed_tableView->setModel(detailed_model);
+    ui->detailed_tableView->hideColumn(detailed_model->fieldIndex("id"));
+    ui->detailed_tableView->hideColumn(detailed_model->fieldIndex("item_id"));
+
+    //ui->detailed_tableView->setItemDelegate(new QSqlRelationalDelegate(ui->tableView));
+
+    detailed_model->setHeaderData(detailed_model->fieldIndex("property"), Qt::Horizontal, tr("Property"), Qt::EditRole);
+    detailed_model->setHeaderData(detailed_model->fieldIndex("value"), Qt::Horizontal, tr("Value"), Qt::EditRole);
+
+    this->updateDetailedView();
+}

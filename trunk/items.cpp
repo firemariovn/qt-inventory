@@ -396,3 +396,9 @@ bool Items::checkNumber() const
     }
     return true;
 }
+
+void Items::fillProperties(const int type_id)
+{
+    if(!type_id) return;
+
+}

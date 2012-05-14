@@ -31,6 +31,10 @@ InventoryTableView::InventoryTableView(QWidget *parent):
     find_item = new QAction(QIcon(":/Icons/icons/Zoom In.png"), tr("Find item"), this);
     find_allocation = new QAction(QIcon(":/Icons/icons/Zoom In.png"), tr("Find allocation"), this);
 
+    add_property = new QAction(QIcon(":/Icons/icons/Tag.png"), tr("Add property"), this);
+    edit_property = new QAction(QIcon(":/Icons/icons/Tool.png"), tr("Edit property"), this);
+    delete_property = new QAction(QIcon(":/Icons/icons/Trash.png"), tr("Delete property"), this);
+
     mark_row = new QAction(QIcon(":/Icons/icons/Ok.png"), tr("Mark row"), this);
     unmark_row = new QAction(QIcon(":/Icons/icons/Cancel.png"), tr("Unmark row"), this);
     marking_reverse = new QAction(QIcon(":/Icons/icons/Refresh.png"), tr("Marking reverse"), this);
@@ -40,6 +44,8 @@ InventoryTableView::InventoryTableView(QWidget *parent):
     hide_unmarked->setCheckable(true);
 
     print = new QAction(QIcon(":/Icons/icons/Printer.png"), tr("Print"), this);
+
+    /*** status tips ***/
 
     add_attachment->setStatusTip(tr("Add attachment to the selected object"));
     open_attachment->setStatusTip(tr("Opens attachment with its associated program"));
@@ -66,6 +72,8 @@ InventoryTableView::InventoryTableView(QWidget *parent):
     connect(add_attachment, SIGNAL(triggered()), this, SLOT(addAttachment()));
     connect(open_attachment, SIGNAL(triggered()), this, SLOT(openAttachment()));    
     connect(delete_attachment, SIGNAL(triggered()), this, SLOT(deleteAttachment()));
+
+    connect(add_property, SIGNAL(triggered()), this, SLOT(addProperty()));
 
     connect(open_rights, SIGNAL(triggered()), this, SLOT(openRights()));
 
@@ -150,6 +158,13 @@ void InventoryTableView::contextMenuEvent(QContextMenuEvent *event)
         else if(model->tableName() == "allocations"){
             if(index.isValid()){
                 menu.addAction(find_item);
+            }
+        }
+        else if(model->tableName() == "properties"){
+            menu.addAction(add_property);
+            if(index.isValid()){
+                menu.addAction(edit_property);
+                menu.addAction(delete_property);
             }
         }
         menu.addSeparator();
@@ -1039,5 +1054,11 @@ void InventoryTableView::loadPrinterSettings(QPrinter *printer)
     settings.endGroup();
 
 #endif
+}
+
+void InventoryTableView::addProperty()
+{
+    if(!this->checkUserRights(19)) return;
+    emit add_property_();
 }
 

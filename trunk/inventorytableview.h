@@ -25,6 +25,7 @@ public slots:
 
 signals:
     void add_attachment_();
+    void add_property_();
     void add_item_();
     void tableUpdate(const QString& table);
     void searchItem(const int item_id, const QString& table);
@@ -55,6 +56,7 @@ private slots:
     void printTable(QPrinter* printer);
     void savePrinterSettings(QPrinter* printer);
     void loadPrinterSettings(QPrinter* printer);
+    void addProperty();
 
 private:
     bool checkUserRights(const int idx, const bool show_message = true) const;
@@ -79,6 +81,9 @@ private:
     QAction* hide_marked;
     QAction* hide_unmarked;
     QAction* print;
+    QAction* add_property;
+    QAction* edit_property;
+    QAction* delete_property;
 
     QStringList marked;
 };
