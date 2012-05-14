@@ -72,6 +72,7 @@ private:
     void loadLicenseInfo();
     bool loadUpdatePlugin();
     bool checkLicense();
+    void updateDataTable();
 
     inline QSqlDatabase* getDB() {return db; }
 

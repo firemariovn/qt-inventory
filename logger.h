@@ -36,6 +36,7 @@ public:
         Logs,
         Attachments,
         Scrap,
+        Properties,
         Other
     };
 

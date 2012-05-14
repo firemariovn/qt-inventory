@@ -42,6 +42,7 @@ protected:
     void closeEvent(QCloseEvent *event);
 
 private slots:
+    void addProperty();
     void save();
     void revert();
     void insert();
