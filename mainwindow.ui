@@ -66,6 +66,7 @@
      <string>Operations</string>
     </property>
     <addaction name="actionAllocations"/>
+    <addaction name="actionReferences"/>
    </widget>
    <widget class="QMenu" name="menuTools">
     <property name="title">
@@ -275,6 +276,15 @@
    </property>
    <property name="text">
     <string>Licensing</string>
+   </property>
+  </action>
+  <action name="actionReferences">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/icons/Search.png</normaloff>:/Icons/icons/Search.png</iconset>
+   </property>
+   <property name="text">
+    <string>References</string>
    </property>
   </action>
  </widget>

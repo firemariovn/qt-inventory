@@ -29,7 +29,8 @@ SOURCES += main.cpp\
     browser.cpp \
     connectionwidget.cpp \
     checkdelegate.cpp \
-    scrap.cpp
+    scrap.cpp \
+    referencesform.cpp
 
 HEADERS  += mainwindow.h \
     dbconnect.h \
@@ -50,7 +51,8 @@ HEADERS  += mainwindow.h \
     connectionwidget.h \
     checkdelegate.h \
     scrap.h \
-    interface.h
+    interface.h \
+    referencesform.h
 
 FORMS    += mainwindow.ui \
     dbconnect.ui \
@@ -62,7 +64,8 @@ FORMS    += mainwindow.ui \
     changepassword.ui \
     settings.ui \
     browserwidget.ui \
-    scrap.ui
+    scrap.ui \
+    referencesform.ui
 
 OTHER_FILES += \
     icons/3.png \
