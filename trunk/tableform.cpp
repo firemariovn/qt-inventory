@@ -2069,7 +2069,7 @@ void TableForm::showTypeProperties(const bool show)
 
     //ui->detailed_tableView->setItemDelegate(new QSqlRelationalDelegate(ui->tableView));
 
-    detailed_model->setHeaderData(detailed_model->fieldIndex("property"), Qt::Horizontal, tr("Property"), Qt::EditRole);
+    detailed_model->setHeaderData(detailed_model->fieldIndex("property"), Qt::Horizontal, tr("Properties"), Qt::EditRole);
 
     this->updateDetailedView();
 }

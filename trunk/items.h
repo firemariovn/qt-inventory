@@ -38,12 +38,16 @@ public:
     void setTypeFilter(const int type_id);
     void setStatusFilter(const int status_id);
 
+private slots:
+    void on_type_comboBox_currentIndexChanged(int );
+
 private:
     void setLineEditCompleter(QLineEdit* lineEdit, const QString& field, const QString& table = "items");
     bool saveItem() const;
     void loadData();
     bool checkNumber() const;
-    void fillProperties(const int type_id = 0);
+    void fillProperties(const int type_id, const int item_id = 0);
+    void saveItemProperties();
 
     Ui::Items *ui;
     QSqlTableModel* locations_model;

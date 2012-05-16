@@ -57,6 +57,8 @@ private slots:
     void savePrinterSettings(QPrinter* printer);
     void loadPrinterSettings(QPrinter* printer);
     void addProperty();
+    void editProperty();
+    void deleteProperty();
 
 private:
     bool checkUserRights(const int idx, const bool show_message = true) const;

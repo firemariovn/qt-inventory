@@ -42,6 +42,7 @@ void Items::accept()
         QApplication::restoreOverrideCursor();
         return;
     }
+    this->saveItemProperties();
     QApplication::restoreOverrideCursor();
     QDialog::accept();
 }
@@ -316,6 +317,8 @@ void Items::loadItem(const int item_id)
     ui->model_lineEdit->setText(record.value("model").toString());
     ui->serialno_lineEdit->setText(record.value("serialno").toString());
     ui->note_textEdit->setText(record.value("note").toString());
+
+    this->fillProperties(record.value("type_id").toInt(), item_id);
 }
 
 void Items::setLocationFilter(const int location_id)
@@ -397,8 +400,84 @@ bool Items::checkNumber() const
     return true;
 }
 
-void Items::fillProperties(const int type_id)
+void Items::fillProperties(const int type_id, const int item_id)
 {
-    if(!type_id) return;
+    if(type_id <=0 || item_id < 0) return;
+    QSqlQuery* query = new QSqlQuery();
+    QString q = QString("SELECT id, property FROM properties "
+                        "WHERE type_id = %1")
+            .arg(type_id);
+    if(!query->exec(q)){
+        if(logger) logger->writeLog(Logger::Error, Logger::Properties, tr("Sql error:\n%1")
+                                    .arg(query->lastError().text())
+                                    );
+        return;
+    }
+    QStandardItemModel* model = new QStandardItemModel(0,2,ui->properties_treeView);
+    model->setHeaderData(0, Qt::Horizontal, tr("Name"));
+    model->setHeaderData(1, Qt::Horizontal, tr("Value"));
+    while (query->next()){
+        QSqlQuery* sub = new QSqlQuery(QString("SELECT id, value FROM item_properties "
+                                               "WHERE item_id = %1 AND property_id = %2")
+                                       .arg(item_id)
+                                       .arg(query->value(0).toInt())
+                                       );
+        QString value;
+        int id = 0;
+        if(sub->exec()){
+            if(sub->first()){
+                id = sub->value(0).toInt();
+                value = sub->value(1).toString();
+            }
+        }
+        QStandardItem* item0 = new QStandardItem(query->value(1).toString());
+        QStandardItem* item1 = new QStandardItem(value);
 
+        item0->setEditable(false);
+        item0->setData(query->value(0).toInt());
+        item1->setData(id);
+
+        model->setItem(model->rowCount(), 0, item0);
+        model->setItem(model->rowCount()-1, 1, item1);
+    }
+
+    ui->properties_treeView->setModel(model);
+}
+
+void Items::saveItemProperties()
+{
+    QStandardItemModel* model = qobject_cast<QStandardItemModel *>(ui->properties_treeView->model());
+    if(!model) return;
+    QSqlQuery* query = new QSqlQuery();
+
+    if(!query->exec(QString("DELETE FROM item_properties WHERE `item_id` = '%1'")
+                   .arg(getItemId())
+                   )){
+        if(logger) logger->writeLog(Logger::Error, Logger::Properties, tr("Sql error:\n%1")
+                                    .arg(query->lastError().text())
+                                    );
+    }
+
+    for (int i = 0; i < model->rowCount(); ++i) {
+         QStandardItem *item0 = model->item(i,0);
+         QStandardItem *item1 = model->item(i,1);
+         if(!item1->data(Qt::EditRole).toString().isEmpty()){
+             if(!query->exec(QString("INSERT INTO item_properties (`property_id`,`item_id`,`value`) "
+                                     "VALUES ('%1','%2','%3')")
+                             .arg(item0->data().toInt())
+                             .arg(this->getItemId())
+                             .arg(item1->data(Qt::EditRole).toString())
+                             ))
+             {
+                 if(logger) logger->writeLog(Logger::Error, Logger::Properties, tr("Sql error:\n%1")
+                                             .arg(query->lastError().text())
+                                             );
+             }
+         }
+    }
+}
+
+void Items::on_type_comboBox_currentIndexChanged(int /*index*/)
+{
+    this->fillProperties(ui->type_comboBox->itemModelId());
 }
