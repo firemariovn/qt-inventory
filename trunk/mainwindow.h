@@ -12,6 +12,7 @@ class ChangePassword;
 class Logger;
 class Settings;
 class Browser;
+class ReferencesForm;
 
 namespace Ui {
     class MainWindow;
@@ -53,6 +54,7 @@ private slots:
     void lockedDatabase();
     void searchItem(const int item_id, const QString& table);
     void switchLanguage(QAction *action);
+    void showReferences();
 
     void on_actionLicensing_triggered();
 
@@ -93,6 +95,7 @@ private:
     Settings* settings_dialog;
     QSqlDatabase* db;
     QTranslator* translator;
+    ReferencesForm* references_form;
 
     UpdMgrInterface* updmgr;
 };

@@ -8,6 +8,7 @@
 #include "logger.h"
 #include "settings.h"
 #include "browser.h"
+#include "referencesform.h"
 
 #include <QtGui>
 #include <QtSql>
@@ -39,6 +40,7 @@ MainWindow::MainWindow(QWidget *parent) :
     logs_form = 0;
     settings_dialog = 0;
     sql_browser_form = 0;
+    references_form = 0;
 
     translator = new QTranslator(this);
     qApp->installTranslator(translator);
@@ -67,6 +69,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->actionChange_password, SIGNAL(triggered()), this, SLOT(changePassword()));
     connect(ui->actionSettings, SIGNAL(triggered()), this, SLOT(showSettings()));
     connect(ui->actionSQL_Browser, SIGNAL(triggered()), this, SLOT(showSqlBrowser()));
+    connect(ui->actionReferences, SIGNAL(triggered()), this, SLOT(showReferences()));
 }
 
 MainWindow::~MainWindow()
@@ -1043,5 +1046,25 @@ void MainWindow::updateDataTable()
             logger->writeLog(Logger::Error, Logger::Other, query->lastError().text());
             return;
         }
+    }
+}
+
+void MainWindow::showReferences()
+{
+    if(!this->checkUserRights(3)) return;
+    if(!checkLicense()) return;
+    if(!references_form){
+        references_form = new ReferencesForm(ui->mdiArea);
+        //references_form->setLogger(logger);
+
+        QMdiSubWindow *subWindowReferences = new QMdiSubWindow;
+        subWindowReferences->setWindowIcon(QIcon(":/Icons/icons/Search.png"));
+        subWindowReferences->setWidget(references_form);
+        ui->mdiArea->addSubWindow(subWindowReferences);
+        subWindowReferences->showMaximized();
+        //logger->writeLog(Logger::View, Logger::Items);
+    }
+    else{
+        references_form->showMaximized();
     }
 }
