@@ -67,6 +67,10 @@ InventoryTableView::InventoryTableView(QWidget *parent):
     hide_unmarked->setStatusTip(tr("Hide the unmarked rows"));
     print->setStatusTip(tr("Print current table"));
 
+    add_property->setStatusTip(tr("Add property to the selected item type"));
+    edit_property->setStatusTip(tr("Edit current property"));
+    delete_property->setStatusTip(tr("Delete current property"));
+
 
 
     connect(add_attachment, SIGNAL(triggered()), this, SLOT(addAttachment()));
@@ -74,6 +78,8 @@ InventoryTableView::InventoryTableView(QWidget *parent):
     connect(delete_attachment, SIGNAL(triggered()), this, SLOT(deleteAttachment()));
 
     connect(add_property, SIGNAL(triggered()), this, SLOT(addProperty()));
+    connect(edit_property, SIGNAL(triggered()), this, SLOT(editProperty()));
+    connect(delete_property, SIGNAL(triggered()), this, SLOT(deleteProperty()));
 
     connect(open_rights, SIGNAL(triggered()), this, SLOT(openRights()));
 
@@ -333,6 +339,10 @@ void InventoryTableView::activated(const QModelIndex& index)
     }
     if(model->tableName() == "users_rights"){
         this->openRights();
+        return;
+    }
+    if(model->tableName() == "properties"){
+        this->editProperty();
         return;
     }
     if(!index.isValid()) return;
@@ -1060,5 +1070,70 @@ void InventoryTableView::addProperty()
 {
     if(!this->checkUserRights(19)) return;
     emit add_property_();
+}
+
+void InventoryTableView::editProperty()
+{
+    if(!this->checkUserRights(19)) return;
+    if(!this->model()) return;
+    QSqlRelationalTableModel *model = qobject_cast<QSqlRelationalTableModel *>(this->model());
+    QModelIndex index = this->selectionModel()->currentIndex();
+    QSqlRecord record = model->record(index.row());
+    if(!record.isEmpty()){
+        bool ok;
+        QString text = QInputDialog::getText(this, tr("Edit property"),
+                                             tr("Property name:"), QLineEdit::Normal,
+                                             record.value("property").toString(), &ok);
+        if (ok && !text.isEmpty()){
+            QSqlQuery* query = new QSqlQuery();
+            if(!query->exec(QString("UPDATE properties SET `property`='%1' WHERE `id`='%2'")
+                            .arg(text)
+                            .arg(record.value("id").toInt())
+                            )){
+                if(logger) logger->writeLog(Logger::Error, Logger::Properties,
+                                            tr("Can not update database. Sql error:\n%1").arg(query->lastError().text())
+                                            );
+            }
+            else emit tableUpdate("properties");
+        }
+    }
+}
+
+void InventoryTableView::deleteProperty()
+{
+    if(!this->checkUserRights(20)) return;
+    if(!this->model()) return;
+    QSqlRelationalTableModel *model = qobject_cast<QSqlRelationalTableModel *>(this->model());
+    QModelIndex index = this->selectionModel()->currentIndex();
+    QSqlRecord record = model->record(index.row());
+    if(!record.isEmpty()){
+        QString property = record.value("property").toString();
+        int ret = QMessageBox::question(this, tr("Properties"),
+                tr("Do you want to delete %1?\nThis could not be restored!")
+                                    .arg(property),
+                                    QMessageBox::Ok | QMessageBox::Cancel);
+        if(ret == QMessageBox::Cancel) return;
+        QString info;
+        if(logger) info = logger->infoLog(record);
+        QSqlQuery* query = new QSqlQuery(QSqlDatabase::database());
+        if(!query->exec(QString("DELETE FROM properties WHERE `id`=%1")
+                            .arg(record.value("id").toInt()))
+            ){
+            if(logger) logger->writeLog(Logger::Error, Logger::Attachments,
+                                        tr("Can not remove from database. Sql error:\n%1").arg(query->lastError().text())
+                                        );
+        }
+        else{
+            if(logger) logger->writeLog(Logger::Delete, Logger::Properties,
+                                        tr("Delete property info:\n%1").arg(info));
+        }
+        if(!query->exec(QString("DELETE FROM item_properties WHERE `property_id`='%1'")
+                        .arg(record.value("id").toInt()))){
+            if(logger) logger->writeLog(Logger::Error, Logger::Properties,
+                                        tr("Sql error:\n%1").arg(query->lastError().text())
+                                        );
+        }
+        emit tableUpdate("properties");
+    }
 }
 
