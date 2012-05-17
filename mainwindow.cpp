@@ -1056,7 +1056,7 @@ void MainWindow::showReferences()
     if(!references_form){
         references_form = new ReferencesForm(ui->mdiArea);
         //references_form->setLogger(logger);
-
+        connect(references_form, SIGNAL(searchItem(int,QString)), this, SLOT(searchItem(int,QString)));
         QMdiSubWindow *subWindowReferences = new QMdiSubWindow;
         subWindowReferences->setWindowIcon(QIcon(":/Icons/icons/Search.png"));
         subWindowReferences->setWidget(references_form);
