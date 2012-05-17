@@ -24,7 +24,7 @@
       </widget>
      </item>
      <item>
-      <widget class="InventoryComboBox" name="type_comboBox">
+      <widget class="QComboBox" name="type_comboBox">
        <property name="sizePolicy">
         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -84,15 +84,15 @@
     </layout>
    </item>
    <item row="1" column="0" colspan="3">
-    <widget class="QTableView" name="tableView"/>
+    <widget class="InventoryTableView" name="tableView"/>
    </item>
   </layout>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>InventoryComboBox</class>
-   <extends>QComboBox</extends>
-   <header>inventorycombobox.h</header>
+   <class>InventoryTableView</class>
+   <extends>QTableView</extends>
+   <header>inventorytableview.h</header>
   </customwidget>
  </customwidgets>
  <resources>

@@ -7,6 +7,9 @@ namespace Ui {
 class ReferencesForm;
 }
 
+class HeaderView;
+class QSqlRelationalTableModel;
+
 class ReferencesForm : public QWidget
 {
     Q_OBJECT
@@ -16,13 +19,17 @@ public:
     ~ReferencesForm();
 
 private slots:
-    void fillProperties(const int type_id = 0);
+    void fillProperties(const int index);
+    void fillFilter(const int index);
+    void setFilter();
     
 private:
-    void fillFilters();
+    void fillTypes();
 
 
     Ui::ReferencesForm *ui;
+    HeaderView* headerView;
+    QSqlRelationalTableModel* model;
 };
 
 #endif // REFERENCESFORM_H
