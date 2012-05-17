@@ -166,6 +166,12 @@ void InventoryTableView::contextMenuEvent(QContextMenuEvent *event)
                 menu.addAction(find_item);
             }
         }
+        else if(model->tableName() == "temp_reference_items" || model->tableName() == "temp_reference_items_properties"){
+            if(index.isValid()){
+                menu.addAction(find_item);
+                menu.addAction(find_allocation);
+            }
+        }
         else if(model->tableName() == "properties"){
             menu.addAction(add_property);
             if(index.isValid()){
@@ -453,6 +459,9 @@ void InventoryTableView::findItem()
             if(!query->first()) return;
             emit searchItem(query->value(0).toInt(), "items");
         }
+        else if(model->tableName() == "temp_reference_items" || model->tableName() == "temp_reference_items_properties"){
+            emit searchItem(record.value("id").toInt(), "items");
+        }
     }
 }
 
@@ -477,6 +486,9 @@ void InventoryTableView::findAllocation()
             }
             if(!query->first()) return;
             emit searchItem(query->value(0).toInt(), "allocations");
+        }
+        else if(model->tableName() == "temp_reference_items" || model->tableName() == "temp_reference_items_properties"){
+            emit searchItem(record.value("id").toInt(), "allocations");
         }
     }
 }
@@ -632,6 +644,15 @@ void InventoryTableView::markRow()
 {
     QSqlRelationalTableModel *model = qobject_cast<QSqlRelationalTableModel *>(this->model());
     if(model){
+        QModelIndexList list = this->selectionModel()->selectedRows();
+        for (int i = 0; i < list.size(); ++i) {
+             QModelIndex index = list.at(i);
+             if(index.isValid()){
+                 this->setItemDelegateForRow(index.row(), new CheckDelegate(this));
+                 this->marked << model->record(index.row()).value("id").toString();
+             }
+         }
+        /*
         QModelIndex index = this->selectionModel()->currentIndex();
         if(index.isValid()){
             this->setItemDelegateForRow(index.row(), new CheckDelegate(this));
@@ -639,6 +660,9 @@ void InventoryTableView::markRow()
             saveMarked();
             emit tableUpdate(model->tableName());
         }
+        */
+        saveMarked();
+        emit tableUpdate(model->tableName());
     }
 }
 
@@ -646,6 +670,15 @@ void InventoryTableView::unmarkRow()
 {
     QSqlRelationalTableModel *model = qobject_cast<QSqlRelationalTableModel *>(this->model());
     if(model){
+        QModelIndexList list = this->selectionModel()->selectedRows();
+        for (int i = 0; i < list.size(); ++i) {
+             QModelIndex index = list.at(i);
+             if(index.isValid()){
+                 this->setItemDelegateForRow(index.row(), new QSqlRelationalDelegate(this));
+                 this->marked.removeOne(model->record(index.row()).value("id").toString());
+             }
+        }
+        /*
         QModelIndex index = this->selectionModel()->currentIndex();
         if(index.isValid()){
             this->setItemDelegateForRow(index.row(), new QSqlRelationalDelegate(this));
@@ -654,6 +687,9 @@ void InventoryTableView::unmarkRow()
             saveMarked();
             emit tableUpdate(model->tableName());
         }
+        */
+        saveMarked();
+        emit tableUpdate(model->tableName());
     }
 }
 
@@ -661,6 +697,7 @@ void InventoryTableView::saveMarked()
 {
     QSqlRelationalTableModel *model = qobject_cast<QSqlRelationalTableModel *>(this->model());
     if(model){
+        marked.removeDuplicates();
         QSqlQuery* query = new QSqlQuery();
         /*if(!query->exec(QString("UPDATE marked SET `list`='%1' WHERE `tablename`='%2'")*/
         if(!query->exec(QString("INSERT OR REPLACE INTO marked (`tablename`, `list`) VALUES( '%1', '%2')")

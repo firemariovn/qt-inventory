@@ -18,6 +18,9 @@ public:
     explicit ReferencesForm(QWidget *parent = 0);
     ~ReferencesForm();
 
+signals:
+    void searchItem(const int item_id, const QString& table);
+
 private slots:
     void fillProperties(const int index);
     void fillFilter(const int index);

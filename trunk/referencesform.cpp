@@ -24,6 +24,8 @@ ReferencesForm::ReferencesForm(QWidget *parent) :
     connect(ui->properties_comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(fillFilter(int)));
     connect(ui->search_pushButton, SIGNAL(clicked()), this, SLOT(setFilter()));
     connect(ui->filter_comboBox, SIGNAL(editTextChanged(QString)), this, SLOT(setFilter()));
+
+    connect(ui->tableView, SIGNAL(searchItem(int,QString)), this, SIGNAL(searchItem(int,QString)));
 }
 
 ReferencesForm::~ReferencesForm()
@@ -195,17 +197,8 @@ void ReferencesForm::setFilter()
                  );
 
         }
-        qDebug() << "Filter: " << f;
+        //qDebug() << "Filter: " << f;
         model->setFilter(f);
-
-        if(!headerView->isRestoredState())
-            headerView->setRestoredState(headerView->restoreStateFromSettings(model->tableName()));
-        if(qApp->property("marking_rows").toBool()){
-            ui->tableView->loadMarked();
-        }
-        else{
-            ui->tableView->cleanMarked();
-        }
     }
 
 
@@ -232,4 +225,13 @@ void ReferencesForm::setFilter()
     model->setHeaderData(model->fieldIndex("serialno"), Qt::Horizontal, tr("Serial No"), Qt::EditRole);
     model->setHeaderData(model->fieldIndex("number"), Qt::Horizontal, tr("Number"), Qt::EditRole);
     model->setHeaderData(model->fieldIndex("name"), Qt::Horizontal, tr("Name"), Qt::EditRole);
+
+    if(!headerView->isRestoredState())
+        headerView->setRestoredState(headerView->restoreStateFromSettings(model->tableName()));
+    if(qApp->property("marking_rows").toBool()){
+        ui->tableView->loadMarked();
+    }
+    else{
+        ui->tableView->cleanMarked();
+    }
 }
