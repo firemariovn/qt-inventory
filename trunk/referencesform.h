@@ -25,10 +25,10 @@ private slots:
     void fillProperties(const int index);
     void fillFilter(const int index);
     void setFilter();
-    
+    void clearFilter();
+
 private:
     void fillTypes();
-
 
     Ui::ReferencesForm *ui;
     HeaderView* headerView;

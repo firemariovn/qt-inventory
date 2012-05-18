@@ -102,6 +102,7 @@ void MainWindow::openDatabase(QSqlDatabase *db)
         this->setToolbar();
         this->startWithTable();
         this->updateDataTable();
+
         if (loadUpdatePlugin()){
             connect(updmgr->updmgrObject(), SIGNAL(blockUserInput(bool)), this, SLOT(setDisabled(bool)));
             updmgr->checkForUpdate("inventory",_STR_PRODUCT_VERSION);
@@ -342,8 +343,14 @@ void MainWindow::setToolbar()
     else{
         ui->actionUsers->setDisabled(true);
     }
-    if(this->checkUserRights(3, false)) ui->mainToolBar->addAction(ui->actionItems);
-    else ui->actionItems->setDisabled(true);
+    if(this->checkUserRights(3, false)){
+        ui->mainToolBar->addAction(ui->actionItems);
+        ui->mainToolBar->addAction(ui->actionReferences);
+    }
+    else {
+        ui->actionItems->setDisabled(true);
+        ui->actionReferences->setDisabled(true);
+    }
     if(this->checkUserRights(18, false)) ui->mainToolBar->addAction(ui->actionItems_types);
     else ui->actionItems_types->setDisabled(true);
     if(this->checkUserRights(21, false)) ui->mainToolBar->addAction(ui->actionItems_status);
@@ -447,7 +454,7 @@ void MainWindow::showOperators()
         subWindowOperators->setWidget(operators_form);
         ui->mdiArea->addSubWindow(subWindowOperators);
         subWindowOperators->showMaximized();
-        logger->writeLog(Logger::View, Logger::Operators);
+        if(logger) logger->writeLog(Logger::View, Logger::Operators);
     }
     else{
         operators_form->showMaximized();
@@ -470,7 +477,7 @@ void MainWindow::showAllocations()
         subWindowAllocations->setWidget(allocations_form);
         ui->mdiArea->addSubWindow(subWindowAllocations);
         subWindowAllocations->showMaximized();
-        logger->writeLog(Logger::View, Logger::Allocations);
+        if(logger) logger->writeLog(Logger::View, Logger::Allocations);
     }
     else{
         allocations_form->showMaximized();
@@ -552,6 +559,10 @@ bool MainWindow::checkDatabase() const
     neededFields << "id" << "item_id" << "type" << "number" << "location" << "IP" << "reason";
     neededFields << "operator" << "manufacturer" << "model" << "serialno" << "note" << "allocations_data";
     if(!checkDatabaseTable("scrap", neededFields)) return false;
+    neededFields << "id" << "type_id" << "property";
+    if(!checkDatabaseTable("properties", neededFields)) return false;
+    neededFields << "id" << "property_id" << "item_id" << "value";
+    if(!checkDatabaseTable("item_properties", neededFields)) return false;
     return true;
 }
 
@@ -570,7 +581,7 @@ bool MainWindow::checkDatabaseTable(const QString &table, QStringList &fields) c
         QMessageBox::critical( 0, tr("Wrong database!"), tr("Missed fields in table <b>%1</b> detected:<br><i>%2</i>")
                                .arg(table)
                                .arg(fields.join("|")));
-        logger->writeLog(Logger::Info, Logger::Other, tr("Missed fields in table %1 detected: %2")
+        if(logger) logger->writeLog(Logger::Info, Logger::Other, tr("Missed fields in table %1 detected: %2")
                                                                                              .arg(table)
                                                                                              .arg(fields.join("|")));
         return false;
@@ -643,7 +654,7 @@ void MainWindow::showLogs()
         subWindowLogs->setWidget(logs_form);
         ui->mdiArea->addSubWindow(subWindowLogs);
         subWindowLogs->showMaximized();
-        logger->writeLog(Logger::View, Logger::Logs);
+        if(logger) logger->writeLog(Logger::View, Logger::Logs);
     }
     else{
         logs_form->showMaximized();
@@ -821,7 +832,7 @@ void MainWindow::showSqlBrowser()
         subWindowSqlBrowser->setWidget(sql_browser_form);
         ui->mdiArea->addSubWindow(subWindowSqlBrowser);
         subWindowSqlBrowser->showMaximized();
-        logger->writeLog(Logger::View, Logger::Other, tr("User open SQL Browser"));
+        if(logger) logger->writeLog(Logger::View, Logger::Other, tr("User open SQL Browser"));
     }
     else{
         sql_browser_form->showMaximized();
@@ -998,13 +1009,13 @@ bool MainWindow::checkLicense()
 {
     /*license restrictions*/
     if(!qApp->property("licensed").toBool()){
-        logger->writeLog(Logger::Error, Logger::Other, tr("License missing warning"));
+        if(logger) logger->writeLog(Logger::Error, Logger::Other, tr("License missing warning"));
         QMessageBox::critical ( this, tr("License missing"), tr("You are working with unregistered version of this program!\n"
                                                                 "Please contact your system administrator!"));
         return false;
     }
     else if(!qApp->property("license_actual").toBool()){
-        logger->writeLog(Logger::Error, Logger::Other, tr("License expired warning"));
+        if(logger) logger->writeLog(Logger::Error, Logger::Other, tr("License expired warning"));
         QMessageBox::critical ( this, tr("License expired"), tr("The period for using on your license has expired!\n"
                                                                 "Please contact your system administrator!"));
         return false;
@@ -1043,7 +1054,7 @@ void MainWindow::updateDataTable()
                                 "(`id` INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , `property_id` INTEGER NOT NULL , `item_id` INTEGER, `value` VARCHAR)"
                                 ))){
             qDebug() << "SQL Error: " << query->lastError();
-            logger->writeLog(Logger::Error, Logger::Other, query->lastError().text());
+            if(logger) logger->writeLog(Logger::Error, Logger::Other, query->lastError().text());
             return;
         }
     }
@@ -1062,7 +1073,7 @@ void MainWindow::showReferences()
         subWindowReferences->setWidget(references_form);
         ui->mdiArea->addSubWindow(subWindowReferences);
         subWindowReferences->showMaximized();
-        //logger->writeLog(Logger::View, Logger::Items);
+        if(logger) logger->writeLog(Logger::View, Logger::References);
     }
     else{
         references_form->showMaximized();
