@@ -44,6 +44,7 @@ void Logger::writeLog(LoggedAction Action, ChangedTable Table, const QString& de
         case Logger::Attachments: table = tr("Attachments"); break;
         case Logger::Scrap: table = tr("Scrap"); break;
         case Logger::Properties: table = tr("Properties"); break;
+        case Logger::References: table = tr("References"); break;
         case Logger::Other: table = tr("Other"); break;
         default: table = tr("Other"); break;
     }

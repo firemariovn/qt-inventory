@@ -22,10 +22,12 @@ ReferencesForm::ReferencesForm(QWidget *parent) :
 
     connect(ui->type_comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(fillProperties(int)));
     connect(ui->properties_comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(fillFilter(int)));
-    connect(ui->search_pushButton, SIGNAL(clicked()), this, SLOT(setFilter()));
+    connect(ui->clean_pushButton, SIGNAL(clicked()), this, SLOT(clearFilter()));
     connect(ui->filter_comboBox, SIGNAL(editTextChanged(QString)), this, SLOT(setFilter()));
 
     connect(ui->tableView, SIGNAL(searchItem(int,QString)), this, SIGNAL(searchItem(int,QString)));
+
+    this->setWindowTitle(tr("References"));
 }
 
 ReferencesForm::~ReferencesForm()
@@ -234,4 +236,9 @@ void ReferencesForm::setFilter()
     else{
         ui->tableView->cleanMarked();
     }
+}
+
+void ReferencesForm::clearFilter()
+{
+    ui->filter_comboBox->setEditText("");
 }

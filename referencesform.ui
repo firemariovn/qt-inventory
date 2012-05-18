@@ -71,13 +71,13 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="search_pushButton">
+      <widget class="QPushButton" name="clean_pushButton">
        <property name="text">
-        <string>search</string>
+        <string/>
        </property>
        <property name="icon">
         <iconset resource="resources.qrc">
-         <normaloff>:/Icons/icons/Search.png</normaloff>:/Icons/icons/Search.png</iconset>
+         <normaloff>:/Icons/icons/Cancel.png</normaloff>:/Icons/icons/Cancel.png</iconset>
        </property>
       </widget>
      </item>
