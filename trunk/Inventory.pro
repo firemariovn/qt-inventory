@@ -30,7 +30,8 @@ SOURCES += main.cpp\
     connectionwidget.cpp \
     checkdelegate.cpp \
     scrap.cpp \
-    referencesform.cpp
+    referencesform.cpp \
+    propertyitemdelegate.cpp
 
 HEADERS  += mainwindow.h \
     dbconnect.h \
@@ -52,7 +53,8 @@ HEADERS  += mainwindow.h \
     checkdelegate.h \
     scrap.h \
     interface.h \
-    referencesform.h
+    referencesform.h \
+    propertyitemdelegate.h
 
 FORMS    += mainwindow.ui \
     dbconnect.ui \
@@ -280,7 +282,8 @@ OTHER_FILES += \
     Inventory_bg.ts \
     Inventory_bg.qm \
     Inventory_en.ts \
-    Inventory_en.qm
+    Inventory_en.qm \
+    UpdateManager_bg.qm
 
 RESOURCES += \
     resources.qrc

@@ -1,6 +1,7 @@
 #include "items.h"
 #include "ui_items.h"
 #include "logger.h"
+#include "propertyitemdelegate.h"
 
 #include <QtSql>
 #include <QtGui>
@@ -436,12 +437,25 @@ void Items::fillProperties(const int type_id, const int item_id)
         item0->setEditable(false);
         item0->setData(query->value(0).toInt());
         item1->setData(id);
+        /* fill item editor completer */
+        QStringList list;
+        if(sub->exec(QString("SELECT `value` FROM item_properties "
+                             "WHERE `property_id` = %1")
+                     .arg(query->value(0).toInt())
+                     )){
+            while(sub->next()){
+                list << sub->value(0).toString();
+            }
+            list.removeDuplicates();
+        }
+        item1->setData(list, Qt::UserRole);
 
         model->setItem(model->rowCount(), 0, item0);
         model->setItem(model->rowCount()-1, 1, item1);
     }
 
     ui->properties_treeView->setModel(model);
+    ui->properties_treeView->setItemDelegate(new PropertyItemDelegate(ui->properties_treeView));
 }
 
 void Items::saveItemProperties()

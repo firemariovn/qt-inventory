@@ -660,7 +660,7 @@ Check the new password again!</source>
     </message>
     <message>
         <location filename="inventorytableview.cpp" line="35"/>
-        <location filename="inventorytableview.cpp" line="1121"/>
+        <location filename="inventorytableview.cpp" line="1331"/>
         <source>Edit property</source>
         <translation>Редакция на характеристика</translation>
     </message>
@@ -823,7 +823,7 @@ Check the new password again!</source>
     </message>
     <message>
         <location filename="inventorytableview.cpp" line="242"/>
-        <location filename="inventorytableview.cpp" line="1149"/>
+        <location filename="inventorytableview.cpp" line="1359"/>
         <source>Do you want to delete %1?
 This could not be restored!</source>
         <translation>Искате ли да изтриете %1?
@@ -831,7 +831,7 @@ This could not be restored!</source>
     </message>
     <message>
         <location filename="inventorytableview.cpp" line="253"/>
-        <location filename="inventorytableview.cpp" line="1160"/>
+        <location filename="inventorytableview.cpp" line="1370"/>
         <source>Can not remove from database. Sql error:
 %1</source>
         <translation>Невъзможност за изтриване от базата данни. Sql грешка:
@@ -850,7 +850,7 @@ This could not be restored!</source>
         <location filename="inventorytableview.cpp" line="483"/>
         <location filename="inventorytableview.cpp" line="708"/>
         <location filename="inventorytableview.cpp" line="747"/>
-        <location filename="inventorytableview.cpp" line="1170"/>
+        <location filename="inventorytableview.cpp" line="1380"/>
         <source>Sql error:
 %1</source>
         <translation>SQL грешка:
@@ -974,24 +974,39 @@ Please contact your system administrator.</source>
 %1 %2</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="1122"/>
+        <location filename="inventorytableview.cpp" line="851"/>
+        <source>Would you like to print the entire table?</source>
+        <translation>Желаете ли да отпечатате цялата таблица?</translation>
+    </message>
+    <message>
+        <location filename="inventorytableview.cpp" line="852"/>
+        <source>Selection</source>
+        <translation>Селекция</translation>
+    </message>
+    <message>
+        <location filename="inventorytableview.cpp" line="853"/>
+        <source>Entire table</source>
+        <translation>Цялата таблица</translation>
+    </message>
+    <message>
+        <location filename="inventorytableview.cpp" line="1332"/>
         <source>Property name:</source>
         <translation>Име на характеристика:</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="1131"/>
+        <location filename="inventorytableview.cpp" line="1341"/>
         <source>Can not update database. Sql error:
 %1</source>
         <translation>Не може да се обнови базата данни. Sql грешка:
 %1</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="1148"/>
+        <location filename="inventorytableview.cpp" line="1358"/>
         <source>Properties</source>
         <translation>Характеристики</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="1165"/>
+        <location filename="inventorytableview.cpp" line="1375"/>
         <source>Delete property info:
 %1</source>
         <translation>Информация за изтрита характеристика:
@@ -1011,12 +1026,12 @@ Please contact your system administrator.</source>
 %1</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="852"/>
+        <location filename="inventorytableview.cpp" line="869"/>
         <source>Print preview: %1</source>
         <translation>Предпечатен изглед: %1</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="856"/>
+        <location filename="inventorytableview.cpp" line="873"/>
         <source>Print preview</source>
         <translation>Предпечатен изглед</translation>
     </message>
@@ -1422,7 +1437,7 @@ This could not be restored!</source>
     </message>
     <message>
         <location filename="mainwindow.ui" line="38"/>
-        <location filename="mainwindow.cpp" line="731"/>
+        <location filename="mainwindow.cpp" line="735"/>
         <source>Database</source>
         <translation>Данни</translation>
     </message>
@@ -1453,7 +1468,7 @@ This could not be restored!</source>
     </message>
     <message>
         <location filename="mainwindow.ui" line="118"/>
-        <location filename="mainwindow.cpp" line="721"/>
+        <location filename="mainwindow.cpp" line="725"/>
         <source>Users</source>
         <translation>Потребители</translation>
     </message>
@@ -1464,25 +1479,25 @@ This could not be restored!</source>
     </message>
     <message>
         <location filename="mainwindow.ui" line="136"/>
-        <location filename="mainwindow.cpp" line="722"/>
+        <location filename="mainwindow.cpp" line="726"/>
         <source>Items</source>
         <translation>Техника</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="145"/>
-        <location filename="mainwindow.cpp" line="724"/>
+        <location filename="mainwindow.cpp" line="728"/>
         <source>Locations</source>
         <translation>Местоположения</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="154"/>
-        <location filename="mainwindow.cpp" line="723"/>
+        <location filename="mainwindow.cpp" line="727"/>
         <source>Operators</source>
         <translation>Оператори</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="163"/>
-        <location filename="mainwindow.cpp" line="725"/>
+        <location filename="mainwindow.cpp" line="729"/>
         <source>Departments</source>
         <translation>Отдели</translation>
     </message>
@@ -1503,7 +1518,7 @@ This could not be restored!</source>
     </message>
     <message>
         <location filename="mainwindow.ui" line="199"/>
-        <location filename="mainwindow.cpp" line="726"/>
+        <location filename="mainwindow.cpp" line="730"/>
         <source>Allocations</source>
         <translation>Разпределения</translation>
     </message>
@@ -1558,7 +1573,7 @@ This could not be restored!</source>
         <translation>Справки</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="430"/>
+        <location filename="mainwindow.cpp" line="428"/>
         <source>You are not authorized to perform this operation!
 Please contact your system administrator.</source>
         <translation>Вие нямате права за да изпълните тази операция!
@@ -1575,18 +1590,18 @@ E-mail: veni_georgiev@mail.bg</source>
 E-mail: veni_georgiev@mail.bg</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="505"/>
+        <location filename="mainwindow.cpp" line="503"/>
         <source>About Inventory</source>
         <translation>Относно Инвентаризация</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="95"/>
-        <location filename="mainwindow.cpp" line="581"/>
+        <location filename="mainwindow.cpp" line="585"/>
         <source>Wrong database!</source>
         <translation>Повредена база данни!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="489"/>
+        <location filename="mainwindow.cpp" line="487"/>
         <source>Version: %1
 Author: Venelin Georgiev
 Pleven, Bulgaria
@@ -1601,17 +1616,17 @@ E-mail: veni_georgiev@mail.bg
 </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="494"/>
+        <location filename="mainwindow.cpp" line="492"/>
         <source>Unregistered version!</source>
         <translation>Нерегистрирана версия!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="497"/>
+        <location filename="mainwindow.cpp" line="495"/>
         <source>Expired license!</source>
         <translation>Изтекъл лиценз!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="500"/>
+        <location filename="mainwindow.cpp" line="498"/>
         <source>Registered version.
 User: %1.
 License expires on: %2 y.</source>
@@ -1620,22 +1635,22 @@ License expires on: %2 y.</source>
 Лицензът изтича на %2 г.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="581"/>
+        <location filename="mainwindow.cpp" line="585"/>
         <source>Missed fields in table &lt;b&gt;%1&lt;/b&gt; detected:&lt;br&gt;&lt;i&gt;%2&lt;/i&gt;</source>
         <translation>Липсващи полета в таблица &lt;b&gt;%1&lt;/b&gt; са открити: &lt;br&gt;&lt;i&gt;%2&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="584"/>
+        <location filename="mainwindow.cpp" line="588"/>
         <source>Missed fields in table %1 detected: %2</source>
         <translation>Липсващи полета в таблица %1 са открити: %2</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="600"/>
+        <location filename="mainwindow.cpp" line="604"/>
         <source>User has changed his password.</source>
         <translation>Потребителят е променил паролата си.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="731"/>
+        <location filename="mainwindow.cpp" line="735"/>
         <source>Database is &lt;b&gt;locked&lt;/b&gt; from another user of the system.
 You can not edit data.
 If the problem persists, contact your system administrator.</source>
@@ -1671,41 +1686,41 @@ Do you want to update it?</source>
 %1</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="835"/>
+        <location filename="mainwindow.cpp" line="839"/>
         <source>User open SQL Browser</source>
         <translation>Потребителят отваря SQL Браузър</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="845"/>
-        <location filename="mainwindow.cpp" line="861"/>
+        <location filename="mainwindow.cpp" line="849"/>
+        <location filename="mainwindow.cpp" line="865"/>
         <source>Language</source>
         <translation>Български</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="863"/>
+        <location filename="mainwindow.cpp" line="867"/>
         <source>&amp;%1 %2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="936"/>
+        <location filename="mainwindow.cpp" line="940"/>
         <source>Open File</source>
         <translation>Отваряне на файл</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="938"/>
+        <location filename="mainwindow.cpp" line="942"/>
         <source>Licenses (*.lic)</source>
         <translation>Лицензи (*.lic)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="958"/>
+        <location filename="mainwindow.cpp" line="962"/>
         <source>Old license file backup I/O error!
 </source>
         <translation>I/O грешка при архивиране на лицензен файл!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="960"/>
-        <location filename="mainwindow.cpp" line="971"/>
-        <location filename="mainwindow.cpp" line="1002"/>
+        <location filename="mainwindow.cpp" line="964"/>
+        <location filename="mainwindow.cpp" line="975"/>
+        <location filename="mainwindow.cpp" line="1006"/>
         <source>Invalid license file and / or license information! 
 
 %1</source>
@@ -1714,88 +1729,88 @@ Do you want to update it?</source>
 %1</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="969"/>
+        <location filename="mainwindow.cpp" line="973"/>
         <source>Old license file remove error!
 </source>
         <translation>Грешка при изтриване на стар лиценз!
 </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="981"/>
+        <location filename="mainwindow.cpp" line="985"/>
         <source>The new license information was taken.</source>
         <translation>Новата лицензна информация беше възприета.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="987"/>
+        <location filename="mainwindow.cpp" line="991"/>
         <source>License file copy error!
 </source>
         <translation>Грешка при копиране на лицензен файл!
 </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="991"/>
+        <location filename="mainwindow.cpp" line="995"/>
         <source>Expired license file!
 </source>
         <translation>Изтекъл лиценз!
 </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="993"/>
+        <location filename="mainwindow.cpp" line="997"/>
         <source>Invalid period content!
 </source>
         <translation>Невалиден период!
 </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="995"/>
+        <location filename="mainwindow.cpp" line="999"/>
         <source>This license file is for another program!
 </source>
         <translation>Този лиценз е за друга програма!
 </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="997"/>
+        <location filename="mainwindow.cpp" line="1001"/>
         <source>Invalid license content!
 </source>
         <translation>Невалидно лицензно съдържание!
 </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="999"/>
+        <location filename="mainwindow.cpp" line="1003"/>
         <source>Empty license file!
 </source>
         <translation>Празен лицензен файл!
 </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1012"/>
+        <location filename="mainwindow.cpp" line="1016"/>
         <source>License missing warning</source>
         <translation>Предупреждение за липсващ лиценз</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1013"/>
+        <location filename="mainwindow.cpp" line="1017"/>
         <source>License missing</source>
         <translation>Липсващ лиценз</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1013"/>
+        <location filename="mainwindow.cpp" line="1017"/>
         <source>You are working with unregistered version of this program!
 Please contact your system administrator!</source>
         <translation>Вие работите с нерегистрирана версия на тази програма!
 Моля, свържете се със системния администратор!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1018"/>
+        <location filename="mainwindow.cpp" line="1022"/>
         <source>License expired warning</source>
         <translation>Предупреждение за изтекъл лиценз</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1019"/>
+        <location filename="mainwindow.cpp" line="1023"/>
         <source>License expired</source>
         <translation>Изтекъл лиценз</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1019"/>
+        <location filename="mainwindow.cpp" line="1023"/>
         <source>The period for using on your license has expired!
 Please contact your system administrator!</source>
         <translation>Периодът за ползване на този лиценз е изтекъл!

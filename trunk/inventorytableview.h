@@ -54,6 +54,7 @@ private slots:
     void hideMarked(bool hide);
     void hideUnmarked(bool hide);
     void printTable(QPrinter* printer);
+    void printSelection(QPrinter* printer);
     void savePrinterSettings(QPrinter* printer);
     void loadPrinterSettings(QPrinter* printer);
     void addProperty();
