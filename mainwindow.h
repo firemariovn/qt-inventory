@@ -61,7 +61,7 @@ private slots:
 private:
     void setUserRights();
     bool checkUserRights(const int idx, bool show_msg = true) const;
-    bool checkDatabase() const;
+    bool checkDatabase();
     bool checkDatabaseTable(const QString& table, QStringList& fields) const;
     void setToolbar();
     void saveSettings();
@@ -74,7 +74,7 @@ private:
     void loadLicenseInfo();
     bool loadUpdatePlugin();
     bool checkLicense();
-    void updateDataTable();
+    void updateDataTable(const QString &table);
 
     inline QSqlDatabase* getDB() {return db; }
 

@@ -101,8 +101,6 @@ void MainWindow::openDatabase(QSqlDatabase *db)
         this->setUserRights();
         this->setToolbar();
         this->startWithTable();
-        this->updateDataTable();
-
         if (loadUpdatePlugin()){
             connect(updmgr->updmgrObject(), SIGNAL(blockUserInput(bool)), this, SLOT(setDisabled(bool)));
             updmgr->checkForUpdate("inventory",_STR_PRODUCT_VERSION);
@@ -505,7 +503,7 @@ void MainWindow::about()
     QMessageBox::about( this, tr("About Inventory"), msg) ;
 }
 
-bool MainWindow::checkDatabase() const
+bool MainWindow::checkDatabase()
 {
     QStringList neededFields;
     neededFields << "id" << "status_id" << "IP" << "note" << "location_id" << "model" << "manufacturer";
@@ -560,9 +558,15 @@ bool MainWindow::checkDatabase() const
     neededFields << "operator" << "manufacturer" << "model" << "serialno" << "note" << "allocations_data";
     if(!checkDatabaseTable("scrap", neededFields)) return false;
     neededFields << "id" << "type_id" << "property";
-    if(!checkDatabaseTable("properties", neededFields)) return false;
+    if(!checkDatabaseTable("properties", neededFields)){
+        updateDataTable("properties");
+        if(!checkDatabaseTable("properties", neededFields)) return false;
+    }
     neededFields << "id" << "property_id" << "item_id" << "value";
-    if(!checkDatabaseTable("item_properties", neededFields)) return false;
+    if(!checkDatabaseTable("item_properties", neededFields)){
+        updateDataTable("item_properties");
+        if(!checkDatabaseTable("item_properties", neededFields)) return false;
+    }
     return true;
 }
 
@@ -1037,10 +1041,11 @@ bool MainWindow::loadUpdatePlugin()
     return false;
 }
 
-void MainWindow::updateDataTable()
+void MainWindow::updateDataTable(const QString& table)
 {
-    if(_REVISION >= 58){
-        QSqlQuery* query = new QSqlQuery();
+    if(table.isEmpty()) return;
+    QSqlQuery* query = new QSqlQuery();
+    if(table == "properties"){
         if(!query->exec(QString("CREATE TABLE IF NOT EXISTS "
                                 "main.properties "
                                 "(`id` INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , `type_id` INTEGER, `property` VARCHAR)"
@@ -1049,6 +1054,8 @@ void MainWindow::updateDataTable()
             logger->writeLog(Logger::Error, Logger::Other, query->lastError().text());
             return;
         }
+    }
+    else if(table == "item_properties"){
         if(!query->exec(QString("CREATE TABLE IF NOT EXISTS "
                                 "main.item_properties "
                                 "(`id` INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , `property_id` INTEGER NOT NULL , `item_id` INTEGER, `value` VARCHAR)"
