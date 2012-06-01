@@ -9,8 +9,13 @@ Settings::Settings(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    QMenu* font_menu = new QMenu(ui->font_toolButton);
+    font_menu->addAction(ui->actionReset_font);
+    ui->font_toolButton->setMenu(font_menu);
+
     loadAccessibleTables();
     loadSettings();
+    loadFontStyleSheet();
 
     connect(ui->selected_pushButton, SIGNAL(clicked()), this, SLOT(setBackgroundBrush()));
     connect(ui->unselected_pushButton, SIGNAL(clicked()), this, SLOT(setBackgroundBrush()));
@@ -109,6 +114,15 @@ void Settings::saveSettings()
         qApp->setProperty("marking_selected_brush", ui->selected_pushButton->palette().background());
         qApp->setProperty("marking_unselected_brush", ui->unselected_pushButton->palette().background());
         settings.endGroup();//marking rows
+        settings.beginGroup("ApplicationFont");
+        settings.setValue("FontFamily", qApp->font().family());
+        settings.setValue("FontPointSize", qApp->font().pointSize());
+        settings.setValue("FontBold", qApp->font().bold());
+        settings.setValue("FontItalic", qApp->font().italic());
+        settings.endGroup();
+        settings.beginGroup("ApplicationStyle");
+        settings.setValue("StyleSheet", qApp->styleSheet());
+        settings.endGroup();//view
         settings.endGroup();//view
     settings.endGroup();
 }
@@ -141,4 +155,59 @@ void Settings::setBoldFont(const bool set)
     font.setBold(set);
     ui->selected_pushButton->setFont(font);
     ui->unselected_pushButton->setFont(font);
+}
+
+void Settings::on_font_toolButton_clicked()
+{
+    QString str = qApp->styleSheet();
+    QFont font(this->font());
+    if(!str.isEmpty()){
+        str.remove("* {");
+        str.remove('}');
+        QStringList list = str.split(';');
+        for(int n=0; n<list.count(); n++){
+            QString key = list.at(n).section(':', 0, 0).trimmed();
+            QString value = list.at(n).section(':', 1, 1).trimmed();
+            if(key=="font-family") font.setFamily(value);
+            else if(key=="font-size"){
+                value = value.remove("px");
+                font.setPointSize(value.toInt());
+            }
+            else if(key=="font-weight") font.setBold(value!="normal");
+            else if(key=="font-style") font.setItalic(value!="normal");
+        }
+    }
+    bool ok;
+    font = QFontDialog::getFont(&ok, font, this);
+    if (ok) {
+        QString style_sheet = QString("* {"
+                                      "font-family: %1;"
+                                      "font-size: %2px;"
+                                      "font-weight: %3;"
+                                      "font-style: %4"
+                                      "}")
+                .arg(font.family())
+                .arg(font.pointSize())
+                .arg(font.bold() ? "bold":"normal")
+                .arg(font.italic() ? "italic":"normal")
+                ;
+        //qApp->setFont(font);
+        qApp->setStyleSheet(style_sheet);
+        loadFontStyleSheet();
+         // the user clicked OK and font is set to the font the user selected
+    } else {
+         // the user canceled the dialog; font is set to the initial
+         // value
+    }
+}
+
+void Settings::loadFontStyleSheet()
+{
+    ui->font_lineEdit->setText(qApp->styleSheet());
+}
+
+void Settings::on_actionReset_font_triggered()
+{
+    qApp->setStyleSheet("");
+    loadFontStyleSheet();
 }

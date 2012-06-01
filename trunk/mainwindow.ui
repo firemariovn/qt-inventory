@@ -10,6 +10,11 @@
     <height>384</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <pointsize>8</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Inventory</string>
   </property>
@@ -30,7 +35,7 @@
      <x>0</x>
      <y>0</y>
      <width>507</width>
-     <height>21</height>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuDatabase">

@@ -634,7 +634,11 @@ bool MainWindow::restoreSettings()
        qApp->setProperty("marking_selected_brush", settings.value("SelectedBackgroundBrush"));
        qApp->setProperty("marking_unselected_brush", settings.value("UnselectedBackgroundBrush"));
        settings.endGroup();
-    settings.endGroup();
+       //application style
+       settings.beginGroup("ApplicationStyle");
+       qApp->setStyleSheet(settings.value("StyleSheet").toString());
+       settings.endGroup();
+    settings.endGroup();//view
     settings.endGroup();
     settings.beginGroup("InventoryWindow");
     bool ok = this->restoreGeometry(settings.value("Geometry").toByteArray());
@@ -1075,6 +1079,7 @@ void MainWindow::showReferences()
         references_form = new ReferencesForm(ui->mdiArea);
         //references_form->setLogger(logger);
         connect(references_form, SIGNAL(searchItem(int,QString)), this, SLOT(searchItem(int,QString)));
+        connect(this, SIGNAL(needUpdate(QString)), references_form, SLOT(needUpdate(QString)));
         QMdiSubWindow *subWindowReferences = new QMdiSubWindow;
         subWindowReferences->setWindowIcon(QIcon(":/Icons/icons/Search.png"));
         subWindowReferences->setWidget(references_form);

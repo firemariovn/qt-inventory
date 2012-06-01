@@ -25,10 +25,15 @@ private slots:
     void setBackgroundBrush();
     void setBoldFont(const bool set);
 
+    void on_font_toolButton_clicked();
+
+    void on_actionReset_font_triggered();
+
 private:
     void loadSettings();
     void saveSettings();
     void loadAccessibleTables();
+    void loadFontStyleSheet();
     Ui::Settings *ui;
 };
 
