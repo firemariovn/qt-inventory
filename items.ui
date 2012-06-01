@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>364</width>
+    <width>305</width>
     <height>326</height>
    </rect>
   </property>
@@ -21,20 +21,13 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="1" colspan="2">
+   <item row="0" column="1" colspan="3">
     <widget class="InventoryComboBox" name="type_comboBox">
      <property name="editable">
       <bool>true</bool>
      </property>
      <property name="currentIndex">
       <number>-1</number>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="3">
-    <widget class="QLabel" name="label_2">
-     <property name="text">
-      <string>Number:</string>
      </property>
     </widget>
    </item>
@@ -52,17 +45,10 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="1" colspan="2">
+   <item row="1" column="1" colspan="3">
     <widget class="InventoryComboBox" name="operator_comboBox">
      <property name="editable">
       <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="3">
-    <widget class="QLabel" name="label_7">
-     <property name="text">
-      <string>IP address:</string>
      </property>
     </widget>
    </item>
@@ -80,7 +66,7 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="1" colspan="2">
+   <item row="2" column="1" colspan="3">
     <widget class="InventoryComboBox" name="location_comboBox">
      <property name="editable">
       <bool>true</bool>
@@ -203,6 +189,20 @@
      </property>
      <property name="standardButtons">
       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="4">
+    <widget class="QLabel" name="label_7">
+     <property name="text">
+      <string>IP address:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="4">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Number:</string>
      </property>
     </widget>
    </item>
