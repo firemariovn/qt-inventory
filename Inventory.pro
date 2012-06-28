@@ -31,7 +31,8 @@ SOURCES += main.cpp\
     checkdelegate.cpp \
     scrap.cpp \
     referencesform.cpp \
-    propertyitemdelegate.cpp
+    propertyitemdelegate.cpp \
+    attachmentsview.cpp
 
 HEADERS  += mainwindow.h \
     dbconnect.h \
@@ -54,7 +55,8 @@ HEADERS  += mainwindow.h \
     scrap.h \
     interface.h \
     referencesform.h \
-    propertyitemdelegate.h
+    propertyitemdelegate.h \
+    attachmentsview.h
 
 FORMS    += mainwindow.ui \
     dbconnect.ui \

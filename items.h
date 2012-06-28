@@ -47,6 +47,7 @@ private:
     void loadData();
     bool checkNumber() const;
     void fillProperties(const int type_id, const int item_id = 0);
+    void fillAttachments(const int item_id = 0);
     void saveItemProperties();
 
     Ui::Items *ui;

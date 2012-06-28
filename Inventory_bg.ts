@@ -1049,94 +1049,94 @@ Please contact your system administrator.</source>
         <translation>Тип:</translation>
     </message>
     <message>
-        <location filename="items.ui" line="37"/>
+        <location filename="items.ui" line="205"/>
         <source>Number:</source>
         <translation>Номер:</translation>
     </message>
     <message>
-        <location filename="items.ui" line="44"/>
-        <location filename="items.ui" line="72"/>
+        <location filename="items.ui" line="37"/>
+        <location filename="items.ui" line="58"/>
+        <location filename="items.ui" line="86"/>
         <location filename="items.ui" line="100"/>
         <location filename="items.ui" line="114"/>
-        <location filename="items.ui" line="128"/>
         <source>N/A</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="items.ui" line="51"/>
+        <location filename="items.ui" line="44"/>
         <source>Operator:</source>
         <translation>Оператор:</translation>
     </message>
     <message>
-        <location filename="items.ui" line="65"/>
+        <location filename="items.ui" line="198"/>
         <source>IP address:</source>
         <translation>IP адрес:</translation>
     </message>
     <message>
-        <location filename="items.ui" line="79"/>
+        <location filename="items.ui" line="65"/>
         <source>Location:</source>
         <translation>Местоположение:</translation>
     </message>
     <message>
-        <location filename="items.ui" line="93"/>
+        <location filename="items.ui" line="79"/>
         <source>Manufacturer:</source>
         <translation>Производител:</translation>
     </message>
     <message>
-        <location filename="items.ui" line="107"/>
+        <location filename="items.ui" line="93"/>
         <source>Model:</source>
         <translation>Модел:</translation>
     </message>
     <message>
-        <location filename="items.ui" line="121"/>
+        <location filename="items.ui" line="107"/>
         <source>Serial No:</source>
         <translation>Сериен номер:</translation>
     </message>
     <message>
-        <location filename="items.ui" line="162"/>
+        <location filename="items.ui" line="148"/>
         <source>Properties:</source>
         <translation>Характеристики:</translation>
     </message>
     <message>
-        <location filename="items.ui" line="175"/>
+        <location filename="items.ui" line="161"/>
         <source>Note:</source>
         <translation>Забележка:</translation>
     </message>
     <message>
-        <location filename="items.ui" line="135"/>
+        <location filename="items.ui" line="121"/>
         <source>Status:</source>
         <translation>Статус:</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="54"/>
+        <location filename="items.cpp" line="55"/>
         <source>Please, choose a valid item type</source>
         <translation>Моля, изберете валиден тип техника</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="59"/>
+        <location filename="items.cpp" line="60"/>
         <source>Please, choose a valid operator</source>
         <translation>Моля, изберете валиден оператор</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="64"/>
+        <location filename="items.cpp" line="65"/>
         <source>Please, choose a valid location</source>
         <translation>Моля, изберете валидно местоположение</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="69"/>
+        <location filename="items.cpp" line="70"/>
         <source>Please, choose a valid item status</source>
         <translation>Моля, изберете валиден статус техника</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="77"/>
-        <location filename="items.cpp" line="89"/>
-        <location filename="items.cpp" line="174"/>
-        <location filename="items.cpp" line="390"/>
+        <location filename="items.cpp" line="78"/>
+        <location filename="items.cpp" line="90"/>
+        <location filename="items.cpp" line="175"/>
+        <location filename="items.cpp" line="391"/>
         <source>Items</source>
         <translation>Техника</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="78"/>
+        <location filename="items.cpp" line="79"/>
         <source>You have blank fields.
 Do you want to continue?</source>
         <oldsource>You have blank fields.
@@ -1146,7 +1146,7 @@ Do you want to continue?
 Желаете ли да продължите?</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="90"/>
+        <location filename="items.cpp" line="91"/>
         <source>You have defined a new item.
 Must be performed new, automatic allocation.
 Do you want to continue?
@@ -1157,77 +1157,77 @@ This could not be restored!</source>
 Действието е необратимо!</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="107"/>
+        <location filename="items.cpp" line="108"/>
         <source>Can not save item.
 %1</source>
         <translation>Данните за техниката не бяха запазени.
 %1</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="125"/>
+        <location filename="items.cpp" line="126"/>
         <source>Can not fill all item fields.
 %1</source>
         <translation>Не можаха да бъдат попълнени всички полета за техниката.
 %1</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="136"/>
+        <location filename="items.cpp" line="137"/>
         <source>Can not load item information.
 %1</source>
         <translation>Не може да бъде заредена информацията за техниката.
 %1</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="141"/>
+        <location filename="items.cpp" line="142"/>
         <source>New item was defined
 %1</source>
         <translation>Нова техника е била дефинирана
 %1</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="152"/>
+        <location filename="items.cpp" line="153"/>
         <source>Automatic allocation. New item was defined</source>
         <translation>Автоматично разпределение. Нова техника е била дефинирана</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="155"/>
-        <location filename="items.cpp" line="236"/>
+        <location filename="items.cpp" line="156"/>
+        <location filename="items.cpp" line="237"/>
         <source>Can not save item allocation into database.
 %1</source>
         <translation>Разпределението на техниката не можа да бъдат запазено в базата данни.
 %1</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="160"/>
+        <location filename="items.cpp" line="161"/>
         <source>Can not load allocation information.
 %1</source>
         <translation>Не може да бъде заредена информацията за разпределение.
 %1</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="165"/>
+        <location filename="items.cpp" line="166"/>
         <source>New automatic allocation was performed%1</source>
         <translation>Ново автоматично разпределение е направено%1</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="360"/>
+        <location filename="items.cpp" line="361"/>
         <source>Sql error: 
 %1</source>
         <translation>SQL грешка:
 %1</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="384"/>
-        <location filename="items.cpp" line="411"/>
-        <location filename="items.cpp" line="456"/>
-        <location filename="items.cpp" line="472"/>
+        <location filename="items.cpp" line="385"/>
+        <location filename="items.cpp" line="412"/>
+        <location filename="items.cpp" line="470"/>
+        <location filename="items.cpp" line="486"/>
         <source>Sql error:
 %1</source>
         <translation>SQL грешка:
 %1</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="391"/>
+        <location filename="items.cpp" line="392"/>
         <source>There is already a item with this number.
 Do you want to continue?
 </source>
@@ -1235,7 +1235,7 @@ Do you want to continue?
 Желаете ли да продължите?</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="417"/>
+        <location filename="items.cpp" line="418"/>
         <source>Name</source>
         <translation>Име</translation>
     </message>
@@ -1244,7 +1244,7 @@ Do you want to continue?
         <translation type="obsolete">Характеристика</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="418"/>
+        <location filename="items.cpp" line="419"/>
         <source>Value</source>
         <translation>Стойност</translation>
     </message>
@@ -1253,7 +1253,7 @@ Do you want to continue?
         <translation type="obsolete">Автоматично разпределение. Нова техника е била дефинирана!</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="175"/>
+        <location filename="items.cpp" line="176"/>
         <source>You have made a change in this item.
 Must be performed new, automatic allocation.
 Do you want to continue?
@@ -1264,42 +1264,42 @@ This could not be restored!</source>
 Действието е необратимо!</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="187"/>
+        <location filename="items.cpp" line="188"/>
         <source>Can not load item info for logging.
 %1</source>
         <translation>Не можаха да бъдат събрани данни относно техниката за журнала.
 %1</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="208"/>
-        <location filename="items.cpp" line="220"/>
+        <location filename="items.cpp" line="209"/>
+        <location filename="items.cpp" line="221"/>
         <source>Can not save item changes.
 %1</source>
         <translation>Промените в техниката не бяха запазени.
 %1</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="233"/>
+        <location filename="items.cpp" line="234"/>
         <source>Automatic allocation. This item was edited!</source>
         <translation>Автоматично разпределение. Тази техника е била редактирана!</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="242"/>
+        <location filename="items.cpp" line="243"/>
         <source>Save edited item: %1</source>
         <translation>Съхранени промени на техника: %1</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="290"/>
+        <location filename="items.cpp" line="291"/>
         <source>Items (%1 item)</source>
         <translation>Техника (%1 техника)</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="290"/>
+        <location filename="items.cpp" line="291"/>
         <source>edit</source>
         <translation>редакция</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="290"/>
+        <location filename="items.cpp" line="291"/>
         <source>new</source>
         <translation>нова</translation>
     </message>
@@ -1431,144 +1431,144 @@ This could not be restored!</source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="mainwindow.ui" line="14"/>
+        <location filename="mainwindow.ui" line="19"/>
         <source>Inventory</source>
         <translation>Инвентаризация</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="38"/>
-        <location filename="mainwindow.cpp" line="735"/>
+        <location filename="mainwindow.ui" line="43"/>
+        <location filename="mainwindow.cpp" line="739"/>
         <source>Database</source>
         <translation>Данни</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="58"/>
+        <location filename="mainwindow.ui" line="63"/>
         <source>Help</source>
         <translation>Помощ</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="66"/>
+        <location filename="mainwindow.ui" line="71"/>
         <source>Operations</source>
         <translation>Операции</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="73"/>
+        <location filename="mainwindow.ui" line="78"/>
         <source>Tools</source>
         <translation>Инструменти</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="77"/>
+        <location filename="mainwindow.ui" line="82"/>
         <source>Languages</source>
         <translation>Езици</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="109"/>
+        <location filename="mainwindow.ui" line="114"/>
         <source>Exit</source>
         <translation>Изход</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="118"/>
-        <location filename="mainwindow.cpp" line="725"/>
+        <location filename="mainwindow.ui" line="123"/>
+        <location filename="mainwindow.cpp" line="729"/>
         <source>Users</source>
         <translation>Потребители</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="127"/>
+        <location filename="mainwindow.ui" line="132"/>
         <source>Open</source>
         <translation>Отваряне</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="136"/>
-        <location filename="mainwindow.cpp" line="726"/>
+        <location filename="mainwindow.ui" line="141"/>
+        <location filename="mainwindow.cpp" line="730"/>
         <source>Items</source>
         <translation>Техника</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="145"/>
-        <location filename="mainwindow.cpp" line="728"/>
+        <location filename="mainwindow.ui" line="150"/>
+        <location filename="mainwindow.cpp" line="732"/>
         <source>Locations</source>
         <translation>Местоположения</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="154"/>
-        <location filename="mainwindow.cpp" line="727"/>
+        <location filename="mainwindow.ui" line="159"/>
+        <location filename="mainwindow.cpp" line="731"/>
         <source>Operators</source>
         <translation>Оператори</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="163"/>
-        <location filename="mainwindow.cpp" line="729"/>
+        <location filename="mainwindow.ui" line="168"/>
+        <location filename="mainwindow.cpp" line="733"/>
         <source>Departments</source>
         <translation>Отдели</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="172"/>
+        <location filename="mainwindow.ui" line="177"/>
         <source>Items types</source>
         <translation>Типове техника</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="181"/>
+        <location filename="mainwindow.ui" line="186"/>
         <source>Items status</source>
         <translation>Статус техника</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="190"/>
+        <location filename="mainwindow.ui" line="195"/>
         <source>About</source>
         <translation>Относно</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="199"/>
-        <location filename="mainwindow.cpp" line="730"/>
+        <location filename="mainwindow.ui" line="204"/>
+        <location filename="mainwindow.cpp" line="734"/>
         <source>Allocations</source>
         <translation>Разпределения</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="208"/>
+        <location filename="mainwindow.ui" line="213"/>
         <source>About Qt</source>
         <translation>Относно Qt</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="217"/>
+        <location filename="mainwindow.ui" line="222"/>
         <source>Change password</source>
         <translation>Смяна на парола</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="226"/>
+        <location filename="mainwindow.ui" line="231"/>
         <source>Logs</source>
         <translation>Логове</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="235"/>
+        <location filename="mainwindow.ui" line="240"/>
         <source>Settings</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="244"/>
+        <location filename="mainwindow.ui" line="249"/>
         <source>SQL Browser</source>
         <translation>SQL Браузър</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="252"/>
+        <location filename="mainwindow.ui" line="257"/>
         <source>English</source>
         <translation>Български</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="260"/>
+        <location filename="mainwindow.ui" line="265"/>
         <source>Bulgarian</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="269"/>
+        <location filename="mainwindow.ui" line="274"/>
         <source>Scrap</source>
         <translation>Брак</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="278"/>
+        <location filename="mainwindow.ui" line="283"/>
         <source>Licensing</source>
         <translation>Лицензиране</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="287"/>
+        <location filename="mainwindow.ui" line="292"/>
         <source>References</source>
         <translation>Справки</translation>
     </message>
@@ -1650,7 +1650,7 @@ License expires on: %2 y.</source>
         <translation>Потребителят е променил паролата си.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="735"/>
+        <location filename="mainwindow.cpp" line="739"/>
         <source>Database is &lt;b&gt;locked&lt;/b&gt; from another user of the system.
 You can not edit data.
 If the problem persists, contact your system administrator.</source>
@@ -1686,41 +1686,41 @@ Do you want to update it?</source>
 %1</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="839"/>
+        <location filename="mainwindow.cpp" line="843"/>
         <source>User open SQL Browser</source>
         <translation>Потребителят отваря SQL Браузър</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="849"/>
-        <location filename="mainwindow.cpp" line="865"/>
+        <location filename="mainwindow.cpp" line="853"/>
+        <location filename="mainwindow.cpp" line="869"/>
         <source>Language</source>
         <translation>Български</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="867"/>
+        <location filename="mainwindow.cpp" line="871"/>
         <source>&amp;%1 %2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="940"/>
+        <location filename="mainwindow.cpp" line="944"/>
         <source>Open File</source>
         <translation>Отваряне на файл</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="942"/>
+        <location filename="mainwindow.cpp" line="946"/>
         <source>Licenses (*.lic)</source>
         <translation>Лицензи (*.lic)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="962"/>
+        <location filename="mainwindow.cpp" line="966"/>
         <source>Old license file backup I/O error!
 </source>
         <translation>I/O грешка при архивиране на лицензен файл!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="964"/>
-        <location filename="mainwindow.cpp" line="975"/>
-        <location filename="mainwindow.cpp" line="1006"/>
+        <location filename="mainwindow.cpp" line="968"/>
+        <location filename="mainwindow.cpp" line="979"/>
+        <location filename="mainwindow.cpp" line="1010"/>
         <source>Invalid license file and / or license information! 
 
 %1</source>
@@ -1729,88 +1729,88 @@ Do you want to update it?</source>
 %1</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="973"/>
+        <location filename="mainwindow.cpp" line="977"/>
         <source>Old license file remove error!
 </source>
         <translation>Грешка при изтриване на стар лиценз!
 </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="985"/>
+        <location filename="mainwindow.cpp" line="989"/>
         <source>The new license information was taken.</source>
         <translation>Новата лицензна информация беше възприета.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="991"/>
+        <location filename="mainwindow.cpp" line="995"/>
         <source>License file copy error!
 </source>
         <translation>Грешка при копиране на лицензен файл!
 </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="995"/>
+        <location filename="mainwindow.cpp" line="999"/>
         <source>Expired license file!
 </source>
         <translation>Изтекъл лиценз!
 </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="997"/>
+        <location filename="mainwindow.cpp" line="1001"/>
         <source>Invalid period content!
 </source>
         <translation>Невалиден период!
 </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="999"/>
+        <location filename="mainwindow.cpp" line="1003"/>
         <source>This license file is for another program!
 </source>
         <translation>Този лиценз е за друга програма!
 </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1001"/>
+        <location filename="mainwindow.cpp" line="1005"/>
         <source>Invalid license content!
 </source>
         <translation>Невалидно лицензно съдържание!
 </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1003"/>
+        <location filename="mainwindow.cpp" line="1007"/>
         <source>Empty license file!
 </source>
         <translation>Празен лицензен файл!
 </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1016"/>
+        <location filename="mainwindow.cpp" line="1020"/>
         <source>License missing warning</source>
         <translation>Предупреждение за липсващ лиценз</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1017"/>
+        <location filename="mainwindow.cpp" line="1021"/>
         <source>License missing</source>
         <translation>Липсващ лиценз</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1017"/>
+        <location filename="mainwindow.cpp" line="1021"/>
         <source>You are working with unregistered version of this program!
 Please contact your system administrator!</source>
         <translation>Вие работите с нерегистрирана версия на тази програма!
 Моля, свържете се със системния администратор!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1022"/>
+        <location filename="mainwindow.cpp" line="1026"/>
         <source>License expired warning</source>
         <translation>Предупреждение за изтекъл лиценз</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1023"/>
+        <location filename="mainwindow.cpp" line="1027"/>
         <source>License expired</source>
         <translation>Изтекъл лиценз</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1023"/>
+        <location filename="mainwindow.cpp" line="1027"/>
         <source>The period for using on your license has expired!
 Please contact your system administrator!</source>
         <translation>Периодът за ползване на този лиценз е изтекъл!
@@ -2151,32 +2151,57 @@ Please contact your system administrator!</source>
         <translation>Удебелен шрифт</translation>
     </message>
     <message>
-        <location filename="settings.cpp" line="29"/>
+        <location filename="settings.ui" line="180"/>
+        <source>Application</source>
+        <translation>Програма</translation>
+    </message>
+    <message>
+        <location filename="settings.ui" line="186"/>
+        <source>Font style sheet</source>
+        <translation>Шрифт style sheet</translation>
+    </message>
+    <message>
+        <location filename="settings.ui" line="199"/>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+    <message>
+        <location filename="settings.ui" line="239"/>
+        <source>Reset font</source>
+        <translation>Нулиране на шрифт</translation>
+    </message>
+    <message>
+        <location filename="settings.ui" line="242"/>
+        <source>Reset font to defaults</source>
+        <translation>Нулиране на шрифта до подразбиращи настройки</translation>
+    </message>
+    <message>
+        <location filename="settings.cpp" line="34"/>
         <source>Users</source>
         <translation>Потребители</translation>
     </message>
     <message>
-        <location filename="settings.cpp" line="30"/>
+        <location filename="settings.cpp" line="35"/>
         <source>Items</source>
         <translation>Техника</translation>
     </message>
     <message>
-        <location filename="settings.cpp" line="31"/>
+        <location filename="settings.cpp" line="36"/>
         <source>Operators</source>
         <translation>Оператори</translation>
     </message>
     <message>
-        <location filename="settings.cpp" line="32"/>
+        <location filename="settings.cpp" line="37"/>
         <source>Locations</source>
         <translation>Местоположения</translation>
     </message>
     <message>
-        <location filename="settings.cpp" line="33"/>
+        <location filename="settings.cpp" line="38"/>
         <source>Departments</source>
         <translation>Отдели</translation>
     </message>
     <message>
-        <location filename="settings.cpp" line="34"/>
+        <location filename="settings.cpp" line="39"/>
         <source>Allocations</source>
         <translation>Разпределения</translation>
     </message>
