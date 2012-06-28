@@ -156,6 +156,7 @@ void InventoryTableView::contextMenuEvent(QContextMenuEvent *event)
                 menu.addAction(allocation);
                 menu.addSeparator();
                 menu.addAction(find_allocation);
+                menu.addAction(find_item);
                 menu.addSeparator();
                 menu.addAction(scrap_item);
                 menu.addAction(delete_item);
@@ -459,7 +460,7 @@ void InventoryTableView::findItem()
             if(!query->first()) return;
             emit searchItem(query->value(0).toInt(), "items");
         }
-        else if(model->tableName() == "temp_reference_items" || model->tableName() == "temp_reference_items_properties"){
+        else if(model->tableName() == "items" || model->tableName() == "temp_reference_items" || model->tableName() == "temp_reference_items_properties"){
             emit searchItem(record.value("id").toInt(), "items");
         }
     }

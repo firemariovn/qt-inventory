@@ -5,6 +5,7 @@
 
 #include <QtSql>
 #include <QtGui>
+#include <QDir>
 
 Items::Items(QWidget *parent) :
     QDialog(parent),
@@ -320,6 +321,7 @@ void Items::loadItem(const int item_id)
     ui->note_textEdit->setText(record.value("note").toString());
 
     this->fillProperties(record.value("type_id").toInt(), item_id);
+    this->fillAttachments(item_id);
 }
 
 void Items::setLocationFilter(const int location_id)
@@ -494,4 +496,39 @@ void Items::saveItemProperties()
 void Items::on_type_comboBox_currentIndexChanged(int /*index*/)
 {
     this->fillProperties(ui->type_comboBox->itemModelId());
+}
+
+void Items::fillAttachments(const int item_id)
+{
+    if(item_id <= 0) return;
+    QSqlQuery* query = new QSqlQuery();
+    QString q = QString("SELECT `id`, `filename` FROM attachments "
+                        "WHERE `tablename`='items' AND `item_id`='%1'")
+            .arg(item_id);
+    if(!query->exec(q)){
+        if(logger) logger->writeLog(Logger::Error, Logger::Properties, tr("Sql error:\n%1")
+                                    .arg(query->lastError().text())
+                                    );
+        return;
+    }
+    QStandardItemModel* model = new QStandardItemModel(0,1,ui->attachments_listView);
+    model->setHeaderData(0, Qt::Horizontal, tr("File name"));
+    while (query->next()){
+        QStandardItem* item = new QStandardItem(query->value(1).toString());
+
+        item->setEditable(false);
+        item->setData(query->value(0).toInt(), Qt::UserRole+1);
+        item->setData(item_id, Qt::UserRole+2);
+
+        QFileInfo fi(qApp->property("data_path").toString());
+        QDir dir(fi.absoluteDir());
+        dir.cd("attachments");
+
+        item->setData(dir.absoluteFilePath(query->value(1).toString()), Qt::UserRole+3);//path
+        item->setToolTip(item->data(Qt::UserRole+3).toString());
+
+        model->setItem(model->rowCount(), 0, item);
+    }
+
+    ui->attachments_listView->setModel(model);
 }

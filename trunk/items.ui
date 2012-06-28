@@ -6,9 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>305</width>
-    <height>326</height>
+    <width>309</width>
+    <height>404</height>
    </rect>
+  </property>
+  <property name="acceptDrops">
+   <bool>true</bool>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
@@ -162,6 +165,19 @@
          </property>
         </widget>
        </item>
+       <item>
+        <widget class="QLabel" name="label_12">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Attachments:</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </item>
      <item>
@@ -178,6 +194,23 @@
         </property>
        </widget>
        <widget class="QTextEdit" name="note_textEdit"/>
+       <widget class="AttachmentsView" name="attachments_listView">
+        <property name="acceptDrops">
+         <bool>false</bool>
+        </property>
+        <property name="dragEnabled">
+         <bool>false</bool>
+        </property>
+        <property name="dragDropOverwriteMode">
+         <bool>false</bool>
+        </property>
+        <property name="dragDropMode">
+         <enum>QAbstractItemView::DropOnly</enum>
+        </property>
+        <property name="defaultDropAction">
+         <enum>Qt::IgnoreAction</enum>
+        </property>
+       </widget>
       </widget>
      </item>
     </layout>
@@ -218,6 +251,11 @@
    <class>InventoryLineEdit</class>
    <extends>QLineEdit</extends>
    <header>inventorylineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>AttachmentsView</class>
+   <extends>QListView</extends>
+   <header location="global">attachmentsview.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

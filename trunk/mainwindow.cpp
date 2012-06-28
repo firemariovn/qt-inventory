@@ -677,6 +677,7 @@ void MainWindow::showSettings()
         connect(settings_dialog, SIGNAL(showId(bool)), this, SLOT(showId(bool)));
     }
     settings_dialog->exec();
+    restoreSettings();
 }
 
 void MainWindow::showId(bool show)
@@ -1079,7 +1080,6 @@ void MainWindow::showReferences()
         references_form = new ReferencesForm(ui->mdiArea);
         //references_form->setLogger(logger);
         connect(references_form, SIGNAL(searchItem(int,QString)), this, SLOT(searchItem(int,QString)));
-        connect(this, SIGNAL(needUpdate(QString)), references_form, SLOT(needUpdate(QString)));
         QMdiSubWindow *subWindowReferences = new QMdiSubWindow;
         subWindowReferences->setWindowIcon(QIcon(":/Icons/icons/Search.png"));
         subWindowReferences->setWidget(references_form);
