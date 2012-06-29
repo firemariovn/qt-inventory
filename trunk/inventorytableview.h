@@ -2,8 +2,17 @@
 #define INVENTORYTABLEVIEW_H
 
 #include <QTableView>
+#include <QSqlRelationalTableModel>
 
 class Logger;
+
+class MySqlRelationalTableModel : public QSqlRelationalTableModel
+{
+    Q_OBJECT
+public:
+    MySqlRelationalTableModel(QObject *parent){}
+    QStringList mimeTypes () const ;
+};
 
 class InventoryTableView : public QTableView
 {
@@ -33,6 +42,7 @@ signals:
 
 protected:
     void contextMenuEvent(QContextMenuEvent *event);
+    void dropEvent(QDropEvent* event);
 
 private slots:
     void openAttachment();

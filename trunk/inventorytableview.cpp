@@ -10,10 +10,21 @@
 #include "logger.h"
 #include "checkdelegate.h"
 
+QStringList MySqlRelationalTableModel::mimeTypes() const
+{
+    QStringList types;
+    types << "text/uri-list";
+    return types;
+}
+
 InventoryTableView::InventoryTableView(QWidget *parent):
     QTableView(parent)
 {
     logger = 0;
+
+    setAcceptDrops(true);
+    setDragDropMode(QAbstractItemView::DropOnly);
+    setDropIndicatorShown(true);
 
     add_attachment = new QAction(QIcon(":/Icons/icons/Attach.png"), tr("Add attachment"), this);
     open_attachment = new QAction(QIcon(":/Icons/icons/Document.png"), tr("Open"), this);
@@ -1382,6 +1393,35 @@ void InventoryTableView::deleteProperty()
                                         );
         }
         emit tableUpdate("properties");
+    }
+}
+
+void InventoryTableView::dropEvent(QDropEvent *event)
+{
+    QSqlRelationalTableModel *model = qobject_cast<QSqlRelationalTableModel *>(this->model());
+    if(model){
+        if(event->mimeData()->hasUrls()==true){
+            QList<QUrl> files = event->mimeData()->urls();
+            for (int i = 0; i < files.size(); ++i) {
+                //qDebug() << files.at(i).toLocalFile();
+                QFileInfo fi(files.at(i).toLocalFile());
+                /*
+                if(model->findItems(fi.fileName()).isEmpty()){
+                    QStandardItem* item = new QStandardItem(fi.fileName());
+
+                    item->setEditable(false);
+                    item->setData(0, Qt::UserRole+1);//attachment id
+                    item->setData(0, Qt::UserRole+2);//item_id
+                    item->setData(files.at(i).toLocalFile(), Qt::UserRole+3);//path
+
+                    item->setToolTip(item->data(Qt::UserRole+3).toString());//tool tip
+
+                    model->setItem(model->rowCount(), 0, item);
+                }
+                */
+            }
+        }
+        event->acceptProposedAction();
     }
 }
 

@@ -9,33 +9,12 @@ MyStandardItemModel::MyStandardItemModel(QObject *parent) :
 {
 }
 
-Qt::DropActions MyStandardItemModel::supportedDropActions() const
-{
-    return Qt::IgnoreAction | Qt::CopyAction | Qt::MoveAction;
-}
-
-Qt::ItemFlags MyStandardItemModel::flags(const QModelIndex &index) const
-{
-    Qt::ItemFlags defaultFlags = QStandardItemModel::flags(index);
-
-    if (index.isValid())
-        return Qt::ItemIsDropEnabled | defaultFlags;
-    else
-        return defaultFlags;
-}
-
-bool MyStandardItemModel::dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent)
-{
-   qDebug("I am in the model");
-   return true;
-}
-
 QStringList MyStandardItemModel::mimeTypes() const
- {
-     QStringList types;
-     types << "text/plain";
-     return types;
- }
+{
+    QStringList types;
+    types << "text/uri-list";
+    return types;
+}
 
 
 AttachmentsView::AttachmentsView(QWidget *parent) :
@@ -57,7 +36,7 @@ AttachmentsView::AttachmentsView(QWidget *parent) :
     delete_attachment = new QAction(QIcon(":/Icons/icons/Trash.png"), tr("Delete"), this);
 
     connect(add_attachment, SIGNAL(triggered()), this, SLOT(addAttachments()));
-    connect(delete_attachment, SIGNAL(triggered()), this, SLOT(deleteAttachments()));
+    connect(delete_attachment, SIGNAL(triggered()), this, SLOT(deleteAttachment()));
     connect(open_attachment, SIGNAL(triggered()), this, SLOT(openAttachment()));
 
     connect(this, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(openAttachment(QModelIndex)));
@@ -71,7 +50,6 @@ AttachmentsView::~AttachmentsView()
 void AttachmentsView::contextMenuEvent(QContextMenuEvent *event)
 {
     if(this->model()){
-        MyStandardItemModel *model = qobject_cast<MyStandardItemModel *>(this->model());
         QModelIndex index = this->selectionModel()->currentIndex();
         QMenu menu;
         menu.addAction(add_attachment);
@@ -107,7 +85,7 @@ bool AttachmentsView::checkUserRights(const int idx, const bool show_message) co
 void AttachmentsView::addAttachments()
 {
     if(!this->checkUserRights(16)) return;
-    MyStandardItemModel *model = qobject_cast<MyStandardItemModel *>(this->model());
+    QStandardItemModel *model = qobject_cast<QStandardItemModel *>(this->model());
     if(model){
         QStringList files = QFileDialog::getOpenFileNames(
                                  this,
@@ -132,14 +110,14 @@ void AttachmentsView::addAttachments()
     }
 }
 
-void AttachmentsView::deleteAttachments()
+void AttachmentsView::deleteAttachment()
 {
-    MyStandardItemModel *model = qobject_cast<MyStandardItemModel *>(this->model());
-    if(model){
-        QModelIndexList list = this->selectedIndexes();
-        for (int i = 0; i < list.size(); ++i) {
-            model->removeRow(model->itemFromIndex(list.at(i))->row());
-         }
+    QStandardItemModel *model = qobject_cast<QStandardItemModel *>(this->model());
+    if(model && this->currentIndex().isValid()){
+        if( model->itemFromIndex(this->currentIndex())->data().toInt() > 0){
+                pended_attachments <<  model->itemFromIndex(this->currentIndex())->data(Qt::EditRole).toString();
+        }
+        model->removeRow( model->itemFromIndex(this->currentIndex())->row());
     }
 }
 
@@ -173,11 +151,27 @@ void AttachmentsView::openAttachment(const QModelIndex & index )
 
 void AttachmentsView::dropEvent(QDropEvent *event)
 {
-    qDebug() << "Drop event";
-    event->acceptProposedAction();
-}
+    MyStandardItemModel *model = qobject_cast<MyStandardItemModel *>(this->model());
+    if(model){
+        if(event->mimeData()->hasUrls()==true){
+            QList<QUrl> files = event->mimeData()->urls();
+            for (int i = 0; i < files.size(); ++i) {
+                //qDebug() << files.at(i).toLocalFile();
+                QFileInfo fi(files.at(i).toLocalFile());
+                if(model->findItems(fi.fileName()).isEmpty()){
+                    QStandardItem* item = new QStandardItem(fi.fileName());
 
-void AttachmentsView::dragEnterEvent(QDragEnterEvent *event)
-{
-    event->acceptProposedAction();
+                    item->setEditable(false);
+                    item->setData(0, Qt::UserRole+1);//attachment id
+                    item->setData(0, Qt::UserRole+2);//item_id
+                    item->setData(files.at(i).toLocalFile(), Qt::UserRole+3);//path
+
+                    item->setToolTip(item->data(Qt::UserRole+3).toString());//tool tip
+
+                    model->setItem(model->rowCount(), 0, item);
+                }
+            }
+        }
+        event->acceptProposedAction();
+    }
 }

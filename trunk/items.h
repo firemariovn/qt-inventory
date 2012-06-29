@@ -49,6 +49,7 @@ private:
     void fillProperties(const int type_id, const int item_id = 0);
     void fillAttachments(const int item_id = 0);
     void saveItemProperties();
+    void saveItemAttachments();
 
     Ui::Items *ui;
     QSqlTableModel* locations_model;

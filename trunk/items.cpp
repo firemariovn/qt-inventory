@@ -2,6 +2,7 @@
 #include "ui_items.h"
 #include "logger.h"
 #include "propertyitemdelegate.h"
+#include "attachmentsview.h"
 
 #include <QtSql>
 #include <QtGui>
@@ -45,6 +46,7 @@ void Items::accept()
         return;
     }
     this->saveItemProperties();
+    this->saveItemAttachments();
     QApplication::restoreOverrideCursor();
     QDialog::accept();
 }
@@ -511,7 +513,7 @@ void Items::fillAttachments(const int item_id)
                                     );
         return;
     }
-    QStandardItemModel* model = new QStandardItemModel(0,1,ui->attachments_listView);
+    MyStandardItemModel* model = qobject_cast<MyStandardItemModel *>(ui->attachments_listView->model());
     model->setHeaderData(0, Qt::Horizontal, tr("File name"));
     while (query->next()){
         QStandardItem* item = new QStandardItem(query->value(1).toString());
@@ -529,6 +531,126 @@ void Items::fillAttachments(const int item_id)
 
         model->setItem(model->rowCount(), 0, item);
     }
+}
 
-    ui->attachments_listView->setModel(model);
+void Items::saveItemAttachments()
+{
+    if(!this->getItemId()) return;
+
+    QFileInfo fi(qApp->property("data_path").toString());
+    QDir dir(fi.absoluteDir());
+    if(!dir.exists()){
+        if(logger) logger->writeLog(Logger::Error, Logger::Attachments,
+                                    tr("Can not find data directory!"));
+        return;
+    }
+    if(!dir.cd("attachments")){
+        if(logger) logger->writeLog(Logger::Error, Logger::Attachments,
+                                    tr("Attachments directory does not exist.\nTry to create it"));
+        if(!dir.mkdir("attachments")){
+            if(logger) logger->writeLog(Logger::Error, Logger::Attachments,
+                                        tr("Error! Can not create attachments directory. The operation is interrupted"));
+            return;
+        }
+        if(!dir.cd("attachments")){
+            if(logger) logger->writeLog(Logger::Error, Logger::Attachments,
+                                        tr("Attachments directory does not exist. The operation is interrupted"));
+            return;
+        }
+    }
+
+    QSqlQuery* query = new QSqlQuery();
+    MyStandardItemModel* model = qobject_cast<MyStandardItemModel *>(ui->attachments_listView->model());
+    if(model){
+        for(int i=0; i<model->rowCount(); i++){
+            if(model->item(i)->data().toInt() == 0){    //new file
+                QFile source(model->item(i)->data(Qt::UserRole+3).toString());
+                fi.setFile(source);
+                QString q = QString("SELECT COUNT(`id`) FROM attachments "
+                                    "WHERE `filename` LIKE '%1'")
+                        .arg(model->item(i)->data(Qt::EditRole).toString());
+                if(query->exec(q)){
+                    query->first();
+                    if(query->value(0).toInt() == 0){//there is no file with that name
+                        this->setCursor(Qt::BusyCursor);
+                        if(!source.copy(dir.absoluteFilePath(fi.fileName()))){
+                            this->setCursor(Qt::ArrowCursor);
+                            if(dir.exists(fi.fileName())) {
+                                if(logger) logger->writeLog(Logger::Error, Logger::Attachments,
+                                                            tr("File already exists!"));
+                            }
+                            else{
+                                if(logger) logger->writeLog(Logger::Error, Logger::Attachments,
+                                                            tr("Can not copy file!"));
+                                return;
+                            }
+                        }
+                        else{
+                            this->setCursor(Qt::ArrowCursor);
+                            if(logger) logger->writeLog(Logger::Add, Logger::Attachments,
+                                                        tr("File was successfully copied:\n%1").arg(dir.absoluteFilePath(fi.fileName()))
+                                                        );
+                        }
+                    }
+                    if(!query->exec(QString("INSERT INTO attachments (`item_id`, `tablename`, `filename`) VALUES ('%1', '%2', '%3')")
+                                        .arg(this->getItemId())
+                                        .arg("items")
+                                        .arg(fi.fileName()))
+                       ){
+                        if(logger) logger->writeLog(Logger::Error, Logger::Attachments,
+                            tr("Sql error:\n%1").arg(query->lastError().text())
+                            );
+                     }
+                     else{
+                            if(logger) logger->writeLog(Logger::Add, Logger::Attachments,
+                                                        tr("Attacment: %1 has been added to:\n%2")
+                                                        .arg(fi.fileName())
+                                                        .arg(tr("Item with id: %1").arg(this->getItemId()))
+                                                        );
+                     }
+                }
+                else{
+                    if(logger) logger->writeLog(Logger::Error, Logger::Attachments, tr("Sql error:\n%1")
+                                                .arg(query->lastError().text())
+                                                );
+                }
+            }
+        }
+    }
+    QList<QString> del = ui->attachments_listView->pendedAttachments();
+    for (int i = 0; i < del.size(); ++i) {
+        QString q = QString("DELETE FROM attachments "
+                            "WHERE `filename` LIKE '%1' AND `item_id`='%2'")
+                .arg(del.at(i))
+                .arg(this->getItemId())
+                ;
+        if(!query->exec(q)){
+            if(logger) logger->writeLog(Logger::Error, Logger::Attachments, tr("Sql error:\n%1")
+                                        .arg(query->lastError().text())
+                                        );
+        }
+        q = QString("SELECT COUNT(`id`) FROM attachments "
+                            "WHERE `filename` LIKE '%1'").arg(del.at(i));
+        if(!query->exec(q)){
+            if(logger) logger->writeLog(Logger::Error, Logger::Attachments, tr("Sql error:\n%1")
+                                        .arg(query->lastError().text())
+                                        );
+        }
+        else{
+            query->first();
+            if(query->value(0).toInt() == 0){//no other uses of the file
+                QFileInfo fi_del(dir, del.at(i));
+                if(!QFile::remove(fi_del.absoluteFilePath())){
+                    if(logger) logger->writeLog(Logger::Error, Logger::Attachments,
+                                                tr("Can not remove file!"));
+                }
+                else{
+                    if(logger) logger->writeLog(Logger::Add, Logger::Attachments,
+                                                tr("File was successfully removed:\n%1").arg(dir.absoluteFilePath(fi_del.fileName()))
+                                                );
+                }
+            }
+        }
+    }
+
 }

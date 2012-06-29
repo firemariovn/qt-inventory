@@ -4,7 +4,6 @@
 #include <QWidget>
 #include <QModelIndex>
 
-class QSqlRelationalTableModel;
 //class QModelIndex;
 
 namespace Ui {
@@ -13,6 +12,8 @@ namespace Ui {
 
 class HeaderView;
 class Logger;
+class QSqlRelationalTableModel;
+class MySqlRelationalTableModel;
 
 class TableForm : public QWidget
 {
@@ -100,7 +101,7 @@ private:
     HeaderView* headerView;
     HeaderView* detailedHeaderView;
     QSqlRelationalTableModel* model;
-    QSqlRelationalTableModel *detailed_model;
+    MySqlRelationalTableModel *detailed_model;
     QAction* show_items;
     QAction* show_attachments;
     QAction* show_rights;

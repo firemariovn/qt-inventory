@@ -283,8 +283,17 @@
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
         <widget class="InventoryTableView" name="detailed_tableView">
+         <property name="acceptDrops">
+          <bool>true</bool>
+         </property>
          <property name="editTriggers">
           <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="dragDropMode">
+          <enum>QAbstractItemView::DropOnly</enum>
+         </property>
+         <property name="defaultDropAction">
+          <enum>Qt::CopyAction</enum>
          </property>
          <property name="selectionMode">
           <enum>QAbstractItemView::ExtendedSelection</enum>
@@ -323,14 +332,14 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>InventoryTableView</class>
-   <extends>QTableView</extends>
-   <header>inventorytableview.h</header>
-  </customwidget>
-  <customwidget>
    <class>InventoryComboBox</class>
    <extends>QComboBox</extends>
    <header>inventorycombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>InventoryTableView</class>
+   <extends>QTableView</extends>
+   <header>inventorytableview.h</header>
   </customwidget>
  </customwidgets>
  <resources>
