@@ -11,10 +11,7 @@ class MyStandardItemModel : public QStandardItemModel
     Q_OBJECT
 public:
     MyStandardItemModel(QObject *parent);
-    Qt::DropActions supportedDropActions() const ;
     QStringList mimeTypes () const ;
-    Qt::ItemFlags flags(const QModelIndex &index) const ;
-    bool dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent);
 };
 
 class AttachmentsView : public QListView
@@ -24,15 +21,16 @@ public:
     explicit AttachmentsView(QWidget * parent = 0);
     ~AttachmentsView();
 
+    inline QList<QString> pendedAttachments() { return pended_attachments; }
+
 protected:
     void contextMenuEvent(QContextMenuEvent *event);
-    void dragEnterEvent(QDragEnterEvent *event);
     void dropEvent(QDropEvent* event);
 signals:
     
 private slots:
     void addAttachments();
-    void deleteAttachments();
+    void deleteAttachment();
     void openAttachment();
     void openAttachment(const QModelIndex &index);
 
@@ -43,6 +41,8 @@ private:
     QAction* add_attachment;
     QAction* delete_attachment;
     QAction* open_attachment;
+
+    QList<QString> pended_attachments;
     
 };
 

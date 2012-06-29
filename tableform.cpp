@@ -885,8 +885,8 @@ void TableForm::showDetailedItems(const bool show)
     else if(model->tableName() == "item_status"){
         detailed_filter = QString("status_id = ");
     }
-
-    if(!detailed_model) detailed_model = new QSqlRelationalTableModel;
+    //if(!detailed_model) detailed_model = new QSqlRelationalTableModel;
+    if(!detailed_model) detailed_model = new MySqlRelationalTableModel(ui->detailed_tableView);
     detailed_model->clear();
     detailed_model->setTable("items");
     detailed_model->setRelation(detailed_model->fieldIndex("type_id"), QSqlRelation("item_types", "id", "type"));
@@ -920,11 +920,13 @@ void TableForm::updateDetailedView()
     if(!detailed_model) return;
     QString filter = detailed_filter;
     detailed_model->setFilter(filter.append(QString("'%1'").arg(QString::number(current_id))));
+
     if(qApp->property("marking_rows").toBool()){
         ui->detailed_tableView->loadMarked();
     }
     else
         ui->detailed_tableView->cleanMarked();
+
 }
 
 void TableForm::setDetailedOptions()
@@ -1015,7 +1017,7 @@ void TableForm::showDetailedAttachments(const bool show)
     detailed_filter = QString("`tablename` LIKE '%1' AND `item_id`=")
             .arg(model->tableName());
 
-    if(!detailed_model) detailed_model = new QSqlRelationalTableModel;
+    if(!detailed_model) detailed_model = new MySqlRelationalTableModel(ui->detailed_tableView);
     detailed_model->clear();
     detailed_model->setTable("attachments");
     detailed_model->select();
@@ -1075,7 +1077,7 @@ void TableForm::showDetailedRights(const bool show)
     if(!ui->detailed_toolButton->isChecked()) ui->detailed_toolButton->toggle();
     detailed_filter.clear();
     detailed_filter = QString("`user_id`=");
-    if(!detailed_model) detailed_model = new QSqlRelationalTableModel;
+    if(!detailed_model) detailed_model = new MySqlRelationalTableModel(ui->detailed_tableView);
     detailed_model->clear();
     detailed_model->setTable("users_rights");
     detailed_model->select();
@@ -2059,7 +2061,7 @@ void TableForm::showTypeProperties(const bool show)
     if(!ui->detailed_toolButton->isChecked()) ui->detailed_toolButton->toggle();
     detailed_filter = QString("type_id = ");
 
-    if(!detailed_model) detailed_model = new QSqlRelationalTableModel;
+    if(!detailed_model) detailed_model = new MySqlRelationalTableModel(ui->detailed_tableView);
     detailed_model->clear();
     detailed_model->setTable("properties");
     detailed_model->select();
@@ -2132,7 +2134,7 @@ void TableForm::showItemProperties(const bool show)
     if(!ui->detailed_toolButton->isChecked()) ui->detailed_toolButton->toggle();
     detailed_filter = QString("item_id = ");
 
-    if(!detailed_model) detailed_model = new QSqlRelationalTableModel;
+    if(!detailed_model) detailed_model = new MySqlRelationalTableModel(ui->detailed_tableView);
     detailed_model->clear();
     detailed_model->setTable("item_properties");
     detailed_model->setRelation(detailed_model->fieldIndex("property_id"), QSqlRelation("properties", "id", "property"));
