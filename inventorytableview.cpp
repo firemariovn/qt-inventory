@@ -10,6 +10,11 @@
 #include "logger.h"
 #include "checkdelegate.h"
 
+MySqlRelationalTableModel::MySqlRelationalTableModel(QObject *parent) :
+    QSqlRelationalTableModel(parent)
+{
+}
+
 QStringList MySqlRelationalTableModel::mimeTypes() const
 {
     QStringList types;
@@ -23,7 +28,6 @@ InventoryTableView::InventoryTableView(QWidget *parent):
     logger = 0;
 
     setAcceptDrops(true);
-    setDragDropMode(QAbstractItemView::DropOnly);
     setDropIndicatorShown(true);
 
     add_attachment = new QAction(QIcon(":/Icons/icons/Attach.png"), tr("Add attachment"), this);
@@ -174,7 +178,8 @@ void InventoryTableView::contextMenuEvent(QContextMenuEvent *event)
             }
         }
         else if(model->tableName() == "allocations"){
-            if(index.isValid()){
+            if(index.isValid()){                
+                menu.addAction(allocation);
                 menu.addAction(find_item);
             }
         }
@@ -440,7 +445,23 @@ void InventoryTableView::allocationItem()
         Allocations* allocations_dialog = new Allocations(this);
         if(logger) allocations_dialog->setLogger(logger);
         allocations_dialog->setEditMode(false);
-        allocations_dialog->setItemFilter(record.value("id").toInt());
+        if(model->tableName() == "items"){
+            allocations_dialog->setItemFilter(record.value("id").toInt());
+        }
+        if(model->tableName() == "allocations"){
+            QSqlQuery* query = new QSqlQuery(QSqlDatabase::database());
+            if(!query->exec(QString("SELECT `item_id` FROM allocations WHERE `id`=%1")
+                                .arg(record.value("id").toInt()))
+                ){
+                if(logger) logger->writeLog(Logger::Error, Logger::Allocations,
+                                            tr("Can not get item id from database.\n%1").arg(query->lastError().text())
+                                            );
+            }
+            else{
+                query->first();
+                allocations_dialog->setItemFilter(query->value(0).toInt());
+            }
+        }
         if(allocations_dialog->exec() == QDialog::Accepted){
             emit tableUpdate("Allocations");
             if(logger) logger->writeLog(Logger::Edit, Logger::Allocations,
@@ -484,7 +505,9 @@ void InventoryTableView::findAllocation()
     QModelIndex index = this->selectionModel()->currentIndex();
     QSqlRecord record = model->record(index.row());
     if(!record.isEmpty()){
-        if(model->tableName() == "items"){
+        if(model->tableName() == "items" ||
+           model->tableName() == "temp_reference_items" ||
+           model->tableName() == "temp_reference_items_properties"){
             int item_id = record.value("id").toInt();
 
             QSqlQuery* query = new QSqlQuery();
@@ -498,9 +521,6 @@ void InventoryTableView::findAllocation()
             }
             if(!query->first()) return;
             emit searchItem(query->value(0).toInt(), "allocations");
-        }
-        else if(model->tableName() == "temp_reference_items" || model->tableName() == "temp_reference_items_properties"){
-            emit searchItem(record.value("id").toInt(), "allocations");
         }
     }
 }
@@ -1398,30 +1418,12 @@ void InventoryTableView::deleteProperty()
 
 void InventoryTableView::dropEvent(QDropEvent *event)
 {
-    QSqlRelationalTableModel *model = qobject_cast<QSqlRelationalTableModel *>(this->model());
+    MySqlRelationalTableModel *model = qobject_cast<MySqlRelationalTableModel *>(this->model());
     if(model){
-        if(event->mimeData()->hasUrls()==true){
-            QList<QUrl> files = event->mimeData()->urls();
-            for (int i = 0; i < files.size(); ++i) {
-                //qDebug() << files.at(i).toLocalFile();
-                QFileInfo fi(files.at(i).toLocalFile());
-                /*
-                if(model->findItems(fi.fileName()).isEmpty()){
-                    QStandardItem* item = new QStandardItem(fi.fileName());
-
-                    item->setEditable(false);
-                    item->setData(0, Qt::UserRole+1);//attachment id
-                    item->setData(0, Qt::UserRole+2);//item_id
-                    item->setData(files.at(i).toLocalFile(), Qt::UserRole+3);//path
-
-                    item->setToolTip(item->data(Qt::UserRole+3).toString());//tool tip
-
-                    model->setItem(model->rowCount(), 0, item);
-                }
-                */
-            }
+        if(model->tableName() == "attachments" && event->mimeData()->hasUrls() == true){
+            emit(add_droped_files(event->mimeData()));
         }
-        event->acceptProposedAction();
     }
+    event->acceptProposedAction();
 }
 

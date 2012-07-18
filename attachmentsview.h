@@ -26,7 +26,6 @@ public:
 protected:
     void contextMenuEvent(QContextMenuEvent *event);
     void dropEvent(QDropEvent* event);
-signals:
     
 private slots:
     void addAttachments();
