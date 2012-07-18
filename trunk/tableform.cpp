@@ -74,6 +74,7 @@ TableForm::TableForm(QWidget *parent, Qt::WindowFlags f)
     connect(ui->detailed_tableView, SIGNAL(tableUpdate(QString)), this, SLOT(needUpdate(QString)));
     connect(ui->detailed_tableView, SIGNAL(searchItem(int,QString)), this, SIGNAL(searchItem(int,QString)));
     connect(ui->detailed_tableView, SIGNAL(activatedItem(int,QString)), this, SLOT(activatedItem(int,QString)));
+    connect(ui->detailed_tableView, SIGNAL(add_droped_files(const QMimeData*)), this, SLOT(addDropedFiles(const QMimeData*)));
 
     connect(ui->export_toolButton, SIGNAL(clicked()), this, SLOT(exportToCsv()));
 
@@ -2143,10 +2144,109 @@ void TableForm::showItemProperties(const bool show)
     ui->detailed_tableView->hideColumn(detailed_model->fieldIndex("id"));
     ui->detailed_tableView->hideColumn(detailed_model->fieldIndex("item_id"));
 
-    //ui->detailed_tableView->setItemDelegate(new QSqlRelationalDelegate(ui->tableView));
-
     detailed_model->setHeaderData(detailed_model->fieldIndex("property"), Qt::Horizontal, tr("Property"), Qt::EditRole);
     detailed_model->setHeaderData(detailed_model->fieldIndex("value"), Qt::Horizontal, tr("Value"), Qt::EditRole);
 
     this->updateDetailedView();
+}
+
+void TableForm::addDropedFiles(const QMimeData *data)
+{
+    if(!this->checkUserRights(16)) return;
+    if(!model) return;
+    QModelIndex index = ui->tableView->selectionModel()->currentIndex();
+    if(!index.isValid()) return;
+    if(data->hasUrls() == true){
+        QFileInfo fi(qApp->property("data_path").toString());
+        QDir dir(fi.absoluteDir());
+        if(!dir.exists()){
+            if(logger) logger->writeLog(Logger::Error, Logger::Attachments,
+                                        tr("Can not find data directory!"));
+            return;
+        }
+        if(!dir.cd("attachments")){
+            if(logger) logger->writeLog(Logger::Error, Logger::Attachments,
+                                        tr("Attachments directory does not exist.\nTry to create it"));
+            if(!dir.mkdir("attachments")){
+                if(logger) logger->writeLog(Logger::Error, Logger::Attachments,
+                                            tr("Error! Can not create attachments directory. The operation is interrupted"));
+                return;
+            }
+            if(!dir.cd("attachments")){
+                if(logger) logger->writeLog(Logger::Error, Logger::Attachments,
+                                            tr("Attachments directory does not exist. The operation is interrupted"));
+                return;
+            }
+        }
+        QSqlQuery* query = new QSqlQuery();
+        QList<QUrl> files = data->urls();
+        for (int i = 0; i < files.size(); ++i) {
+            //qDebug() << files.at(i).toLocalFile();
+            QFileInfo fi(files.at(i).toLocalFile());
+            /*****/
+            QString q = QString("SELECT COUNT(`id`) FROM attachments "
+                                            "WHERE `filename` LIKE '%1'")
+                                .arg(fi.fileName());
+            if(query->exec(q)){
+                query->first();
+                if(query->value(0).toInt() == 0){//there is no file with that name
+                    QFile source(fi.absoluteFilePath());
+                    this->setCursor(Qt::BusyCursor);
+                    if(!source.copy(dir.absoluteFilePath(fi.fileName()))){
+                        this->setCursor(Qt::ArrowCursor);
+                        if(dir.exists(fi.fileName())) {
+                            if(logger) logger->writeLog(Logger::Error, Logger::Attachments,
+                                                        tr("File already exists!"));
+                        }
+                        else{
+                            if(logger) logger->writeLog(Logger::Error, Logger::Attachments,
+                                                        tr("Can not copy file!"));
+                                return;
+                            }
+                        }
+                    else{
+                        this->setCursor(Qt::ArrowCursor);
+                        if(logger) logger->writeLog(Logger::Add, Logger::Attachments,
+                                                    tr("File was successfully copied:\n%1").arg(dir.absoluteFilePath(fi.fileName()))
+                        );
+                    }
+               }
+                /****** check is that item has attachment with same name ******/
+                if(!query->exec(QString("SELECT COUNT(`id`) FROM attachments "
+                                        "WHERE `item_id`='%1' AND `filename` LIKE '%2'")
+                                .arg(current_id)
+                                .arg(fi.fileName())
+                                )){
+                    if(logger) logger->writeLog(Logger::Error, Logger::Attachments,
+                                        tr("Sql error:\n%1").arg(query->lastError().text())
+                                         );
+                }
+                query->first();
+                if(query->value(0).toInt() > 0) return;
+                /***/
+               if(!query->exec(QString("INSERT INTO attachments (`item_id`, `tablename`, `filename`) VALUES ('%1', '%2', '%3')")
+                                  .arg(current_id)
+                                  .arg("items")
+                                  .arg(fi.fileName()))
+                                  ){
+                   if(logger) logger->writeLog(Logger::Error, Logger::Attachments,
+                                       tr("Sql error:\n%1").arg(query->lastError().text())
+                                        );
+               }
+               else{
+                   if(logger) logger->writeLog(Logger::Add, Logger::Attachments,
+                                       tr("Attacment: %1 has been added to:\n%2")
+                                               .arg(fi.fileName())
+                                               .arg(tr("Item with id: %1").arg(current_id))
+                                               );
+               }
+            }
+            else{
+                if(logger) logger->writeLog(Logger::Error, Logger::Attachments, tr("Sql error:\n%1")
+                                               .arg(query->lastError().text())
+                                               );
+            }
+        }
+    this->updateDetailedView();
+    }
 }

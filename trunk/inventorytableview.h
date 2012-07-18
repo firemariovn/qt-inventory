@@ -10,8 +10,13 @@ class MySqlRelationalTableModel : public QSqlRelationalTableModel
 {
     Q_OBJECT
 public:
-    MySqlRelationalTableModel(QObject *parent){}
+    MySqlRelationalTableModel(QObject *parent);
     QStringList mimeTypes () const ;
+    Qt::ItemFlags flags(const QModelIndex &index) const
+    {
+        Qt::ItemFlags defaultFlags = QAbstractTableModel::flags(index);
+        return Qt::ItemIsDropEnabled | defaultFlags;
+    }
 };
 
 class InventoryTableView : public QTableView
@@ -28,12 +33,12 @@ public:
     void loadMarked();
     void cleanMarked();
 
-
 public slots:
     void printPreviewTable();
 
 signals:
     void add_attachment_();
+    void add_droped_files(const QMimeData* data);
     void add_property_();
     void add_item_();
     void tableUpdate(const QString& table);
@@ -42,7 +47,7 @@ signals:
 
 protected:
     void contextMenuEvent(QContextMenuEvent *event);
-    void dropEvent(QDropEvent* event);
+    virtual void dropEvent(QDropEvent* event);
 
 private slots:
     void openAttachment();

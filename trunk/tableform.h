@@ -34,6 +34,7 @@ signals:
 
 public slots:
     void addAttachedFile();
+    void addDropedFiles(const QMimeData* data);
     void addItem();
     void needUpdate(const QString& table);
     void showHeaderId(bool show);
