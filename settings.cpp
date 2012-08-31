@@ -46,6 +46,8 @@ void Settings::loadSettings()
     //QSettings settings(appdir.filePath("Inventory.ini"), QSettings::IniFormat);
     QSettings settings(qApp->property("ini").toString(), QSettings::IniFormat);
     settings.beginGroup("InventorySettings");
+        ui->disable_item_edit_operator_checkBox->setChecked(settings.value("DisableItemOperatorEdit", true).toBool());
+        ui->disable_item_edit_location_checkBox->setChecked(settings.value("DisableItemLocationEdit", true).toBool());
     settings.beginGroup("Startup");
         ui->load_table_groupBox->setChecked(settings.value("AutostartTable", false).toBool());
         ui->load_table_comboBox->setCurrentIndex(
@@ -85,6 +87,10 @@ void Settings::saveSettings()
     //QSettings settings(appdir.filePath("Inventory.ini"), QSettings::IniFormat);
     QSettings settings(qApp->property("ini").toString(), QSettings::IniFormat);
     settings.beginGroup("InventorySettings");
+    settings.setValue("DisableItemOperatorEdit", ui->disable_item_edit_operator_checkBox->isChecked());
+    qApp->setProperty("disable_item_operator_edit", ui->disable_item_edit_operator_checkBox->isChecked());
+    settings.setValue("DisableItemLocationEdit", ui->disable_item_edit_location_checkBox->isChecked());
+    qApp->setProperty("disable_item_location_edit", ui->disable_item_edit_location_checkBox->isChecked());
         settings.beginGroup("Startup");
             settings.setValue("AutostartTable", ui->load_table_groupBox->isChecked());
             settings.setValue("AutostartTableName", ui->load_table_comboBox->currentText());

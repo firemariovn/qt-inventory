@@ -213,6 +213,43 @@ Old data:
     </message>
 </context>
 <context>
+    <name>AttachmentsView</name>
+    <message>
+        <location filename="attachmentsview.cpp" line="34"/>
+        <source>Add attachment</source>
+        <translation>Добавяне на прикачен файл</translation>
+    </message>
+    <message>
+        <location filename="attachmentsview.cpp" line="35"/>
+        <source>Open</source>
+        <translation>Отваряне</translation>
+    </message>
+    <message>
+        <location filename="attachmentsview.cpp" line="36"/>
+        <source>Delete</source>
+        <translation>Изтриване</translation>
+    </message>
+    <message>
+        <location filename="attachmentsview.cpp" line="71"/>
+        <source>You are not authorized to perform this operation!
+Please contact your system administrator.</source>
+        <translation>Нямате права за да извършите тази операция!
+Моля, свържете се с вашия системен администратор.</translation>
+    </message>
+    <message>
+        <location filename="attachmentsview.cpp" line="141"/>
+        <source>Error with document opening. The url path:
+%1</source>
+        <translation>Грешка при отваряне на документ. Url път:
+%1</translation>
+    </message>
+    <message>
+        <location filename="attachmentsview.cpp" line="146"/>
+        <source>Open attachment: %1</source>
+        <translation>Отваряне на приложение: %1</translation>
+    </message>
+</context>
+<context>
     <name>Browser</name>
     <message>
         <location filename="browserwidget.ui" line="14"/>
@@ -602,411 +639,418 @@ Check the new password again!</source>
 <context>
     <name>InventoryTableView</name>
     <message>
-        <location filename="inventorytableview.cpp" line="24"/>
+        <location filename="inventorytableview.cpp" line="39"/>
         <source>Add</source>
         <translation>Добави</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="19"/>
+        <location filename="inventorytableview.cpp" line="34"/>
         <source>Open</source>
         <translation>Отвори</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="18"/>
+        <location filename="inventorytableview.cpp" line="33"/>
         <source>Add attachment</source>
         <translation>Добавяне на прикачен файл</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="20"/>
-        <location filename="inventorytableview.cpp" line="28"/>
+        <location filename="inventorytableview.cpp" line="35"/>
+        <location filename="inventorytableview.cpp" line="43"/>
         <source>Delete</source>
         <translation>Изтрий</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="22"/>
-        <location filename="inventorytableview.cpp" line="25"/>
+        <location filename="inventorytableview.cpp" line="37"/>
+        <location filename="inventorytableview.cpp" line="40"/>
         <source>Edit</source>
         <translation>Редакция</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="26"/>
+        <location filename="inventorytableview.cpp" line="41"/>
         <source>Copy</source>
         <translation>Копиране</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="27"/>
+        <location filename="inventorytableview.cpp" line="42"/>
         <source>Scrapping</source>
         <translation>Бракуване</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="29"/>
+        <location filename="inventorytableview.cpp" line="44"/>
         <source>Allocation</source>
         <translation>Разпределение</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="31"/>
+        <location filename="inventorytableview.cpp" line="46"/>
         <source>Find item</source>
         <translation>Намери техника</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="32"/>
+        <location filename="inventorytableview.cpp" line="47"/>
         <source>Find allocation</source>
         <translation>Намери разпределение</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="34"/>
+        <location filename="inventorytableview.cpp" line="49"/>
         <source>Add property</source>
         <translation>Добавяне на характеристика</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="35"/>
-        <location filename="inventorytableview.cpp" line="1331"/>
+        <location filename="inventorytableview.cpp" line="50"/>
+        <location filename="inventorytableview.cpp" line="1363"/>
         <source>Edit property</source>
         <translation>Редакция на характеристика</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="36"/>
+        <location filename="inventorytableview.cpp" line="51"/>
         <source>Delete property</source>
         <translation>Изтриване на характеристика</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="38"/>
+        <location filename="inventorytableview.cpp" line="53"/>
         <source>Mark row</source>
         <translation>Маркирай ред</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="39"/>
+        <location filename="inventorytableview.cpp" line="54"/>
         <source>Unmark row</source>
         <translation>Размаркирай ред</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="40"/>
+        <location filename="inventorytableview.cpp" line="55"/>
         <source>Marking reverse</source>
         <translation>Обърни маркировката</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="41"/>
+        <location filename="inventorytableview.cpp" line="56"/>
         <source>Hide marked</source>
         <translation>Скрий маркираните</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="43"/>
+        <location filename="inventorytableview.cpp" line="58"/>
         <source>Hide unmarked</source>
         <translation>Скрий немаркираните</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="46"/>
+        <location filename="inventorytableview.cpp" line="61"/>
         <source>Print</source>
         <translation>Печат</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="50"/>
+        <location filename="inventorytableview.cpp" line="65"/>
         <source>Add attachment to the selected object</source>
         <translation>Добавяне на прикачен файл към избрания обект</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="51"/>
+        <location filename="inventorytableview.cpp" line="66"/>
         <source>Opens attachment with its associated program</source>
         <translation>Отваряне на прикачен файл чрез асоциираната програма</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="52"/>
+        <location filename="inventorytableview.cpp" line="67"/>
         <source>Deletes the attachment</source>
         <translation>Изтриване на прикачен файл</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="54"/>
+        <location filename="inventorytableview.cpp" line="69"/>
         <source>Edit the selected user rights</source>
         <translation>Редакция на правата на избрания потребител</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="55"/>
+        <location filename="inventorytableview.cpp" line="70"/>
         <source>Add a item</source>
         <translation>Добавяне на техника</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="56"/>
+        <location filename="inventorytableview.cpp" line="71"/>
         <source>Edit current item</source>
         <translation>Редакция на избраната техника</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="57"/>
+        <location filename="inventorytableview.cpp" line="72"/>
         <source>Add a item based on the selected item</source>
         <translation>Добавяне на техника, подобна на избраната техника</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="58"/>
+        <location filename="inventorytableview.cpp" line="73"/>
         <source>Scrapping of the selected item</source>
         <translation>Бракуване на избраната техника</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="59"/>
+        <location filename="inventorytableview.cpp" line="74"/>
         <source>Delete current item</source>
         <translation>Изтриване на избраната техника</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="60"/>
+        <location filename="inventorytableview.cpp" line="75"/>
         <source>Allocation of the selected item to a new location / operator</source>
         <translation>Разпределяне на избраната техника към ново местоположение/нов оператор</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="61"/>
+        <location filename="inventorytableview.cpp" line="76"/>
         <source>Find the item associated with selected row</source>
         <translation>Търсене на техниката, асоциирана с избрания ред</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="62"/>
+        <location filename="inventorytableview.cpp" line="77"/>
         <source>Find the allocation associated with selected row</source>
         <translation>Търсене на разпределение, асоциирано към избрания ред</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="63"/>
+        <location filename="inventorytableview.cpp" line="78"/>
         <source>Mark the selected row</source>
         <translation>Маркиране на избрания ред</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="64"/>
+        <location filename="inventorytableview.cpp" line="79"/>
         <source>Unmark the selected row</source>
         <translation>Размаркиране на избрания ред</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="65"/>
+        <location filename="inventorytableview.cpp" line="80"/>
         <source>Reversed the current marking</source>
         <translation>Обръща текущата маркировка</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="66"/>
+        <location filename="inventorytableview.cpp" line="81"/>
         <source>Hide the marked rows</source>
         <translation>Скриване на маркираните редове</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="67"/>
+        <location filename="inventorytableview.cpp" line="82"/>
         <source>Hide the unmarked rows</source>
         <translation>Скриване на немаркираните редове</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="68"/>
+        <location filename="inventorytableview.cpp" line="83"/>
         <source>Print current table</source>
         <translation>Печат на текущата таблица</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="70"/>
+        <location filename="inventorytableview.cpp" line="85"/>
         <source>Add property to the selected item type</source>
         <translation>Добавяне на характеристика, асоциирана с избрания тип</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="71"/>
+        <location filename="inventorytableview.cpp" line="86"/>
         <source>Edit current property</source>
         <translation>Редакция на избраната характеристика</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="72"/>
+        <location filename="inventorytableview.cpp" line="87"/>
         <source>Delete current property</source>
         <translation>Изтриване на избраната характеристика</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="215"/>
+        <location filename="inventorytableview.cpp" line="232"/>
         <source>Error with document opening. The url path:
 %1</source>
         <translation>Грешка при отваряне на документ. Url път:
 %1</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="220"/>
+        <location filename="inventorytableview.cpp" line="237"/>
         <source>Open attachment: %1</source>
         <translation>Отваряне на приложение: %1</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="241"/>
+        <location filename="inventorytableview.cpp" line="258"/>
         <source>Attachments</source>
         <translation>Приложения</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="242"/>
-        <location filename="inventorytableview.cpp" line="1359"/>
+        <location filename="inventorytableview.cpp" line="259"/>
+        <location filename="inventorytableview.cpp" line="1391"/>
         <source>Do you want to delete %1?
 This could not be restored!</source>
         <translation>Искате ли да изтриете %1?
 Действието е необратимо!</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="253"/>
-        <location filename="inventorytableview.cpp" line="1370"/>
+        <location filename="inventorytableview.cpp" line="270"/>
+        <location filename="inventorytableview.cpp" line="1402"/>
         <source>Can not remove from database. Sql error:
 %1</source>
         <translation>Невъзможност за изтриване от базата данни. Sql грешка:
 %1</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="258"/>
+        <location filename="inventorytableview.cpp" line="275"/>
         <source>Delete attachment info:
 %1</source>
         <translation>Информация за изтрито приложение:
 %1</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="263"/>
-        <location filename="inventorytableview.cpp" line="455"/>
-        <location filename="inventorytableview.cpp" line="483"/>
-        <location filename="inventorytableview.cpp" line="708"/>
-        <location filename="inventorytableview.cpp" line="747"/>
-        <location filename="inventorytableview.cpp" line="1380"/>
+        <location filename="inventorytableview.cpp" line="280"/>
+        <location filename="inventorytableview.cpp" line="488"/>
+        <location filename="inventorytableview.cpp" line="518"/>
+        <location filename="inventorytableview.cpp" line="740"/>
+        <location filename="inventorytableview.cpp" line="779"/>
+        <location filename="inventorytableview.cpp" line="1412"/>
         <source>Sql error:
 %1</source>
         <translation>SQL грешка:
 %1</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="278"/>
+        <location filename="inventorytableview.cpp" line="295"/>
         <source>Can not find data directory!</source>
         <translation>Не може да бъде намерена директорията за данни!</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="284"/>
+        <location filename="inventorytableview.cpp" line="301"/>
         <source>Can not find attachments directory.</source>
         <translation>Не може да бъде намерена директорията за приложения.</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="289"/>
+        <location filename="inventorytableview.cpp" line="306"/>
         <source>Can not delete file:
 %1</source>
         <translation>Не можа да бъде изтрит файл:
 %1</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="296"/>
+        <location filename="inventorytableview.cpp" line="313"/>
         <source>Deleted file:
 %1</source>
         <translation>Изтрит файл:
 %1</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="310"/>
+        <location filename="inventorytableview.cpp" line="327"/>
         <source>Items</source>
         <translation>Техника</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="311"/>
+        <location filename="inventorytableview.cpp" line="328"/>
         <source>Do you want to delete item %1?
 This could not be restored!</source>
         <translation>Искате ли да изтриете техника %1?
 Действието е необратимо!</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="322"/>
+        <location filename="inventorytableview.cpp" line="339"/>
         <source>Can not remove item from database.
 %1</source>
         <translation>Не можа да се премахне техниката от базата данни.
 %1</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="327"/>
+        <location filename="inventorytableview.cpp" line="344"/>
         <source>Deleted item:
 %1</source>
         <translation>Изтрита техника:
 %1</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="371"/>
+        <location filename="inventorytableview.cpp" line="388"/>
         <source>Edit user rights. Old data:
 %1</source>
         <translation>Редактирани потребителски права. Стари данни:
 %1</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="383"/>
+        <location filename="inventorytableview.cpp" line="400"/>
         <source>You are not authorized to perform this operation!
 Please contact your system administrator.</source>
         <translation>Нямате права за да извършите тази операция!
 Моля, свържете се с вашия системен администратор.</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="412"/>
+        <location filename="inventorytableview.cpp" line="429"/>
         <source>Edit item. Old data:
 %1</source>
         <translation>Редакция на техника. Стари данни:
 %1</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="435"/>
+        <location filename="inventorytableview.cpp" line="457"/>
+        <source>Can not get item id from database.
+%1</source>
+        <translation>Не може да се получи информация за техниката от базата данни.
+%1</translation>
+    </message>
+    <message>
+        <location filename="inventorytableview.cpp" line="468"/>
         <source>Edit allocation. Old data:
 %1</source>
         <translation>Редакция на разпределение. Стари данни:
 %1</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="511"/>
+        <location filename="inventorytableview.cpp" line="543"/>
         <source>Copy item. From data:
 %1</source>
         <translation>Копиране на техника. От данни:
 %1</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="536"/>
-        <location filename="inventorytableview.cpp" line="548"/>
-        <location filename="inventorytableview.cpp" line="559"/>
-        <location filename="inventorytableview.cpp" line="570"/>
-        <location filename="inventorytableview.cpp" line="581"/>
+        <location filename="inventorytableview.cpp" line="568"/>
+        <location filename="inventorytableview.cpp" line="580"/>
+        <location filename="inventorytableview.cpp" line="591"/>
+        <location filename="inventorytableview.cpp" line="602"/>
+        <location filename="inventorytableview.cpp" line="613"/>
         <source>Can not load scrapped item info.
 %1</source>
         <translation>Не може да бъде заредена информацията за техниката за бракуване.
 %1</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="596"/>
+        <location filename="inventorytableview.cpp" line="628"/>
         <source>Can not remove scrapped item from allocations.
 %1</source>
         <translation>Не можа да се премахне бракуваната техниката от таблицата с разпределенията.
 %1</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="618"/>
+        <location filename="inventorytableview.cpp" line="650"/>
         <source>Can not save scrapped item.
 %1</source>
         <translation>Данните за техниката за бракуване не бяха запазени.
 %1</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="624"/>
+        <location filename="inventorytableview.cpp" line="656"/>
         <source>Scrapped item:
 %1 %2</source>
         <translation>Бракувана техника:
 %1 %2</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="851"/>
+        <location filename="inventorytableview.cpp" line="883"/>
         <source>Would you like to print the entire table?</source>
         <translation>Желаете ли да отпечатате цялата таблица?</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="852"/>
+        <location filename="inventorytableview.cpp" line="884"/>
         <source>Selection</source>
         <translation>Селекция</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="853"/>
+        <location filename="inventorytableview.cpp" line="885"/>
         <source>Entire table</source>
         <translation>Цялата таблица</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="1332"/>
+        <location filename="inventorytableview.cpp" line="1364"/>
         <source>Property name:</source>
         <translation>Име на характеристика:</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="1341"/>
+        <location filename="inventorytableview.cpp" line="1373"/>
         <source>Can not update database. Sql error:
 %1</source>
         <translation>Не може да се обнови базата данни. Sql грешка:
 %1</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="1358"/>
+        <location filename="inventorytableview.cpp" line="1390"/>
         <source>Properties</source>
         <translation>Характеристики</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="1375"/>
+        <location filename="inventorytableview.cpp" line="1407"/>
         <source>Delete property info:
 %1</source>
         <translation>Информация за изтрита характеристика:
@@ -1019,19 +1063,19 @@ Please contact your system administrator.</source>
 %1</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="634"/>
+        <location filename="inventorytableview.cpp" line="666"/>
         <source>Can not delete item data from table.
 %1</source>
         <translation>Не можа да се премахне техниката от таблицата.
 %1</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="869"/>
+        <location filename="inventorytableview.cpp" line="901"/>
         <source>Print preview: %1</source>
         <translation>Предпечатен изглед: %1</translation>
     </message>
     <message>
-        <location filename="inventorytableview.cpp" line="873"/>
+        <location filename="inventorytableview.cpp" line="905"/>
         <source>Print preview</source>
         <translation>Предпечатен изглед</translation>
     </message>
@@ -1039,104 +1083,109 @@ Please contact your system administrator.</source>
 <context>
     <name>Items</name>
     <message>
-        <location filename="items.ui" line="14"/>
+        <location filename="items.ui" line="17"/>
         <source>Dialog</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="items.ui" line="20"/>
+        <location filename="items.ui" line="23"/>
         <source>Type:</source>
         <translation>Тип:</translation>
     </message>
     <message>
-        <location filename="items.ui" line="205"/>
+        <location filename="items.ui" line="177"/>
+        <source>Attachments:</source>
+        <translation>Приложения</translation>
+    </message>
+    <message>
+        <location filename="items.ui" line="238"/>
         <source>Number:</source>
         <translation>Номер:</translation>
     </message>
     <message>
-        <location filename="items.ui" line="37"/>
-        <location filename="items.ui" line="58"/>
-        <location filename="items.ui" line="86"/>
-        <location filename="items.ui" line="100"/>
-        <location filename="items.ui" line="114"/>
+        <location filename="items.ui" line="40"/>
+        <location filename="items.ui" line="61"/>
+        <location filename="items.ui" line="89"/>
+        <location filename="items.ui" line="103"/>
+        <location filename="items.ui" line="117"/>
         <source>N/A</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="items.ui" line="44"/>
+        <location filename="items.ui" line="47"/>
         <source>Operator:</source>
         <translation>Оператор:</translation>
     </message>
     <message>
-        <location filename="items.ui" line="198"/>
+        <location filename="items.ui" line="231"/>
         <source>IP address:</source>
         <translation>IP адрес:</translation>
     </message>
     <message>
-        <location filename="items.ui" line="65"/>
+        <location filename="items.ui" line="68"/>
         <source>Location:</source>
         <translation>Местоположение:</translation>
     </message>
     <message>
-        <location filename="items.ui" line="79"/>
+        <location filename="items.ui" line="82"/>
         <source>Manufacturer:</source>
         <translation>Производител:</translation>
     </message>
     <message>
-        <location filename="items.ui" line="93"/>
+        <location filename="items.ui" line="96"/>
         <source>Model:</source>
         <translation>Модел:</translation>
     </message>
     <message>
-        <location filename="items.ui" line="107"/>
+        <location filename="items.ui" line="110"/>
         <source>Serial No:</source>
         <translation>Сериен номер:</translation>
     </message>
     <message>
-        <location filename="items.ui" line="148"/>
+        <location filename="items.ui" line="151"/>
         <source>Properties:</source>
         <translation>Характеристики:</translation>
     </message>
     <message>
-        <location filename="items.ui" line="161"/>
+        <location filename="items.ui" line="164"/>
         <source>Note:</source>
         <translation>Забележка:</translation>
     </message>
     <message>
-        <location filename="items.ui" line="121"/>
+        <location filename="items.ui" line="124"/>
         <source>Status:</source>
         <translation>Статус:</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="55"/>
+        <location filename="items.cpp" line="58"/>
         <source>Please, choose a valid item type</source>
         <translation>Моля, изберете валиден тип техника</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="60"/>
+        <location filename="items.cpp" line="63"/>
         <source>Please, choose a valid operator</source>
         <translation>Моля, изберете валиден оператор</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="65"/>
+        <location filename="items.cpp" line="68"/>
         <source>Please, choose a valid location</source>
         <translation>Моля, изберете валидно местоположение</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="70"/>
+        <location filename="items.cpp" line="73"/>
         <source>Please, choose a valid item status</source>
         <translation>Моля, изберете валиден статус техника</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="78"/>
-        <location filename="items.cpp" line="90"/>
-        <location filename="items.cpp" line="175"/>
-        <location filename="items.cpp" line="391"/>
+        <location filename="items.cpp" line="81"/>
+        <location filename="items.cpp" line="93"/>
+        <location filename="items.cpp" line="178"/>
+        <location filename="items.cpp" line="395"/>
         <source>Items</source>
         <translation>Техника</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="79"/>
+        <location filename="items.cpp" line="82"/>
         <source>You have blank fields.
 Do you want to continue?</source>
         <oldsource>You have blank fields.
@@ -1146,7 +1195,7 @@ Do you want to continue?
 Желаете ли да продължите?</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="91"/>
+        <location filename="items.cpp" line="94"/>
         <source>You have defined a new item.
 Must be performed new, automatic allocation.
 Do you want to continue?
@@ -1157,77 +1206,82 @@ This could not be restored!</source>
 Действието е необратимо!</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="108"/>
+        <location filename="items.cpp" line="111"/>
         <source>Can not save item.
 %1</source>
         <translation>Данните за техниката не бяха запазени.
 %1</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="126"/>
+        <location filename="items.cpp" line="129"/>
         <source>Can not fill all item fields.
 %1</source>
         <translation>Не можаха да бъдат попълнени всички полета за техниката.
 %1</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="137"/>
+        <location filename="items.cpp" line="140"/>
         <source>Can not load item information.
 %1</source>
         <translation>Не може да бъде заредена информацията за техниката.
 %1</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="142"/>
+        <location filename="items.cpp" line="145"/>
         <source>New item was defined
 %1</source>
         <translation>Нова техника е била дефинирана
 %1</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="153"/>
+        <location filename="items.cpp" line="156"/>
         <source>Automatic allocation. New item was defined</source>
         <translation>Автоматично разпределение. Нова техника е била дефинирана</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="156"/>
-        <location filename="items.cpp" line="237"/>
+        <location filename="items.cpp" line="159"/>
+        <location filename="items.cpp" line="240"/>
         <source>Can not save item allocation into database.
 %1</source>
         <translation>Разпределението на техниката не можа да бъдат запазено в базата данни.
 %1</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="161"/>
+        <location filename="items.cpp" line="164"/>
         <source>Can not load allocation information.
 %1</source>
         <translation>Не може да бъде заредена информацията за разпределение.
 %1</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="166"/>
+        <location filename="items.cpp" line="169"/>
         <source>New automatic allocation was performed%1</source>
         <translation>Ново автоматично разпределение е направено%1</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="361"/>
+        <location filename="items.cpp" line="365"/>
         <source>Sql error: 
 %1</source>
         <translation>SQL грешка:
 %1</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="385"/>
-        <location filename="items.cpp" line="412"/>
-        <location filename="items.cpp" line="470"/>
-        <location filename="items.cpp" line="486"/>
+        <location filename="items.cpp" line="389"/>
+        <location filename="items.cpp" line="416"/>
+        <location filename="items.cpp" line="474"/>
+        <location filename="items.cpp" line="490"/>
+        <location filename="items.cpp" line="511"/>
+        <location filename="items.cpp" line="601"/>
+        <location filename="items.cpp" line="613"/>
+        <location filename="items.cpp" line="628"/>
+        <location filename="items.cpp" line="635"/>
         <source>Sql error:
 %1</source>
         <translation>SQL грешка:
 %1</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="392"/>
+        <location filename="items.cpp" line="396"/>
         <source>There is already a item with this number.
 Do you want to continue?
 </source>
@@ -1235,16 +1289,84 @@ Do you want to continue?
 Желаете ли да продължите?</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="418"/>
+        <location filename="items.cpp" line="422"/>
         <source>Name</source>
         <translation>Име</translation>
+    </message>
+    <message>
+        <location filename="items.cpp" line="517"/>
+        <source>File name</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <location filename="items.cpp" line="544"/>
+        <source>Can not find data directory!</source>
+        <translation>Не може да бъде намерена директорията за данни!</translation>
+    </message>
+    <message>
+        <location filename="items.cpp" line="549"/>
+        <source>Attachments directory does not exist.
+Try to create it</source>
+        <translation>Директорията за приложения не съществува.
+Опит за създаване</translation>
+    </message>
+    <message>
+        <location filename="items.cpp" line="552"/>
+        <source>Error! Can not create attachments directory. The operation is interrupted</source>
+        <translation>Грешка! Не можа да бъде създадена директория за приложенията. Операцията е прекъсната</translation>
+    </message>
+    <message>
+        <location filename="items.cpp" line="557"/>
+        <source>Attachments directory does not exist. The operation is interrupted</source>
+        <translation>Директорията за приложения не съществува. Операцията е прекъсната</translation>
+    </message>
+    <message>
+        <location filename="items.cpp" line="580"/>
+        <source>File already exists!</source>
+        <translation>Файлът вече съществува!</translation>
+    </message>
+    <message>
+        <location filename="items.cpp" line="584"/>
+        <source>Can not copy file!</source>
+        <translation>Не можа да бъде копиран файл!</translation>
+    </message>
+    <message>
+        <location filename="items.cpp" line="591"/>
+        <source>File was successfully copied:
+%1</source>
+        <translation>Файлът беше успешно копиран:
+%1</translation>
+    </message>
+    <message>
+        <location filename="items.cpp" line="606"/>
+        <source>Attacment: %1 has been added to:
+%2</source>
+        <translation>Приложение: %1 беше добавено към:
+%2</translation>
+    </message>
+    <message>
+        <location filename="items.cpp" line="608"/>
+        <source>Item with id: %1</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="items.cpp" line="645"/>
+        <source>Can not remove file!</source>
+        <translation>Не може да бъде изтрит файл!</translation>
+    </message>
+    <message>
+        <location filename="items.cpp" line="649"/>
+        <source>File was successfully removed:
+%1</source>
+        <translation>Файлът беше успешно премахнат:
+%1</translation>
     </message>
     <message>
         <source>Property</source>
         <translation type="obsolete">Характеристика</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="419"/>
+        <location filename="items.cpp" line="423"/>
         <source>Value</source>
         <translation>Стойност</translation>
     </message>
@@ -1253,7 +1375,7 @@ Do you want to continue?
         <translation type="obsolete">Автоматично разпределение. Нова техника е била дефинирана!</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="176"/>
+        <location filename="items.cpp" line="179"/>
         <source>You have made a change in this item.
 Must be performed new, automatic allocation.
 Do you want to continue?
@@ -1264,42 +1386,42 @@ This could not be restored!</source>
 Действието е необратимо!</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="188"/>
+        <location filename="items.cpp" line="191"/>
         <source>Can not load item info for logging.
 %1</source>
         <translation>Не можаха да бъдат събрани данни относно техниката за журнала.
 %1</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="209"/>
-        <location filename="items.cpp" line="221"/>
+        <location filename="items.cpp" line="212"/>
+        <location filename="items.cpp" line="224"/>
         <source>Can not save item changes.
 %1</source>
         <translation>Промените в техниката не бяха запазени.
 %1</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="234"/>
+        <location filename="items.cpp" line="237"/>
         <source>Automatic allocation. This item was edited!</source>
         <translation>Автоматично разпределение. Тази техника е била редактирана!</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="243"/>
+        <location filename="items.cpp" line="246"/>
         <source>Save edited item: %1</source>
         <translation>Съхранени промени на техника: %1</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="291"/>
+        <location filename="items.cpp" line="294"/>
         <source>Items (%1 item)</source>
         <translation>Техника (%1 техника)</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="291"/>
+        <location filename="items.cpp" line="294"/>
         <source>edit</source>
         <translation>редакция</translation>
     </message>
     <message>
-        <location filename="items.cpp" line="291"/>
+        <location filename="items.cpp" line="294"/>
         <source>new</source>
         <translation>нова</translation>
     </message>
@@ -1431,144 +1553,144 @@ This could not be restored!</source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="mainwindow.ui" line="19"/>
+        <location filename="mainwindow.ui" line="22"/>
         <source>Inventory</source>
         <translation>Инвентаризация</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="43"/>
-        <location filename="mainwindow.cpp" line="739"/>
+        <location filename="mainwindow.ui" line="46"/>
+        <location filename="mainwindow.cpp" line="744"/>
         <source>Database</source>
         <translation>Данни</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="63"/>
+        <location filename="mainwindow.ui" line="66"/>
         <source>Help</source>
         <translation>Помощ</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="71"/>
+        <location filename="mainwindow.ui" line="74"/>
         <source>Operations</source>
         <translation>Операции</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="78"/>
+        <location filename="mainwindow.ui" line="81"/>
         <source>Tools</source>
         <translation>Инструменти</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="82"/>
+        <location filename="mainwindow.ui" line="85"/>
         <source>Languages</source>
         <translation>Езици</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="114"/>
+        <location filename="mainwindow.ui" line="117"/>
         <source>Exit</source>
         <translation>Изход</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="123"/>
-        <location filename="mainwindow.cpp" line="729"/>
+        <location filename="mainwindow.ui" line="126"/>
+        <location filename="mainwindow.cpp" line="734"/>
         <source>Users</source>
         <translation>Потребители</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="132"/>
+        <location filename="mainwindow.ui" line="135"/>
         <source>Open</source>
         <translation>Отваряне</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="141"/>
-        <location filename="mainwindow.cpp" line="730"/>
+        <location filename="mainwindow.ui" line="144"/>
+        <location filename="mainwindow.cpp" line="735"/>
         <source>Items</source>
         <translation>Техника</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="150"/>
-        <location filename="mainwindow.cpp" line="732"/>
+        <location filename="mainwindow.ui" line="153"/>
+        <location filename="mainwindow.cpp" line="737"/>
         <source>Locations</source>
         <translation>Местоположения</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="159"/>
-        <location filename="mainwindow.cpp" line="731"/>
+        <location filename="mainwindow.ui" line="162"/>
+        <location filename="mainwindow.cpp" line="736"/>
         <source>Operators</source>
         <translation>Оператори</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="168"/>
-        <location filename="mainwindow.cpp" line="733"/>
+        <location filename="mainwindow.ui" line="171"/>
+        <location filename="mainwindow.cpp" line="738"/>
         <source>Departments</source>
         <translation>Отдели</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="177"/>
+        <location filename="mainwindow.ui" line="180"/>
         <source>Items types</source>
         <translation>Типове техника</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="186"/>
+        <location filename="mainwindow.ui" line="189"/>
         <source>Items status</source>
         <translation>Статус техника</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="195"/>
+        <location filename="mainwindow.ui" line="198"/>
         <source>About</source>
         <translation>Относно</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="204"/>
-        <location filename="mainwindow.cpp" line="734"/>
+        <location filename="mainwindow.ui" line="207"/>
+        <location filename="mainwindow.cpp" line="739"/>
         <source>Allocations</source>
         <translation>Разпределения</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="213"/>
+        <location filename="mainwindow.ui" line="216"/>
         <source>About Qt</source>
         <translation>Относно Qt</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="222"/>
+        <location filename="mainwindow.ui" line="225"/>
         <source>Change password</source>
         <translation>Смяна на парола</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="231"/>
+        <location filename="mainwindow.ui" line="234"/>
         <source>Logs</source>
         <translation>Логове</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="240"/>
+        <location filename="mainwindow.ui" line="243"/>
         <source>Settings</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="249"/>
+        <location filename="mainwindow.ui" line="252"/>
         <source>SQL Browser</source>
         <translation>SQL Браузър</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="257"/>
+        <location filename="mainwindow.ui" line="260"/>
         <source>English</source>
         <translation>Български</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="265"/>
+        <location filename="mainwindow.ui" line="268"/>
         <source>Bulgarian</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="274"/>
+        <location filename="mainwindow.ui" line="277"/>
         <source>Scrap</source>
         <translation>Брак</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="283"/>
+        <location filename="mainwindow.ui" line="286"/>
         <source>Licensing</source>
         <translation>Лицензиране</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="292"/>
+        <location filename="mainwindow.ui" line="295"/>
         <source>References</source>
         <translation>Справки</translation>
     </message>
@@ -1590,13 +1712,13 @@ E-mail: veni_georgiev@mail.bg</source>
 E-mail: veni_georgiev@mail.bg</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="503"/>
+        <location filename="mainwindow.cpp" line="505"/>
         <source>About Inventory</source>
         <translation>Относно Инвентаризация</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="95"/>
-        <location filename="mainwindow.cpp" line="585"/>
+        <location filename="mainwindow.cpp" line="587"/>
         <source>Wrong database!</source>
         <translation>Повредена база данни!</translation>
     </message>
@@ -1635,22 +1757,33 @@ License expires on: %2 y.</source>
 Лицензът изтича на %2 г.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="585"/>
+        <location filename="mainwindow.cpp" line="502"/>
+        <source>
+
+Current database:
+%1</source>
+        <translation>
+
+Текуща база данни:
+%1</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="587"/>
         <source>Missed fields in table &lt;b&gt;%1&lt;/b&gt; detected:&lt;br&gt;&lt;i&gt;%2&lt;/i&gt;</source>
         <translation>Липсващи полета в таблица &lt;b&gt;%1&lt;/b&gt; са открити: &lt;br&gt;&lt;i&gt;%2&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="588"/>
+        <location filename="mainwindow.cpp" line="590"/>
         <source>Missed fields in table %1 detected: %2</source>
         <translation>Липсващи полета в таблица %1 са открити: %2</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="604"/>
+        <location filename="mainwindow.cpp" line="606"/>
         <source>User has changed his password.</source>
         <translation>Потребителят е променил паролата си.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="739"/>
+        <location filename="mainwindow.cpp" line="744"/>
         <source>Database is &lt;b&gt;locked&lt;/b&gt; from another user of the system.
 You can not edit data.
 If the problem persists, contact your system administrator.</source>
@@ -1686,41 +1819,41 @@ Do you want to update it?</source>
 %1</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="843"/>
+        <location filename="mainwindow.cpp" line="848"/>
         <source>User open SQL Browser</source>
         <translation>Потребителят отваря SQL Браузър</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="853"/>
-        <location filename="mainwindow.cpp" line="869"/>
+        <location filename="mainwindow.cpp" line="858"/>
+        <location filename="mainwindow.cpp" line="874"/>
         <source>Language</source>
         <translation>Български</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="871"/>
+        <location filename="mainwindow.cpp" line="876"/>
         <source>&amp;%1 %2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="944"/>
+        <location filename="mainwindow.cpp" line="949"/>
         <source>Open File</source>
         <translation>Отваряне на файл</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="946"/>
+        <location filename="mainwindow.cpp" line="951"/>
         <source>Licenses (*.lic)</source>
         <translation>Лицензи (*.lic)</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="966"/>
+        <location filename="mainwindow.cpp" line="971"/>
         <source>Old license file backup I/O error!
 </source>
         <translation>I/O грешка при архивиране на лицензен файл!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="968"/>
-        <location filename="mainwindow.cpp" line="979"/>
-        <location filename="mainwindow.cpp" line="1010"/>
+        <location filename="mainwindow.cpp" line="973"/>
+        <location filename="mainwindow.cpp" line="984"/>
+        <location filename="mainwindow.cpp" line="1015"/>
         <source>Invalid license file and / or license information! 
 
 %1</source>
@@ -1729,88 +1862,88 @@ Do you want to update it?</source>
 %1</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="977"/>
+        <location filename="mainwindow.cpp" line="982"/>
         <source>Old license file remove error!
 </source>
         <translation>Грешка при изтриване на стар лиценз!
 </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="989"/>
+        <location filename="mainwindow.cpp" line="994"/>
         <source>The new license information was taken.</source>
         <translation>Новата лицензна информация беше възприета.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="995"/>
+        <location filename="mainwindow.cpp" line="1000"/>
         <source>License file copy error!
 </source>
         <translation>Грешка при копиране на лицензен файл!
 </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="999"/>
+        <location filename="mainwindow.cpp" line="1004"/>
         <source>Expired license file!
 </source>
         <translation>Изтекъл лиценз!
 </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1001"/>
+        <location filename="mainwindow.cpp" line="1006"/>
         <source>Invalid period content!
 </source>
         <translation>Невалиден период!
 </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1003"/>
+        <location filename="mainwindow.cpp" line="1008"/>
         <source>This license file is for another program!
 </source>
         <translation>Този лиценз е за друга програма!
 </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1005"/>
+        <location filename="mainwindow.cpp" line="1010"/>
         <source>Invalid license content!
 </source>
         <translation>Невалидно лицензно съдържание!
 </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1007"/>
+        <location filename="mainwindow.cpp" line="1012"/>
         <source>Empty license file!
 </source>
         <translation>Празен лицензен файл!
 </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1020"/>
+        <location filename="mainwindow.cpp" line="1025"/>
         <source>License missing warning</source>
         <translation>Предупреждение за липсващ лиценз</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1021"/>
+        <location filename="mainwindow.cpp" line="1026"/>
         <source>License missing</source>
         <translation>Липсващ лиценз</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1021"/>
+        <location filename="mainwindow.cpp" line="1026"/>
         <source>You are working with unregistered version of this program!
 Please contact your system administrator!</source>
         <translation>Вие работите с нерегистрирана версия на тази програма!
 Моля, свържете се със системния администратор!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1026"/>
+        <location filename="mainwindow.cpp" line="1031"/>
         <source>License expired warning</source>
         <translation>Предупреждение за изтекъл лиценз</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1027"/>
+        <location filename="mainwindow.cpp" line="1032"/>
         <source>License expired</source>
         <translation>Изтекъл лиценз</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="1027"/>
+        <location filename="mainwindow.cpp" line="1032"/>
         <source>The period for using on your license has expired!
 Please contact your system administrator!</source>
         <translation>Периодът за ползване на този лиценз е изтекъл!
@@ -2166,12 +2299,22 @@ Please contact your system administrator!</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="settings.ui" line="239"/>
+        <location filename="settings.ui" line="225"/>
+        <source>Disable editing item operator</source>
+        <translation>Забрана за редактиране оператор на техника</translation>
+    </message>
+    <message>
+        <location filename="settings.ui" line="232"/>
+        <source>Disable editing item location</source>
+        <translation>Забрана за редактиране местоположение на техника</translation>
+    </message>
+    <message>
+        <location filename="settings.ui" line="253"/>
         <source>Reset font</source>
         <translation>Нулиране на шрифт</translation>
     </message>
     <message>
-        <location filename="settings.ui" line="242"/>
+        <location filename="settings.ui" line="256"/>
         <source>Reset font to defaults</source>
         <translation>Нулиране на шрифта до подразбиращи настройки</translation>
     </message>
@@ -2285,7 +2428,7 @@ Please contact your system administrator!</source>
     </message>
     <message>
         <location filename="tableform.ui" line="160"/>
-        <location filename="tableform.cpp" line="264"/>
+        <location filename="tableform.cpp" line="265"/>
         <source>Details</source>
         <translation>Детайли</translation>
     </message>
@@ -2300,12 +2443,12 @@ Please contact your system administrator!</source>
         <translation>Експорт на данните към csv</translation>
     </message>
     <message>
-        <location filename="tableform.ui" line="307"/>
+        <location filename="tableform.ui" line="316"/>
         <source>Set filter:</source>
         <translation>Филтър:</translation>
     </message>
     <message>
-        <location filename="tableform.ui" line="314"/>
+        <location filename="tableform.ui" line="323"/>
         <source>x</source>
         <translation></translation>
     </message>
@@ -2325,290 +2468,293 @@ Please contact your system administrator!</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="99"/>
-        <location filename="tableform.cpp" line="1288"/>
+        <location filename="tableform.cpp" line="100"/>
+        <location filename="tableform.cpp" line="1291"/>
         <source>Users</source>
         <translation>Потребители</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="102"/>
-        <location filename="tableform.cpp" line="1968"/>
-        <location filename="tableform.cpp" line="1991"/>
+        <location filename="tableform.cpp" line="103"/>
+        <location filename="tableform.cpp" line="1971"/>
+        <location filename="tableform.cpp" line="1994"/>
         <source>User</source>
         <translation>Потребител</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="103"/>
-        <location filename="tableform.cpp" line="1969"/>
-        <location filename="tableform.cpp" line="1992"/>
+        <location filename="tableform.cpp" line="104"/>
+        <location filename="tableform.cpp" line="1972"/>
+        <location filename="tableform.cpp" line="1995"/>
         <source>First name</source>
         <translation>Име</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="104"/>
-        <location filename="tableform.cpp" line="1970"/>
-        <location filename="tableform.cpp" line="1994"/>
+        <location filename="tableform.cpp" line="105"/>
+        <location filename="tableform.cpp" line="1973"/>
+        <location filename="tableform.cpp" line="1997"/>
         <source>Last name</source>
         <translation>Фамилия</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="105"/>
-        <location filename="tableform.cpp" line="1971"/>
-        <location filename="tableform.cpp" line="1993"/>
+        <location filename="tableform.cpp" line="106"/>
+        <location filename="tableform.cpp" line="1974"/>
+        <location filename="tableform.cpp" line="1996"/>
         <source>E-mail</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="108"/>
-        <location filename="tableform.cpp" line="1219"/>
-        <location filename="tableform.cpp" line="1266"/>
+        <location filename="tableform.cpp" line="109"/>
+        <location filename="tableform.cpp" line="1222"/>
+        <location filename="tableform.cpp" line="1269"/>
         <source>Items</source>
         <translation>Техника</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="118"/>
-        <location filename="tableform.cpp" line="1324"/>
+        <location filename="tableform.cpp" line="119"/>
+        <location filename="tableform.cpp" line="1327"/>
         <source>Locations</source>
         <translation>Местоположения</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="120"/>
-        <location filename="tableform.cpp" line="232"/>
-        <location filename="tableform.cpp" line="241"/>
-        <location filename="tableform.cpp" line="276"/>
-        <location filename="tableform.cpp" line="906"/>
-        <location filename="tableform.cpp" line="1960"/>
-        <location filename="tableform.cpp" line="1983"/>
+        <location filename="tableform.cpp" line="121"/>
+        <location filename="tableform.cpp" line="233"/>
+        <location filename="tableform.cpp" line="242"/>
+        <location filename="tableform.cpp" line="277"/>
+        <location filename="tableform.cpp" line="907"/>
+        <location filename="tableform.cpp" line="1963"/>
+        <location filename="tableform.cpp" line="1986"/>
         <source>Location</source>
         <translation>Местоположение</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="126"/>
-        <location filename="tableform.cpp" line="1499"/>
+        <location filename="tableform.cpp" line="127"/>
+        <location filename="tableform.cpp" line="1502"/>
         <source>Operators</source>
         <translation>Оператори</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="133"/>
+        <location filename="tableform.cpp" line="134"/>
         <source>Items status</source>
         <translation>Статус техника</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="135"/>
-        <location filename="tableform.cpp" line="240"/>
-        <location filename="tableform.cpp" line="905"/>
-        <location filename="tableform.cpp" line="1958"/>
-        <location filename="tableform.cpp" line="1981"/>
+        <location filename="tableform.cpp" line="136"/>
+        <location filename="tableform.cpp" line="241"/>
+        <location filename="tableform.cpp" line="906"/>
+        <location filename="tableform.cpp" line="1961"/>
+        <location filename="tableform.cpp" line="1984"/>
         <source>Status</source>
         <translation>Статус</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="140"/>
+        <location filename="tableform.cpp" line="141"/>
         <source>Items types</source>
         <translation>Типове техника</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="142"/>
-        <location filename="tableform.cpp" line="239"/>
-        <location filename="tableform.cpp" line="275"/>
-        <location filename="tableform.cpp" line="904"/>
-        <location filename="tableform.cpp" line="1964"/>
-        <location filename="tableform.cpp" line="1987"/>
+        <location filename="tableform.cpp" line="143"/>
+        <location filename="tableform.cpp" line="240"/>
+        <location filename="tableform.cpp" line="276"/>
+        <location filename="tableform.cpp" line="905"/>
+        <location filename="tableform.cpp" line="1967"/>
+        <location filename="tableform.cpp" line="1990"/>
         <source>Type</source>
         <translation>Тип</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="147"/>
-        <location filename="tableform.cpp" line="1630"/>
+        <location filename="tableform.cpp" line="148"/>
+        <location filename="tableform.cpp" line="1633"/>
         <source>Departments</source>
         <translation>Отдели</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="149"/>
-        <location filename="tableform.cpp" line="253"/>
-        <location filename="tableform.cpp" line="1973"/>
-        <location filename="tableform.cpp" line="1996"/>
+        <location filename="tableform.cpp" line="150"/>
+        <location filename="tableform.cpp" line="254"/>
+        <location filename="tableform.cpp" line="1976"/>
+        <location filename="tableform.cpp" line="1999"/>
         <source>Department</source>
         <translation>Отдел</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="154"/>
+        <location filename="tableform.cpp" line="155"/>
         <source>Allocations</source>
         <translation>Разпределения</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="164"/>
-        <location filename="tableform.cpp" line="169"/>
-        <location filename="tableform.cpp" line="174"/>
-        <location filename="tableform.cpp" line="183"/>
-        <location filename="tableform.cpp" line="188"/>
-        <location filename="tableform.cpp" line="193"/>
-        <location filename="tableform.cpp" line="327"/>
-        <location filename="tableform.cpp" line="822"/>
-        <location filename="tableform.cpp" line="1183"/>
-        <location filename="tableform.cpp" line="1194"/>
-        <location filename="tableform.cpp" line="1215"/>
-        <location filename="tableform.cpp" line="1254"/>
-        <location filename="tableform.cpp" line="1276"/>
-        <location filename="tableform.cpp" line="1297"/>
-        <location filename="tableform.cpp" line="1332"/>
-        <location filename="tableform.cpp" line="1343"/>
-        <location filename="tableform.cpp" line="1354"/>
-        <location filename="tableform.cpp" line="1378"/>
-        <location filename="tableform.cpp" line="1393"/>
-        <location filename="tableform.cpp" line="1417"/>
-        <location filename="tableform.cpp" line="1432"/>
-        <location filename="tableform.cpp" line="1463"/>
-        <location filename="tableform.cpp" line="1477"/>
-        <location filename="tableform.cpp" line="1507"/>
-        <location filename="tableform.cpp" line="1519"/>
-        <location filename="tableform.cpp" line="1530"/>
-        <location filename="tableform.cpp" line="1554"/>
-        <location filename="tableform.cpp" line="1569"/>
-        <location filename="tableform.cpp" line="1593"/>
-        <location filename="tableform.cpp" line="1608"/>
-        <location filename="tableform.cpp" line="1638"/>
-        <location filename="tableform.cpp" line="1649"/>
-        <location filename="tableform.cpp" line="1672"/>
-        <location filename="tableform.cpp" line="1679"/>
-        <location filename="tableform.cpp" line="1694"/>
-        <location filename="tableform.cpp" line="1702"/>
-        <location filename="tableform.cpp" line="1717"/>
-        <location filename="tableform.cpp" line="1724"/>
-        <location filename="tableform.cpp" line="1739"/>
-        <location filename="tableform.cpp" line="1746"/>
-        <location filename="tableform.cpp" line="1761"/>
-        <location filename="tableform.cpp" line="1768"/>
-        <location filename="tableform.cpp" line="1791"/>
-        <location filename="tableform.cpp" line="1804"/>
-        <location filename="tableform.cpp" line="1910"/>
-        <location filename="tableform.cpp" line="2093"/>
+        <location filename="tableform.cpp" line="165"/>
+        <location filename="tableform.cpp" line="170"/>
+        <location filename="tableform.cpp" line="175"/>
+        <location filename="tableform.cpp" line="184"/>
+        <location filename="tableform.cpp" line="189"/>
+        <location filename="tableform.cpp" line="194"/>
+        <location filename="tableform.cpp" line="328"/>
+        <location filename="tableform.cpp" line="823"/>
+        <location filename="tableform.cpp" line="1186"/>
+        <location filename="tableform.cpp" line="1197"/>
+        <location filename="tableform.cpp" line="1218"/>
+        <location filename="tableform.cpp" line="1257"/>
+        <location filename="tableform.cpp" line="1279"/>
+        <location filename="tableform.cpp" line="1300"/>
+        <location filename="tableform.cpp" line="1335"/>
+        <location filename="tableform.cpp" line="1346"/>
+        <location filename="tableform.cpp" line="1357"/>
+        <location filename="tableform.cpp" line="1381"/>
+        <location filename="tableform.cpp" line="1396"/>
+        <location filename="tableform.cpp" line="1420"/>
+        <location filename="tableform.cpp" line="1435"/>
+        <location filename="tableform.cpp" line="1466"/>
+        <location filename="tableform.cpp" line="1480"/>
+        <location filename="tableform.cpp" line="1510"/>
+        <location filename="tableform.cpp" line="1522"/>
+        <location filename="tableform.cpp" line="1533"/>
+        <location filename="tableform.cpp" line="1557"/>
+        <location filename="tableform.cpp" line="1572"/>
+        <location filename="tableform.cpp" line="1596"/>
+        <location filename="tableform.cpp" line="1611"/>
+        <location filename="tableform.cpp" line="1641"/>
+        <location filename="tableform.cpp" line="1652"/>
+        <location filename="tableform.cpp" line="1675"/>
+        <location filename="tableform.cpp" line="1682"/>
+        <location filename="tableform.cpp" line="1697"/>
+        <location filename="tableform.cpp" line="1705"/>
+        <location filename="tableform.cpp" line="1720"/>
+        <location filename="tableform.cpp" line="1727"/>
+        <location filename="tableform.cpp" line="1742"/>
+        <location filename="tableform.cpp" line="1749"/>
+        <location filename="tableform.cpp" line="1764"/>
+        <location filename="tableform.cpp" line="1771"/>
+        <location filename="tableform.cpp" line="1794"/>
+        <location filename="tableform.cpp" line="1807"/>
+        <location filename="tableform.cpp" line="1913"/>
+        <location filename="tableform.cpp" line="2096"/>
+        <location filename="tableform.cpp" line="2221"/>
+        <location filename="tableform.cpp" line="2233"/>
+        <location filename="tableform.cpp" line="2245"/>
         <source>Sql error:
 %1</source>
         <translation>SQL грешка:
 %1</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="202"/>
-        <location filename="tableform.cpp" line="1894"/>
+        <location filename="tableform.cpp" line="203"/>
+        <location filename="tableform.cpp" line="1897"/>
         <source>Logs</source>
         <translation>Логове</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="229"/>
-        <location filename="tableform.cpp" line="260"/>
-        <location filename="tableform.cpp" line="1975"/>
-        <location filename="tableform.cpp" line="1998"/>
+        <location filename="tableform.cpp" line="230"/>
+        <location filename="tableform.cpp" line="261"/>
+        <location filename="tableform.cpp" line="1978"/>
+        <location filename="tableform.cpp" line="2001"/>
         <source>Date</source>
         <translation>Дата</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="230"/>
-        <location filename="tableform.cpp" line="247"/>
-        <location filename="tableform.cpp" line="282"/>
-        <location filename="tableform.cpp" line="912"/>
-        <location filename="tableform.cpp" line="1965"/>
-        <location filename="tableform.cpp" line="1988"/>
+        <location filename="tableform.cpp" line="231"/>
+        <location filename="tableform.cpp" line="248"/>
+        <location filename="tableform.cpp" line="283"/>
+        <location filename="tableform.cpp" line="913"/>
+        <location filename="tableform.cpp" line="1968"/>
+        <location filename="tableform.cpp" line="1991"/>
         <source>Number</source>
         <translation>Номер</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="231"/>
-        <location filename="tableform.cpp" line="1976"/>
-        <location filename="tableform.cpp" line="1999"/>
+        <location filename="tableform.cpp" line="232"/>
+        <location filename="tableform.cpp" line="1979"/>
+        <location filename="tableform.cpp" line="2002"/>
         <source>Old location</source>
         <translation>Старо местоположение</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="233"/>
-        <location filename="tableform.cpp" line="1977"/>
-        <location filename="tableform.cpp" line="2000"/>
+        <location filename="tableform.cpp" line="234"/>
+        <location filename="tableform.cpp" line="1980"/>
+        <location filename="tableform.cpp" line="2003"/>
         <source>Old name</source>
         <translation>Старо име</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="234"/>
-        <location filename="tableform.cpp" line="248"/>
-        <location filename="tableform.cpp" line="251"/>
-        <location filename="tableform.cpp" line="913"/>
-        <location filename="tableform.cpp" line="1966"/>
-        <location filename="tableform.cpp" line="1989"/>
+        <location filename="tableform.cpp" line="235"/>
+        <location filename="tableform.cpp" line="249"/>
+        <location filename="tableform.cpp" line="252"/>
+        <location filename="tableform.cpp" line="914"/>
+        <location filename="tableform.cpp" line="1969"/>
+        <location filename="tableform.cpp" line="1992"/>
         <source>Name</source>
         <translation>Име</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="121"/>
-        <location filename="tableform.cpp" line="235"/>
-        <location filename="tableform.cpp" line="243"/>
-        <location filename="tableform.cpp" line="252"/>
-        <location filename="tableform.cpp" line="278"/>
-        <location filename="tableform.cpp" line="908"/>
-        <location filename="tableform.cpp" line="1959"/>
-        <location filename="tableform.cpp" line="1982"/>
+        <location filename="tableform.cpp" line="122"/>
+        <location filename="tableform.cpp" line="236"/>
+        <location filename="tableform.cpp" line="244"/>
+        <location filename="tableform.cpp" line="253"/>
+        <location filename="tableform.cpp" line="279"/>
+        <location filename="tableform.cpp" line="909"/>
+        <location filename="tableform.cpp" line="1962"/>
+        <location filename="tableform.cpp" line="1985"/>
         <source>Note</source>
         <translation>Забележка</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="207"/>
+        <location filename="tableform.cpp" line="208"/>
         <source>Scrap</source>
         <translation>Брак</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="242"/>
-        <location filename="tableform.cpp" line="277"/>
-        <location filename="tableform.cpp" line="907"/>
+        <location filename="tableform.cpp" line="243"/>
+        <location filename="tableform.cpp" line="278"/>
+        <location filename="tableform.cpp" line="908"/>
         <source>IP address</source>
         <translation>IP адрес</translation>
-    </message>
-    <message>
-        <location filename="tableform.cpp" line="244"/>
-        <location filename="tableform.cpp" line="279"/>
-        <location filename="tableform.cpp" line="909"/>
-        <location filename="tableform.cpp" line="1961"/>
-        <location filename="tableform.cpp" line="1984"/>
-        <source>Model</source>
-        <translation>Модел</translation>
     </message>
     <message>
         <location filename="tableform.cpp" line="245"/>
         <location filename="tableform.cpp" line="280"/>
         <location filename="tableform.cpp" line="910"/>
-        <location filename="tableform.cpp" line="1962"/>
-        <location filename="tableform.cpp" line="1985"/>
-        <source>Manufacturer</source>
-        <translation>Производител</translation>
+        <location filename="tableform.cpp" line="1964"/>
+        <location filename="tableform.cpp" line="1987"/>
+        <source>Model</source>
+        <translation>Модел</translation>
     </message>
     <message>
         <location filename="tableform.cpp" line="246"/>
         <location filename="tableform.cpp" line="281"/>
         <location filename="tableform.cpp" line="911"/>
-        <location filename="tableform.cpp" line="1963"/>
-        <location filename="tableform.cpp" line="1986"/>
+        <location filename="tableform.cpp" line="1965"/>
+        <location filename="tableform.cpp" line="1988"/>
+        <source>Manufacturer</source>
+        <translation>Производител</translation>
+    </message>
+    <message>
+        <location filename="tableform.cpp" line="247"/>
+        <location filename="tableform.cpp" line="282"/>
+        <location filename="tableform.cpp" line="912"/>
+        <location filename="tableform.cpp" line="1966"/>
+        <location filename="tableform.cpp" line="1989"/>
         <source>Serial No</source>
         <translation>Сериен номер</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="261"/>
+        <location filename="tableform.cpp" line="262"/>
         <source>Username</source>
         <translation>Потребител</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="262"/>
+        <location filename="tableform.cpp" line="263"/>
         <source>Table</source>
         <translation>Таблица</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="263"/>
+        <location filename="tableform.cpp" line="264"/>
         <source>Action</source>
         <translation>Действие</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="283"/>
+        <location filename="tableform.cpp" line="284"/>
         <source>Operator</source>
         <translation>Оператор</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="284"/>
+        <location filename="tableform.cpp" line="285"/>
         <source>Reason</source>
         <translation>Основание</translation>
     </message>
@@ -2617,222 +2763,230 @@ Please contact your system administrator!</source>
         <translation type="obsolete">Данни за разпределения</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="367"/>
+        <location filename="tableform.cpp" line="368"/>
         <source>Add item type</source>
         <translation>Добавяне на тип техника</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="368"/>
+        <location filename="tableform.cpp" line="369"/>
         <source>Item type:</source>
         <translation>Тип техника:</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="375"/>
-        <location filename="tableform.cpp" line="397"/>
-        <location filename="tableform.cpp" line="419"/>
-        <location filename="tableform.cpp" line="443"/>
-        <location filename="tableform.cpp" line="465"/>
+        <location filename="tableform.cpp" line="376"/>
+        <location filename="tableform.cpp" line="398"/>
+        <location filename="tableform.cpp" line="420"/>
+        <location filename="tableform.cpp" line="444"/>
+        <location filename="tableform.cpp" line="466"/>
         <source>Can not write into database. Sql error:
 %1</source>
         <translation>Не може да се записва в базата данни. Sql грешка:
 %1</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="389"/>
+        <location filename="tableform.cpp" line="390"/>
         <source>Add item status</source>
         <translation>Добавяне статус на техника</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="390"/>
+        <location filename="tableform.cpp" line="391"/>
         <source>Item status:</source>
         <translation>Статус на техника:</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="411"/>
+        <location filename="tableform.cpp" line="412"/>
         <source>Add location</source>
         <translation>Добавяне на местоположение</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="412"/>
+        <location filename="tableform.cpp" line="413"/>
         <source>Location:</source>
         <translation>Местоположение:</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="433"/>
+        <location filename="tableform.cpp" line="434"/>
         <source>Add operator</source>
         <translation>Добавяне на оператор</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="434"/>
+        <location filename="tableform.cpp" line="435"/>
         <source>Operator:</source>
         <translation>Оператор:</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="457"/>
+        <location filename="tableform.cpp" line="458"/>
         <source>Add department</source>
         <translation>Добавяне на отдел</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="458"/>
+        <location filename="tableform.cpp" line="459"/>
         <source>Department:</source>
         <translation>Отдел:</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="537"/>
+        <location filename="tableform.cpp" line="538"/>
         <source>Inventory</source>
         <translation>Инвентаризация</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="538"/>
+        <location filename="tableform.cpp" line="539"/>
         <source>There are unsaved changes.
 Do you want to save?</source>
         <translation>Има незапазени промени.
 Искате ли да ги съхраните?</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="570"/>
-        <location filename="tableform.cpp" line="594"/>
+        <location filename="tableform.cpp" line="571"/>
+        <location filename="tableform.cpp" line="595"/>
         <source>All</source>
         <translation>Всички</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="685"/>
+        <location filename="tableform.cpp" line="686"/>
         <source>You are not authorized to perform this operation!
 Please contact your system administrator.</source>
         <translation>Нямате права за да извършите тази операция!
 Моля, свържете се с вашия системен администратор.</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="702"/>
+        <location filename="tableform.cpp" line="703"/>
         <source> (read only)</source>
         <translation>(само за четене)</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="764"/>
+        <location filename="tableform.cpp" line="765"/>
         <source>Open File</source>
         <translation>Отваряне на файл</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="772"/>
+        <location filename="tableform.cpp" line="773"/>
+        <location filename="tableform.cpp" line="2164"/>
         <source>Can not find data directory!</source>
         <translation>Не може да бъде намерена директорията за данни!</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="777"/>
+        <location filename="tableform.cpp" line="778"/>
+        <location filename="tableform.cpp" line="2169"/>
         <source>Attachments directory does not exist.
 Try to create it</source>
         <translation>Директорията за приложения не съществува.
 Опит за създаване</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="780"/>
+        <location filename="tableform.cpp" line="781"/>
+        <location filename="tableform.cpp" line="2172"/>
         <source>Error! Can not create attachments directory. The operation is interrupted</source>
         <translation>Грешка! Не можа да бъде създадена директория за приложенията. Операцията е прекъсната</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="785"/>
+        <location filename="tableform.cpp" line="786"/>
+        <location filename="tableform.cpp" line="2177"/>
         <source>Attachments directory does not exist. The operation is interrupted</source>
         <translation>Директорията за приложения не съществува. Операцията е прекъсната</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="797"/>
+        <location filename="tableform.cpp" line="798"/>
+        <location filename="tableform.cpp" line="2199"/>
         <source>File already exists!</source>
         <translation>Файлът вече съществува!</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="801"/>
+        <location filename="tableform.cpp" line="802"/>
+        <location filename="tableform.cpp" line="2203"/>
         <source>Can not copy file!</source>
         <translation>Не можа да бъде копиран файл!</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="808"/>
+        <location filename="tableform.cpp" line="809"/>
+        <location filename="tableform.cpp" line="2210"/>
         <source>File was successfully copied:
 %1</source>
         <translation>Файлът беше успешно копиран:
 %1</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="827"/>
+        <location filename="tableform.cpp" line="828"/>
+        <location filename="tableform.cpp" line="2238"/>
         <source>Attacment: %1 has been added to:
 %2</source>
         <translation>Приложение: %1 беше добавено към:
 %2</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="938"/>
+        <location filename="tableform.cpp" line="941"/>
         <source>Show attachments</source>
         <translation>Покажи приложенията</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="941"/>
+        <location filename="tableform.cpp" line="944"/>
         <source>Shows attachments associated with the selected row</source>
         <translation>Показване на приложенията, асоциирани към избрания ред</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="952"/>
+        <location filename="tableform.cpp" line="955"/>
         <source>Show items</source>
         <translation>Покажи техниката</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="955"/>
+        <location filename="tableform.cpp" line="958"/>
         <source>Shows items associated with the selected row</source>
         <translation>Показва техниките, асоциирани към избрания ред</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="962"/>
+        <location filename="tableform.cpp" line="965"/>
         <source>Show users rights</source>
         <translation>Покажи потребителските права</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="971"/>
-        <location filename="tableform.cpp" line="980"/>
+        <location filename="tableform.cpp" line="974"/>
+        <location filename="tableform.cpp" line="983"/>
         <source>Show properties</source>
         <translation>Покажи характеристиките</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="974"/>
+        <location filename="tableform.cpp" line="977"/>
         <source>Shows properties associated with the selected item type</source>
         <translation>Показва характеристиките, асоциирани към избрания тип</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="983"/>
+        <location filename="tableform.cpp" line="986"/>
         <source>Shows properties of selected item</source>
         <translation>Показва характеристиките на избраната техника</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1027"/>
+        <location filename="tableform.cpp" line="1030"/>
         <source>File name</source>
         <translation>Файл</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1127"/>
+        <location filename="tableform.cpp" line="1130"/>
         <source>Editing of NULL item is not allowed!</source>
         <translation>Редакция на NULL техника не е позволена!</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1170"/>
+        <location filename="tableform.cpp" line="1173"/>
         <source>Deletion of NULL item type is not allowed!</source>
         <translation>Редакция на NULL тип техника не е позволена!</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1175"/>
+        <location filename="tableform.cpp" line="1178"/>
         <source>Item types</source>
         <translation>Типове техника</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1176"/>
+        <location filename="tableform.cpp" line="1179"/>
         <source>Do you want to delete type %1?
 This could not be restored!</source>
         <translation>Искате ли да изтриете тип %1?
 Действието е необратимо!</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1206"/>
+        <location filename="tableform.cpp" line="1209"/>
         <source>Deletion of NULL item is not allowed!</source>
         <translation>Изтриване на NULL техника не е позволено!</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1220"/>
+        <location filename="tableform.cpp" line="1223"/>
         <source>Do you want to delete %1 %2?
 This could not be restored!
 This item is found in some allocations.
@@ -2843,7 +2997,7 @@ Will be made automatically reset of the these allocations!</source>
 Ще бъде извършено служебно нулиране на тези разпределения!</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1228"/>
+        <location filename="tableform.cpp" line="1231"/>
         <source>Revised allocation. Deleted item:
 type: %1, manufacturer: %2, number: %3
 serialNo: %4, IP: %5, note: %6
@@ -2856,62 +3010,62 @@ name: %9.</source>
 име: %9.</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1243"/>
+        <location filename="tableform.cpp" line="1246"/>
         <source>
 Previous allocation date: %1</source>
         <translation>
 Предходна дата на разпределение: %1</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1244"/>
+        <location filename="tableform.cpp" line="1247"/>
         <source>
 Previous allocation note: %1</source>
         <translation>
 Предходна забележка на разпределение: %1</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1259"/>
+        <location filename="tableform.cpp" line="1262"/>
         <source>Update allocation:
 %1</source>
         <translation>Обновяване на разпределение:
 %1</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1267"/>
+        <location filename="tableform.cpp" line="1270"/>
         <source>Do you want to delete %1 %2?
 This could not be restored!</source>
         <translation>Искате ли да изтриете %1 %2?
 Действието е необратимо!</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1280"/>
+        <location filename="tableform.cpp" line="1283"/>
         <source>Deleted item:
 %1</source>
         <translation>Изтрита техника:
 %1</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1289"/>
-        <location filename="tableform.cpp" line="1325"/>
-        <location filename="tableform.cpp" line="1500"/>
-        <location filename="tableform.cpp" line="1631"/>
+        <location filename="tableform.cpp" line="1292"/>
+        <location filename="tableform.cpp" line="1328"/>
+        <location filename="tableform.cpp" line="1503"/>
+        <location filename="tableform.cpp" line="1634"/>
         <source>Do you want to delete %1?
 This could not be restored!</source>
         <translation>Искате ли да изтриете %1?
 Действието е необратимо!</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1319"/>
+        <location filename="tableform.cpp" line="1322"/>
         <source>Deletion of NULL locaton is not allowed!</source>
         <translation>Изтриване на NULL местоположение не е позволено!</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1348"/>
+        <location filename="tableform.cpp" line="1351"/>
         <source>Set null location id for items with location id: %1</source>
         <translation>Задаване на null местоположение за разпределение с id: %1</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1370"/>
+        <location filename="tableform.cpp" line="1373"/>
         <source>Automatic allocation. Deleted location:
 From: %1
 Revised allocation with id: %2,
@@ -2924,10 +3078,10 @@ note: %4</source>
 забележка: %4</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1383"/>
-        <location filename="tableform.cpp" line="1422"/>
-        <location filename="tableform.cpp" line="1559"/>
-        <location filename="tableform.cpp" line="1598"/>
+        <location filename="tableform.cpp" line="1386"/>
+        <location filename="tableform.cpp" line="1425"/>
+        <location filename="tableform.cpp" line="1562"/>
+        <location filename="tableform.cpp" line="1601"/>
         <source>Automatic create allocation, copy of allocation:
 %1
 Inserted id: %2</source>
@@ -2936,7 +3090,7 @@ Inserted id: %2</source>
 Вмъкнат id: %2</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1409"/>
+        <location filename="tableform.cpp" line="1412"/>
         <source>Automatic allocation. Deleted location:
 To: %1
 Revised allocation with id: %2,
@@ -2949,44 +3103,44 @@ note: %4</source>
 забележка: %4</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1437"/>
+        <location filename="tableform.cpp" line="1440"/>
         <source>Delete allocations with location id: %1</source>
         <translation>Изтриване на разпределения с id на местоположение: %1</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1450"/>
+        <location filename="tableform.cpp" line="1453"/>
         <source>Deletion of NULL item status is not allowed!</source>
         <translation>Изтриване на NULL тип техника не е позволено!</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1455"/>
+        <location filename="tableform.cpp" line="1458"/>
         <source>Item status</source>
         <translation>Статус техника</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1456"/>
+        <location filename="tableform.cpp" line="1459"/>
         <source>Do you want to delete %1 status?
 This could not be restored!</source>
         <translation>Искате ли да изтриете статус %1?
 Действието е необратимо!</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1482"/>
+        <location filename="tableform.cpp" line="1485"/>
         <source>Update items with deleted status id: %1</source>
         <translation>Обновяване на техника с изтрит тих техника id: %1</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1494"/>
+        <location filename="tableform.cpp" line="1497"/>
         <source>Deletion of NULL operator is not allowed!</source>
         <translation>Изтриване на NULL оператор не е позволено!</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1524"/>
+        <location filename="tableform.cpp" line="1527"/>
         <source>Update all items with operator id: %1</source>
         <translation>Обновяване на техника с id на оператор: %1</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1546"/>
+        <location filename="tableform.cpp" line="1549"/>
         <source>Automatic allocation. Deleted operator:
 From: %1
 Revised allocation with id: %2,
@@ -2999,7 +3153,7 @@ note: %4</source>
 забележка: %4</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1585"/>
+        <location filename="tableform.cpp" line="1588"/>
         <source>Automatic allocation. Deleted operator:
 To: %1
 Revised allocation with id: %2,
@@ -3012,75 +3166,80 @@ note: %4</source>
 забележка: %4</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1613"/>
+        <location filename="tableform.cpp" line="1616"/>
         <source>Delete allocations with deleted operator id: %1</source>
         <translation>Изтриване на разпределения с id на оператор: %1</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1625"/>
+        <location filename="tableform.cpp" line="1628"/>
         <source>Deletion of NULL department is not allowed!</source>
         <translation>Изтриване на NUL Lотдел не е позволено!</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1654"/>
+        <location filename="tableform.cpp" line="1657"/>
         <source>Update operators with deleted department id: %1</source>
         <translation>Обновяване на оператори с изтрит отдел id: %1</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="2072"/>
+        <location filename="tableform.cpp" line="2075"/>
         <source>Properties</source>
         <translation>Характеристики</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="2083"/>
+        <location filename="tableform.cpp" line="2086"/>
         <source>%1 (new property)</source>
         <translation>%1 (нова характеристика)</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="2084"/>
+        <location filename="tableform.cpp" line="2087"/>
         <source>Property name:</source>
         <translation>Име на характеристика:</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="2098"/>
+        <location filename="tableform.cpp" line="2101"/>
         <source>Property: %1 has been added to:
 %2</source>
         <translation>Характеристика: %1 беше добавена към:
 %2</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="2146"/>
+        <location filename="tableform.cpp" line="2147"/>
         <source>Property</source>
         <translation>Характеристика</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="2147"/>
+        <location filename="tableform.cpp" line="2148"/>
         <source>Value</source>
         <translation>Стойност</translation>
+    </message>
+    <message>
+        <location filename="tableform.cpp" line="2240"/>
+        <source>Item with id: %1</source>
+        <translation>Техника с id: %1</translation>
     </message>
     <message>
         <source>Print preview: %1</source>
         <translation type="obsolete">Предпечатен изглед: %1</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1816"/>
+        <location filename="tableform.cpp" line="1819"/>
         <source>Export CSV</source>
         <translation>Експорт към CSV</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1818"/>
+        <location filename="tableform.cpp" line="1821"/>
         <source>Comma Separated Values (*.csv)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1895"/>
+        <location filename="tableform.cpp" line="1898"/>
         <source>Do you want to delete this %1 logs?
 This could not be restored!</source>
         <translation>Искате ли да изтриете тези %1 логове?
 Действието е необратимо!</translation>
     </message>
     <message>
-        <location filename="tableform.cpp" line="1936"/>
+        <location filename="tableform.cpp" line="1939"/>
         <source>The search did not return results</source>
         <translation>Търсенето не върна резултат</translation>
     </message>
