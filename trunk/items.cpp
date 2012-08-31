@@ -288,8 +288,8 @@ void Items::setEditMode(const bool edit)
 {
     this->edit_mode = edit;
 
-    //ui->operator_comboBox->setDisabled(edit);
-    //ui->location_comboBox->setDisabled(edit);
+    if(qApp->property("disable_item_operator_edit").toBool()) ui->operator_comboBox->setDisabled(edit);
+    if(qApp->property("disable_item_location_edit").toBool()) ui->location_comboBox->setDisabled(edit);
 
     setWindowTitle(tr("Items (%1 item)").arg(edit ? tr("edit") : tr("new")));
 }

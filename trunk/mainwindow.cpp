@@ -499,7 +499,9 @@ void MainWindow::about()
                    .arg(qApp->property("licensed_user").toString())
                    .arg(qApp->property("license_to_date").toDate().toString("dd.MM.yyyy")
                    ));
+        msg.append(tr("\n\nCurrent database:\n%1").arg(qApp->property("data_path").toString()));
     }
+
     QMessageBox::about( this, tr("About Inventory"), msg) ;
 }
 
@@ -625,7 +627,9 @@ bool MainWindow::restoreSettings()
     //QSettings settings(appdir.filePath("Inventory.ini"), QSettings::IniFormat);
     QSettings settings(qApp->property("ini").toString(), QSettings::IniFormat);
     settings.beginGroup("InventorySettings");
-    qApp->setProperty("locale", settings.value("Locale", "en").toString());
+        qApp->setProperty("locale", settings.value("Locale", "en").toString());
+        qApp->setProperty("disable_item_operator_edit", settings.value("DisableItemOperatorEdit", true).toBool());
+        qApp->setProperty("disable_item_location_edit", settings.value("DisableItemLocationEdit", true).toBool());
     settings.beginGroup("View");
        qApp->setProperty("show_id", settings.value("ShowIdEverywhere", false).toBool());
        settings.beginGroup("MarkingRows");

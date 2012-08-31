@@ -206,7 +206,7 @@
          </layout>
         </widget>
        </item>
-       <item row="1" column="0">
+       <item row="3" column="0">
         <spacer name="verticalSpacer_3">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -218,6 +218,20 @@
           </size>
          </property>
         </spacer>
+       </item>
+       <item row="1" column="0">
+        <widget class="QCheckBox" name="disable_item_edit_operator_checkBox">
+         <property name="text">
+          <string>Disable editing item operator</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QCheckBox" name="disable_item_edit_location_checkBox">
+         <property name="text">
+          <string>Disable editing item location</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
