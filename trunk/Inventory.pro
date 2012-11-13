@@ -232,7 +232,6 @@ OTHER_FILES += \
     icons/Smiley3.png \
     icons/Smiley2.png \
     icons/Smiley1.png \
-    icons/Sleep.png \
     icons/Star.png \
     icons/Standby.png \
     icons/Sound Plus.png \

@@ -60,7 +60,9 @@ void DbConnectDialog::accept()
     //QString type = ui->dbtype_comboBox->currentText();
     QString type = "QSQLITE";
     if(!type.isEmpty()){
-        _db = &QSqlDatabase::addDatabase(type);
+        QSqlDatabase db = QSqlDatabase::addDatabase(type);
+        //_db = &QSqlDatabase::addDatabase(type);
+        _db = &db;
         if(type == "QSQLITE"){
             _db->setDatabaseName(ui->database_lineEdit->text());
         }
